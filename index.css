@@ -9,6 +9,13 @@ body {
   background-color: #F9F6EE;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: #F9F6EE;
+  }
+}
+
 .root {
   height: 100vh;
   display: flex;
@@ -22,6 +29,13 @@ body {
   text-align: center;
   background: #F9F6EE;
   padding: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-content {
+    background-color: black;
+    color: #F9F6EE;
+  }
 }
 
 .main-content > *:not(:last-child) {
@@ -59,4 +73,10 @@ body {
 
 .thanks-note {
   margin-bottom: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .github-logo {
+    background: white;
+  }
 }
