@@ -13,176 +13,182 @@
     />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body class="root">
-    <header>
-      <div>
-        <img
-          alt="Adnan Logo"
-          src="/images/logo_black.png"
-          width="26"
-          height="19"
-        />
+  <body>
+    <header class="cmn_navbar">
+      <div class="cmn_navbar__inner cmn_container">
+        <div>
+          <a href="/index.html">
+            <img
+              alt="Adnan Logo"
+              src="/images/logo_black.png"
+              width="26"
+              height="19"
+            />
+          </a>
+        </div>
+        <nav class="cmn_navbar__nav">
+          <a href="/contact" class="cmn_button--outline">Contact Me</a
+          ><button class="cmn_navbar__hamburger">
+            <img
+              src="./images/hamburger-menu.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+          </button>
+        </nav>
       </div>
-      <nav>
-        <a href="/contact">Contact Me</a
-        ><button>
-          <svg
-            width="20"
-            height="15"
-            viewBox="0 0 20 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_2010_58)">
-              <rect
-                y="0.600006"
-                width="20"
-                height="2.6"
-                rx="1.3"
-                fill="#1A1F16"
-              />
-              <rect
-                y="6.20001"
-                width="20"
-                height="2.6"
-                rx="1.3"
-                fill="#1A1F16"
-              />
-              <rect y="11.8" width="20" height="2.6" rx="1.3" fill="#1A1F16" />
-            </g>
-            <defs>
-              <clipPath id="clip0_2010_58">
-                <rect
-                  y="0.600006"
-                  width="20"
-                  height="13.8"
-                  rx="4"
-                  fill="white"
-                />
-              </clipPath>
-            </defs>
-          </svg>
-        </button>
-      </nav>
     </header>
 
-    <section>
-      <div><img alt="Picture of Adnan smiling" src="/images/hero.png" /></div>
-      <span>Hi, I'm <span>Adnan</span> a Software Engineer</span>
-      <h1>I Help you create <span>fast</span> web apps!</h1>
-      <footer>
-        <a href="/contact">Contact Me</a>
-        <a href="/index.html#portfolio">Learn More</a>
+    <section class="hero cmn_container">
+      <div class="hero__img_container">
+        <img
+          class="hero_img"
+          alt="Picture of Adnan smiling"
+          src="/images/hero.png"
+        />
+      </div>
+      <div class="hero__main">
+        <span class="hero__subheadline"
+          >Hi, I'm <span class="hero__name">Adnan</span> a Software
+          Engineer</span
+        >
+        <h1 class="hero__headline">
+          I help you create <span class="hero__dynamic_text">fast</span> web
+          apps!
+        </h1>
+      </div>
+      <footer class="hero__navs mt-2">
+        <div class="hero__buttons">
+          <a href="/index.html#portfolio_target" class="cmn_button--outline"
+            >Learn More</a
+          >
+          <a href="/contact" class="cmn_button--solid_secondary">Contact Me</a>
+        </div>
       </footer>
     </section>
 
-    <section>
-      <h2 id="portfolio">My Portfolio</h2>
-      <p>
-        I have been a Software Engineer in the industry for 4 years.
-        Specializing in Frontend. I mainly use React, Next.js, Typescript, and
-        Express.js. I am currently available for remote part time / project
-        based work
-      </p>
-      <aside>
+    <section class="portfolio">
+      <div class="portfolio_inner cmn_container">
+        <div id="portfolio_target"></div>
         <div>
-          <span>Companies</span>
-          <span>5</span>
+          <h2 class="portfolio__headline">My Portfolio</h2>
+          <p>
+            I have been a Software Engineer in the industry for 4 years.
+            Specializing in Frontend. I mainly use React, Next.js, Typescript,
+            and Express.js. I am
+            <span class="portfolio__emphasis">currently available</span> for
+            <span class="portfolio__emphasis"
+              >remote part time / project based work</span
+            >
+          </p>
         </div>
-        <div>
-          <span>Projects</span>
-          <span>20+</span>
-        </div>
-        <div>
-          <span>Users</span>
-          <span>10M+</span>
-        </div>
-        <div>
-          <span>Speaker Events</span>
-          <span>10+</span>
+      </div>
+      <aside class="portfolio_stats">
+        <div class="portfolio_stats__inner cmn_container">
+          <div class="portfolio_stat">
+            <span class="portfolio_stat__label">Companies</span>
+            <span class="portfolio_stat__value">5</span>
+          </div>
+          <div class="portfolio_stat">
+            <span class="portfolio_stat__label">Projects</span>
+            <span class="portfolio_stat__value">20+</span>
+          </div>
+          <div class="portfolio_stat">
+            <span class="portfolio_stat__label">Users</span>
+            <span class="portfolio_stat__value">10M+</span>
+          </div>
+          <div class="portfolio_stat">
+            <span class="portfolio_stat__label">Speaker Events</span>
+            <span class="portfolio_stat__value">10+</span>
+          </div>
         </div>
       </aside>
     </section>
 
-    <section>
-      <h3>What Others Say About Me</h3>
-      <ol>
-        <li>
-          <div>
-            <blockquote>
-              “Ultimately, what sets him apart from his peers is his hunger and
-              willingness to drive improvements within his team. He communicates
-              with his stakeholders effectively, and he is capable of rounding
-              up a group of stakeholders together to deliver his impact
-              effectively.”
-            </blockquote>
-            <footer>
-              <button>Detail</button>
-              <span>Engineering Manager, Grab</span>
-            </footer>
-          </div>
-        </li>
-        <li>
-          <div>
-            <blockquote>
-              “He has really good technical skills and always have will to
-              improve himself by taking challenging projects, or plan what is
-              the next improvement for our service code base.”
-            </blockquote>
-            <footer>
-              <button>Detail</button>
-              <span>Senior Engineer, Grab</span>
-            </footer>
-          </div>
-        </li>
-        <li>
-          <div>
-            <blockquote>
-              “He possesses exceptional technical skills, consistently tackling
-              difficult projects with great success and excellent
-              implementation. His code is reliable and well-structured, which
-              greatly contributes to the overall success of our projects.”
-            </blockquote>
-            <footer>
-              <button>Detail</button>
-              <span>Software Engineer, Grab</span>
-            </footer>
-          </div>
-        </li>
-      </ol>
+    <section class="social_proof">
+      <div class="cmn_container">
+        <h3 class="social_proof__headline">What Others Say About Me</h3>
+        <ol class="social_proof_list">
+          <li>
+            <article class="testimony">
+              <blockquote class="testimony__quote">
+                “Ultimately, what sets him apart from his peers is his hunger
+                and willingness to drive improvements within his team. He
+                communicates with his stakeholders effectively, and he is
+                capable of rounding up a group of stakeholders together to
+                deliver his impact effectively.”
+              </blockquote>
+              <footer class="testimony__footer">
+                <button class="testimony__button">Detail</button>
+                <span class="testimony__person">Engineering Manager, Grab</span>
+              </footer>
+            </article>
+          </li>
+          <li>
+            <article class="testimony">
+              <blockquote class="testimony__quote">
+                “He has really good technical skills and always have will to
+                improve himself by taking challenging projects, or plan what is
+                the next improvement for our service code base.”
+              </blockquote>
+              <footer class="testimony__footer">
+                <button class="testimony__button">Detail</button>
+                <span class="testimony__person">Senior Engineer, Grab</span>
+              </footer>
+            </article>
+          </li>
+          <li>
+            <article class="testimony">
+              <blockquote class="testimony__quote">
+                “He possesses exceptional technical skills, consistently
+                tackling difficult projects with great success and excellent
+                implementation. His code is reliable and well-structured, which
+                greatly contributes to the overall success of our projects.”
+              </blockquote>
+              <footer class="testimony__footer">
+                <button class="testimony__button">Detail</button>
+                <span class="testimony__person">Software Engineer, Grab</span>
+              </footer>
+            </article>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section>
-      <h3>Projects</h3>
-      <ol>
+    <section class="projects cmn_container">
+      <h3 class="projects__headline">Projects</h3>
+      <ol class="projects__list">
         <li>
-          <article>
-            <div>
+          <article class="project">
+            <div class="project__img_container">
               <img
-                src="https://picsum.photos/273/237"
-                alt="Project picture"
-                width="273"
+                src="/images/grab_illustration.svg"
+                alt="Grab food delivery app"
                 height="237"
               />
             </div>
-            <section>
-              <span>Grab Food Merchant Portal</span>
-              <p>
+            <section class="project__texts">
+              <span class="project__title">Grab Food Merchant Portal</span>
+              <p class="project__description">
                 Grab Food Merchant Portal is an public facing application to
                 help merchants manage all information related to their business
               </p>
-              <footer>
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Redux</span>
-                <span>Antd</span>
+              <footer class="project__techs">
+                <div class="project__techs__inner">
+                  <span class="project__tech">React</span>
+                  <span class="project__tech">TypeScript</span>
+                  <span class="project__tech">Redux</span>
+                  <span class="project__tech">Antd</span>
+                </div>
               </footer>
             </section>
-            <footer>
+            <footer class="project__footer">
               <a
                 href="https://merchant.grab.com/portal"
                 target="_blank"
                 rel="noopener"
+                class="cmn_button--solid_primary"
               >
                 Visit
               </a>
@@ -190,58 +196,61 @@
           </article>
         </li>
         <li>
-          <article>
-            <div>
+          <article class="project">
+            <div class="project__img_container">
               <img
-                src="https://picsum.photos/273/237"
+                src="/images/mading_illustration.svg"
                 alt="Project picture"
-                width="273"
                 height="237"
               />
             </div>
-            <section>
-              <span>Kautsar Design System Mading</span>
-              <p>
+            <section class="project__texts">
+              <span class="project__title">Kautsar Design System Mading</span>
+              <p class="project__description">
                 Mading is a library to help software engineers build uniform
                 high quality UI faster
               </p>
-              <footer>
-                <span>Vue</span>
-                <span>JavaScript</span>
-                <span>Storybook</span>
-                <span>LESS</span>
+              <footer class="project__techs">
+                <div class="project__techs__inner">
+                  <span class="project__tech">Vue</span>
+                  <span class="project__tech">JavaScript</span>
+                  <span class="project__tech">Storybook</span>
+                  <span class="project__tech">LESS</span>
+                </div>
               </footer>
             </section>
           </article>
         </li>
         <li>
-          <article>
-            <div>
+          <article class="project">
+            <div class="project__img_container">
               <img
-                src="https://picsum.photos/273/237"
+                src="/images/ruangguru_illustration.svg"
                 alt="Project picture"
-                width="273"
                 height="237"
               />
             </div>
-            <section>
-              <span>Ruangguru E-Learning Web App</span>
-              <p>
+            <section class="project__texts">
+              <span class="project__title">Ruangguru E-Learning Web App</span>
+              <p class="project__description">
                 Ruangguru E-Learning is a web app to help students learn
                 subjects in various formats and form
               </p>
-              <footer>
-                <span>Next</span>
-                <span>TypeScript</span>
-                <span>Zustand</span>
-                <span>Chakra UI</span>
+              <footer class="project__techs">
+                <div class="project__techs__inner">
+                  <span class="project__tech">Next</span>
+                  <span class="project__tech">TypeScript</span>
+                  <span class="project__tech">Zustand</span>
+                  <span class="project__tech">Chakra UI</span>
+                </div>
               </footer>
             </section>
-            <footer>
+            <footer class="project__footer">
               <a
                 href="https://merchant.grab.com/portal"
                 target="_blank"
                 rel="noopener"
+                class="cmn_button--solid_primary"
               >
                 Visit
               </a>
@@ -250,72 +259,87 @@
         </li>
       </ol>
 
-      <a href="/portfolio">Portfolio Page</a>
+      <footer class="projects__footer">
+        <a href="/portfolio" class="cmn_button--outline_secondary"
+          >Portfolio Page</a
+        >
+      </footer>
     </section>
 
-    <footer>
-      <div>
-        <div>
-          <ol>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/about">About</a></li>
-          </ol>
-        </div>
-        <div>
-          <ol>
-            <li>
-              <a href="https://www.linkedin.com/in/madnanrizqu/">
-                <img
-                  height="12"
-                  width="12"
-                  src="/images/linkedin.svg"
-                  alt="LindedIn logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/rizquadnan">
-                <img
-                  height="12"
-                  width="12"
-                  src="/images/github.svg"
-                  alt="Github logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:madnanrizqullah@gmail.com">
-                <img
-                  height="12"
-                  width="12"
-                  src="/images/google.svg"
-                  alt="Google logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/madnanrizqu">
-                <img height="12" width="12" src="/images/x.svg" alt="X logo" />
-              </a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div>
-        <div>
+    <footer class="cmn_footer">
+      <div class="cmn_footer__inner cmn_container">
+        <div class="cmn_footer__links">
           <div>
-            <img
-              src="/images/logo_white.png"
-              alt="Adnan Logo"
-              width="26"
-              height="19"
-            />
+            <ol class="cmn_footer__site_links">
+              <li><a class="cmn_footer__site_link" href="/index">Home</a></li>
+              <li>
+                <a class="cmn_footer__site_link" href="/contact">Contact</a>
+              </li>
+              <li>
+                <a class="cmn_footer__site_link" href="/portfolio">Portfolio</a>
+              </li>
+              <li><a class="cmn_footer__site_link" href="/about">About</a></li>
+            </ol>
           </div>
-          <span>Muhammad Adnan R</span>
+          <div>
+            <ol class="cmn_footer__social_medias">
+              <li>
+                <a href="https://www.linkedin.com/in/madnanrizqu/">
+                  <img
+                    height="12"
+                    width="12"
+                    src="/images/linkedin.svg"
+                    alt="LindedIn logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rizquadnan">
+                  <img
+                    height="12"
+                    width="12"
+                    src="/images/github.svg"
+                    alt="Github logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="mailto:madnanrizqullah@gmail.com">
+                  <img
+                    height="12"
+                    width="12"
+                    src="/images/google.svg"
+                    alt="Google logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/madnanrizqu">
+                  <img
+                    height="12"
+                    width="12"
+                    src="/images/x.svg"
+                    alt="X logo"
+                  />
+                </a>
+              </li>
+            </ol>
+          </div>
         </div>
-        <span>Made with ❤️ @ 2024 </span>
+        <div class="cmn_footer__botttom">
+          <div class="cmn_footer__identity">
+            <div>
+              <img
+                src="/images/logo_white.png"
+                alt="Adnan Logo"
+                width="26"
+                height="19"
+              />
+            </div>
+            <span>Muhammad Adnan R</span>
+          </div>
+          <span class="cmn_footer__note">Made with ❤️ @ 2024 </span>
+        </div>
       </div>
     </footer>
   </body>
