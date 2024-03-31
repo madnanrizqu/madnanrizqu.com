@@ -85,12 +85,12 @@
 
 .hero__navs {
   position: absolute;
-  bottom: 16px;
+  bottom: 1.6rem;
 }
 
 .hero__buttons {
   display: flex;
-  gap: 4px;
+  gap: 0.4rem;
   width: 100%;
 }
 
@@ -104,7 +104,7 @@
 
 #portfolio_target {
   position: absolute;
-  top: -64px;
+  top: -6.4rem;
 }
 
 .portfolio__headline {
@@ -123,8 +123,8 @@
   color: var(--white);
   padding-left: var(--page-pad-x);
   padding-right: var(--page-pad-x);
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
   margin-top: 3.6rem;
 }
 
