@@ -87,6 +87,53 @@ button {
   cursor: pointer;
 }
 
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* UTILS */
+.u_hide_xs {
+  visibility: hidden;
+  position: absolute;
+}
+
+@media screen and (min-width: 650px) {
+  .u_hide_xs {
+    visibility: visible;
+    position: initial;
+  }
+
+  .u_hide_sm {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .u_hide_sm {
+    visibility: visible;
+    position: initial;
+  }
+
+  .u_hide_md {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .u_hide_md {
+    visibility: visible;
+    position: initial;
+  }
+
+  .u_hide_lg {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
 /* COMMON COMPONENT STYLS */
 
 .cmn_container {
@@ -124,7 +171,12 @@ button {
 .cmn_navbar__nav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 2rem;
+}
+
+.cmn_navbar__links {
+  display: flex;
+  gap: 2rem;
 }
 
 .cmn_button--outline {
