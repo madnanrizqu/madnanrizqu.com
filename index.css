@@ -117,7 +117,8 @@ canvas {
 /* PORTFOLIO SECTION */
 .portfolio {
   position: relative;
-  background: var(--grey);
+  background-color: var(--black);
+  color: var(--white);
   padding-top: 4.8rem;
   padding-bottom: 3.2rem;
 }
