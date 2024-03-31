@@ -27,15 +27,27 @@
           </a>
         </div>
         <nav class="cmn_navbar__nav">
-          <ul class="u_hide_xs u_hide_sm cmn_navbar__links">
+          <ul class="u_hide_xs cmn_navbar__links">
             <li><a href="/index.html"> Home </a></li>
             <li><a href="/coming-soon">Portfolio</a></li>
             <li><a href="/coming-soon">About</a></li>
           </ul>
           <a href="/coming-soon" class="cmn_button--outline">Contact Me</a>
-          <button class="u_hide_md u_hide_lg cmn_navbar__hamburger">
+          <button
+            id="mobile_drawer_toggle"
+            class="u_hide_sm u_hide_md u_hide_lg cmn_navbar__hamburger"
+          >
             <img
+              id="mobile_drawer_open"
               src="./images/hamburger-menu.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+            <img
+              id="mobile_drawer_close"
+              class="u_hide_all"
+              src="./images/cross.svg"
               alt=""
               width="24"
               height="24"
@@ -43,6 +55,13 @@
           </button>
         </nav>
       </div>
+      <aside id="mobile_drawer" class="u_hide_all cmn_navbar__mobile_drawer">
+        <ul class="cmn_navbar__mobile_links">
+          <li><a href="/index.html"> Home </a></li>
+          <li><a href="/coming-soon">Portfolio</a></li>
+          <li><a href="/coming-soon">About</a></li>
+        </ul>
+      </aside>
     </header>
 
     <section id="hero">

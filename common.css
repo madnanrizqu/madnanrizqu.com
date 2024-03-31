@@ -93,6 +93,7 @@ ol {
 }
 
 /* UTILS */
+/* dont touch the ordering of the u_hide classes */
 .u_hide_xs {
   visibility: hidden;
   position: absolute;
@@ -132,6 +133,12 @@ ol {
     visibility: hidden;
     position: absolute;
   }
+}
+
+.u_hide_all {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
 }
 
 /* COMMON COMPONENT STYLS */
@@ -177,6 +184,34 @@ ol {
 .cmn_navbar__links {
   display: flex;
   gap: 2rem;
+}
+
+.cmn_navbar__mobile_drawer {
+  transition: visibilty 250ms, opacity 250ms;
+}
+
+.cmn_navbar__mobile_links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  width: 100%;
+  background: white;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  z-index: 2;
+}
+
+.cmn_navbar__mobile_links::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .cmn_button--outline {
