@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   height: 100vh;
-  padding-top: 3.2rem;
+  padding-top: 5.4rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -21,6 +21,10 @@
 .hero__img_container {
   text-align: center;
 }
+
+.hero__img_container img {
+  max-height: 320px;
+}
 /* for tablets */
 @media screen and (min-width: 700px) {
   .hero__img_container {
@@ -29,6 +33,7 @@
 
   .hero__img_container img {
     height: 50vh;
+    max-height: none;
   }
 }
 /* for desktops */
@@ -49,26 +54,22 @@
 }
 
 .hero__subheadline {
-  font-size: 1.3rem;
   font-weight: 700;
 }
 
-.hero__headline {
-  font-size: 3.2rem;
-}
 @media screen and (min-height: 700px) {
   .hero__headline {
-    font-size: 4rem;
+    font-size: 4.6rem;
   }
 }
 @media screen and (min-height: 800px) {
   .hero__headline {
-    font-size: 4.8rem;
+    font-size: 5.4rem;
   }
 }
 @media screen and (min-width: 1368px) {
   .hero__headline {
-    font-size: 5.4rem;
+    font-size: 6.2rem;
   }
 }
 
@@ -81,6 +82,20 @@
   color: var(--primary);
   display: block;
   font-size: inherit;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+@media screen and (min-height: 700px) {
+  .hero__dynamic_text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .hero__dynamic_text {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .hero__navs {
@@ -110,7 +125,6 @@
 .portfolio__headline {
   color: var(--primary);
   font-weight: 700;
-  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -129,11 +143,11 @@
 }
 
 .portfolio_stat__label {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 .portfolio_stat__value {
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: var(--secondary);
 }
@@ -159,7 +173,6 @@
 }
 
 .social_proof__headline {
-  font-size: 1.8rem;
   color: var(--primary);
   font-weight: 700;
   margin-bottom: 1.6rem;
@@ -207,6 +220,7 @@
 
 .testimony__quote {
   font-style: italic;
+  font-size: 1.4rem;
 }
 
 .testimony__person {
@@ -273,7 +287,6 @@
 }
 
 .project__title {
-  font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 1.6rem;
   display: inline-block;
@@ -281,17 +294,17 @@
 
 .project__description {
   display: inline-block;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .project__techs {
   display: flex;
-  justify-content: end;
+  justify-content: start;
 }
 
 .project__techs__inner {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -301,6 +314,7 @@
   border: 1px solid var(--primary);
   border-radius: 12px;
   padding: 0.4rem 1rem;
+  font-size: 1.4rem;
 }
 
 .project__footer > a {
