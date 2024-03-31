@@ -1,4 +1,4 @@
-function main() {
+function heroBackground() {
   // Initialising the canvas
   const canvas = document.getElementById("hero_background"),
     ctx = canvas.getContext("2d");
@@ -44,6 +44,21 @@ function main() {
   setInterval(draw, 99);
 }
 
+function heroAnimatedHeadline() {
+  const text = document.getElementById("hero__dynamic_text");
+  // Set to no content to avoid jitter
+  text.textContent = "";
+
+  var typed = new Typed("#hero__dynamic_text", {
+    strings: ["smooth", "reliable", "engaging", "aesthetic", "powerful"],
+    typeSpeed: 100,
+    startDelay: 300,
+    loop: true,
+    showCursor: false,
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  main();
+  heroBackground();
+  heroAnimatedHeadline();
 });

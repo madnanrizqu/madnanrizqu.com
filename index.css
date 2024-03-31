@@ -83,6 +83,23 @@ canvas {
   font-size: inherit;
 }
 
+.hero__dynamic_text_holder {
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+  height: 2rem;
+}
+@media screen and (min-height: 700px) {
+  .hero__dynamic_text_holder {
+    height: 5rem;
+  }
+}
+@media screen and (min-height: 800px) {
+  .hero__dynamic_text_holder {
+    height: 6rem;
+  }
+}
+
 .hero__dynamic_text {
   color: var(--primary);
   display: block;
@@ -150,6 +167,7 @@ canvas {
 
 .portfolio_stat__label {
   font-size: 1.6rem;
+  color: var(--secondary);
 }
 
 .portfolio_stat__value {
@@ -160,7 +178,7 @@ canvas {
 
 .portfolio_stats__inner {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.6rem;
   justify-content: space-between;
   flex-wrap: wrap;
 }
