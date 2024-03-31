@@ -58,7 +58,15 @@ function heroAnimatedHeadline() {
   });
 }
 
+// on mobile web
+function makeHeroProperFullHeight() {
+  const hero = document.querySelector(".hero");
+
+  hero.style.height = window.innerHeight;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  makeHeroProperFullHeight();
   heroBackground();
   heroAnimatedHeadline();
 });
