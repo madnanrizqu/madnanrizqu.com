@@ -10,12 +10,16 @@
   gap: 1.6rem;
 }
 
-canvas {
+#hero_background {
   position: absolute;
 }
 
+.hero__img_container img {
+  filter: grayscale(100%);
+}
+
 /* for tablets */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .hero {
     flex-direction: row;
     align-items: center;
@@ -31,7 +35,7 @@ canvas {
   max-height: 320px;
 }
 /* for tablets */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .hero__img_container {
     order: 2;
   }
@@ -207,7 +211,7 @@ canvas {
   display: grid;
   gap: 3.8rem;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .social_proof_list {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -225,7 +229,7 @@ canvas {
   flex-direction: column;
   gap: 1.8rem;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .testimony {
     height: 100%;
     justify-content: space-between;
@@ -269,7 +273,7 @@ canvas {
   gap: 3.6rem;
   margin-bottom: 2.4rem;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .projects__list {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -288,7 +292,7 @@ canvas {
   border-radius: 20px;
   overflow: hidden;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .project {
     height: 100%;
   }
