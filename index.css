@@ -3,7 +3,7 @@
 /* HERO SECTION */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   padding-top: 5.4rem;
   display: flex;
   flex-direction: column;
