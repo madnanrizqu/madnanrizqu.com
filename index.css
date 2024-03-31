@@ -9,6 +9,11 @@
   flex-direction: column;
   gap: 1.6rem;
 }
+
+canvas {
+  position: absolute;
+}
+
 /* for tablets */
 @media screen and (min-width: 700px) {
   .hero {

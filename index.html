@@ -40,33 +40,38 @@
       </div>
     </header>
 
-    <section class="hero cmn_container">
-      <div class="hero__img_container">
-        <img
-          class="hero_img"
-          alt="Picture of Adnan smiling"
-          srcset="/images/hero_mobile.png 500w, /images/hero.png 1000w"
-          sizes="(max-width: 600px) 480px, 1000px"
-        />
-      </div>
-      <div class="hero__main">
-        <span class="hero__subheadline"
-          >Hi, I'm <span class="hero__name">Adnan</span> a Software
-          Engineer</span
-        >
-        <h1 class="hero__headline">
-          I help you create <span class="hero__dynamic_text">fast</span> web
-          apps!
-        </h1>
-      </div>
-      <footer class="hero__navs mt-2">
-        <div class="hero__buttons">
-          <a href="/index.html#portfolio_target" class="cmn_button--outline"
-            >Learn More</a
-          >
-          <a href="/contact" class="cmn_button--solid_secondary">Contact Me</a>
+    <section id="hero">
+      <canvas id="hero_background"></canvas>
+      <div class="hero cmn_container">
+        <div class="hero__img_container">
+          <img
+            class="hero_img"
+            alt="Picture of Adnan smiling"
+            srcset="/images/hero_mobile.png 500w, /images/hero.png 1000w"
+            sizes="(max-width: 600px) 480px, 1000px"
+          />
         </div>
-      </footer>
+        <div class="hero__main">
+          <span class="hero__subheadline"
+            >Hi, I'm <span class="hero__name">Adnan</span> a Software
+            Engineer</span
+          >
+          <h1 class="hero__headline">
+            I help you create <span class="hero__dynamic_text">fast</span> web
+            apps!
+          </h1>
+        </div>
+        <footer class="hero__navs mt-2">
+          <div class="hero__buttons">
+            <a href="/index.html#portfolio_target" class="cmn_button--outline"
+              >Learn More</a
+            >
+            <a href="/contact" class="cmn_button--solid_secondary"
+              >Contact Me</a
+            >
+          </div>
+        </footer>
+      </div>
     </section>
 
     <section class="portfolio">
@@ -343,5 +348,6 @@
         </div>
       </div>
     </footer>
+    <script src="/index.js"></script>
   </body>
 </html>
