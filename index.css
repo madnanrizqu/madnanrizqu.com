@@ -166,6 +166,7 @@
 
 .portfolio__emphasis {
   font-weight: 700;
+  color: var(--secondary);
 }
 
 .portfolio_stats {
