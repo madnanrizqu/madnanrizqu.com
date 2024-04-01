@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M Adnan Rizqullah - Software Engineer | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon_white.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="cmn_navbar">
+      <div class="cmn_navbar__inner cmn_container">
+        <div>
+          <a href="/index.html">
+            <img
+              alt="Adnan Logo"
+              src="/images/logo_black.png"
+              width="26"
+              height="19"
+            />
+          </a>
+        </div>
+        <nav class="cmn_navbar__nav">
+          <ul class="u_hide_xs cmn_navbar__links">
+            <li><a href="/index.html"> Home </a></li>
+            <li><a href="/coming-soon">Portfolio</a></li>
+            <li><a href="/coming-soon">About</a></li>
+          </ul>
+          <a href="/coming-soon" class="cmn_button--outline">Contact Me</a>
+          <button
+            id="mobile_drawer_toggle"
+            class="u_hide_sm u_hide_md u_hide_lg cmn_navbar__hamburger"
+          >
+            <img
+              id="mobile_drawer_open"
+              src="./images/hamburger-menu.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+            <img
+              id="mobile_drawer_close"
+              class="u_hide_all"
+              src="./images/cross.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+          </button>
+        </nav>
+      </div>
+      <aside id="mobile_drawer" class="u_hide_all cmn_navbar__mobile_drawer">
+        <ul class="cmn_navbar__mobile_links">
+          <li><a href="/index.html"> Home </a></li>
+          <li><a href="/coming-soon">Portfolio</a></li>
+          <li><a href="/coming-soon">About</a></li>
+        </ul>
+      </aside>
+    </header>
+
+    <main>
+      <h1>Portfolio</h1>
+
+      <section>
+        <h2>Background</h2>
+        <p>
+          I am a Software Engineer who has about 4 years of working experience,
+          specializing in Frontend. I have experience working at platform and
+          product teams
+        </p>
+        <p>
+          One key achievement in the platform side was increasing build
+          performance of 2 webapps by 43%. Another one was optimizing API
+          latency by 42%.
+        </p>
+        <p>
+          One key achievement in the product side was working on CPO
+          (cost-per-order) that drove $1.27M of revenue in only 2 months after
+          launch
+        </p>
+        <p>
+          On the product side: I've worked on E-learning platorms, Education
+          Information System, CMS, Desktop Apps, Marketing sites, apps that uses
+          Geo Coordinates, and more
+        </p>
+        <p>
+          On the platform side: I've work on optimizing performance, building
+          design systems, creating best practices web app boilerplate, define
+          development workflows, upgrading old dependencies, enforcing web
+          securities, setup/maintain CI/CD pipelines, and more
+        </p>
+        <p>
+          I also am proud to have the soft skills to pay the bills :D. At Grab,
+          as a new joiner, I influenced the team about best practices in web
+          development and conducted team events for learning. Team got the
+          chance to learn 155 relevant topics in only 1 year. There I was
+          selected as a speaker of 10 out of 48 (about 20,8%) team sharing
+          sessions during the yeaream sharing sessions during the year
+        </p>
+        <p>
+          Besides work, I like to give back to the community and help people in
+          software engineering:
+        </p>
+        <ul>
+          <li>
+            <span
+              >I was a Glints Expert guest content creator talking about work
+              life balance</span
+            >
+          </li>
+          <li>
+            <span
+              >I created Youtube tutorials about competitive programming and
+              frontend stuff</span
+            >
+          </li>
+          <li>
+            <span
+              >I was the speaker of 2 days workshop about Frontend and Backend
+              with over 100 registrants</span
+            >
+          </li>
+          <li>
+            <span
+              >I am a mentor in Dealls Indonesian National Mentoring Festival
+              helping people to pursue postgraduate studies. With a 100%
+              recommendation rate rating</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="projects cmn_container">
+        <h2 class="projects__headline">Projects</h2>
+        <ol class="projects__list">
+          <li>
+            <article class="project">
+              <div class="project__img_container">
+                <img
+                  src="/images/grab_illustration.svg"
+                  alt="Grab food delivery app"
+                  height="237"
+                />
+              </div>
+              <section class="project__texts">
+                <span class="project__title">Grab Food Merchant Portal</span>
+                <p class="project__description">
+                  Grab Food Merchant Portal is an public facing application to
+                  help merchants manage all information related to their
+                  business
+                </p>
+                <footer class="project__techs">
+                  <div class="project__techs__inner">
+                    <span class="project__tech">React</span>
+                    <span class="project__tech">TypeScript</span>
+                    <span class="project__tech">Redux</span>
+                    <span class="project__tech">Antd</span>
+                  </div>
+                </footer>
+              </section>
+              <footer class="project__footer">
+                <a
+                  href="https://merchant.grab.com/portal"
+                  target="_blank"
+                  rel="noopener"
+                  class="cmn_button--solid_primary"
+                >
+                  Visit
+                </a>
+              </footer>
+            </article>
+          </li>
+          <li>
+            <article class="project">
+              <div class="project__img_container">
+                <img
+                  src="/images/mading_illustration.svg"
+                  alt="Project picture"
+                  height="237"
+                />
+              </div>
+              <section class="project__texts">
+                <span class="project__title">Kautsar Design System Mading</span>
+                <p class="project__description">
+                  Mading is a library to help software engineers build uniform
+                  high quality UI faster
+                </p>
+                <footer class="project__techs">
+                  <div class="project__techs__inner">
+                    <span class="project__tech">Vue</span>
+                    <span class="project__tech">JavaScript</span>
+                    <span class="project__tech">Storybook</span>
+                    <span class="project__tech">LESS</span>
+                  </div>
+                </footer>
+              </section>
+            </article>
+          </li>
+          <li>
+            <article class="project">
+              <div class="project__img_container">
+                <img
+                  src="/images/ruangguru_illustration.svg"
+                  alt="Project picture"
+                  height="237"
+                />
+              </div>
+              <section class="project__texts">
+                <span class="project__title">Ruangguru E-Learning Web App</span>
+                <p class="project__description">
+                  Ruangguru E-Learning is a web app to help students learn
+                  subjects in various formats and form
+                </p>
+                <footer class="project__techs">
+                  <div class="project__techs__inner">
+                    <span class="project__tech">Next</span>
+                    <span class="project__tech">TypeScript</span>
+                    <span class="project__tech">Zustand</span>
+                    <span class="project__tech">Chakra UI</span>
+                  </div>
+                </footer>
+              </section>
+              <footer class="project__footer">
+                <a
+                  href="https://merchant.grab.com/portal"
+                  target="_blank"
+                  rel="noopener"
+                  class="cmn_button--solid_primary"
+                >
+                  Visit
+                </a>
+              </footer>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <section class="social_proof">
+        <div class="cmn_container">
+          <h2 class="social_proof__headline">What Others Say About Me</h2>
+          <ol class="social_proof_list">
+            <li>
+              <article class="testimony">
+                <blockquote class="testimony__quote">
+                  “Ultimately, what sets him apart from his peers is his hunger
+                  and willingness to drive improvements within his team. He
+                  communicates with his stakeholders effectively, and he is
+                  capable of rounding up a group of stakeholders together to
+                  deliver his impact effectively.”
+                </blockquote>
+                <footer class="testimony__footer">
+                  <dialog class="cmn_dialog" id="dialog_testimony_1">
+                    <button
+                      class="cmn_dialog__close_btn"
+                      data-close-dialog-id="dialog_testimony_1"
+                    >
+                      <img
+                        src="./images/cross.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </button>
+                    <div class="testimony__dialog">
+                      <blockquote class="testimony__dialog_quote">
+                        <p>
+                          "Adnan is one of the most passionate engineers I've
+                          met in my time at Grab. He clearly demonstrates his
+                          willingness to be excellent, and he clearly has an
+                          appetite for tackling difficult problems.
+                        </p>
+
+                        <p>
+                          Ultimately, what sets him apart from his peers is his
+                          hunger and willingness to drive improvements within
+                          his team. He communicates with his stakeholders
+                          effectively, and he is capable of rounding up a group
+                          of stakeholders together to deliver his impact
+                          effectively. I'd gladly have Adnan on my team again"
+                        </p>
+                      </blockquote>
+                      <span class="testimony__person"
+                        >Engineering Manager, Grab</span
+                      >
+                    </div>
+                  </dialog>
+                  <button
+                    class="testimony__button"
+                    data-open-dialog-id="dialog_testimony_1"
+                  >
+                    Detail
+                  </button>
+                  <span class="testimony__person"
+                    >Engineering Manager, Grab</span
+                  >
+                </footer>
+              </article>
+            </li>
+            <li>
+              <article class="testimony">
+                <blockquote class="testimony__quote">
+                  “He has really good technical skills and always have will to
+                  improve himself by taking challenging projects, or plan what
+                  is the next improvement for our service code base.”
+                </blockquote>
+                <footer class="testimony__footer">
+                  <dialog class="cmn_dialog" id="dialog_testimony_2">
+                    <button
+                      class="cmn_dialog__close_btn"
+                      data-close-dialog-id="dialog_testimony_2"
+                    >
+                      <img
+                        src="./images/cross.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </button>
+                    <div class="testimony__dialog">
+                      <blockquote class="testimony__dialog_quote">
+                        <p>
+                          "It's really good working with Adnan, for more than 1
+                          year he bring positive impact for the team and for me.
+                        </p>
+
+                        <p>
+                          He has really good technical skills and always have
+                          will to improve himself by taking challenging
+                          projects, or plan what is the next improvement for our
+                          service code base
+                        </p>
+
+                        <p>
+                          He is rare kind of engineer, always initiate to
+                          arrange discussion and team engagement. One of his
+                          idea is arrange weekly sharing to discuss about what
+                          team members learn this week and share."
+                        </p>
+                      </blockquote>
+                      <span class="testimony__person"
+                        >Senior Software Engineer, Grab</span
+                      >
+                    </div>
+                  </dialog>
+                  <button
+                    class="testimony__button"
+                    data-open-dialog-id="dialog_testimony_2"
+                  >
+                    Detail
+                  </button>
+                  <span class="testimony__person"
+                    >Senior Software Engineer, Grab</span
+                  >
+                </footer>
+              </article>
+            </li>
+            <li>
+              <article class="testimony">
+                <blockquote class="testimony__quote">
+                  “He possesses exceptional technical skills, consistently
+                  tackling difficult projects with great success and excellent
+                  implementation. His code is reliable and well-structured,
+                  which greatly contributes to the overall success of our
+                  projects.”
+                </blockquote>
+                <footer class="testimony__footer">
+                  <dialog class="cmn_dialog" id="dialog_testimony_3">
+                    <button
+                      class="cmn_dialog__close_btn"
+                      data-close-dialog-id="dialog_testimony_3"
+                    >
+                      <img
+                        src="./images/cross.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                      />
+                    </button>
+                    <div class="testimony__dialog">
+                      <blockquote class="testimony__dialog_quote">
+                        <p>
+                          "It is a pleasure to work on the same team as Adnan,
+                          and I can confidently say that he is an exceptional
+                          colleague. He possesses exceptional technical skills,
+                          consistently tackling difficult projects with great
+                          success and excellent implementation. His code is
+                          reliable and well-structured, which greatly
+                          contributes to the overall success of our projects.
+                        </p>
+                        <p>
+                          In addition to his technical skills, Adnan excels as
+                          an excellent communicator. He has the ability to
+                          explain complex concepts in a clear and concise
+                          manner, ensuring that everyone on the team is on the
+                          same page. His effective communication and strong
+                          interpersonal skills contribute to a positive team
+                          dynamic and foster a productive work environment. Many
+                          of his excellent ideas and improvements have greatly
+                          contributed to the success and continuous improvement
+                          of our team. Adnan's willingness to share his
+                          knowledge and expertise has made him a trusted
+                          teammate to other team members, elevating the skills
+                          of the entire team.
+                        </p>
+                        <p>
+                          I highly endorse Adnan and have no doubt that he will
+                          succeed in any future projects/works he undertakes."
+                        </p>
+                      </blockquote>
+                      <span class="testimony__person"
+                        >Software Engineer, Grab</span
+                      >
+                    </div>
+                  </dialog>
+                  <button
+                    class="testimony__button"
+                    data-open-dialog-id="dialog_testimony_3"
+                  >
+                    Detail
+                  </button>
+                  <span class="testimony__person">Software Engineer, Grab</span>
+                </footer>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technologies I Use</h2>
+        <p>These are the tech that I have used professionaly</p>
+
+        <ol>
+          <li>
+            <h3>Progamming Language</h3>
+            <ol>
+              <li><span>TypeScript</span></li>
+              <li><span>Node.js</span></li>
+              <li><span>JavaScript</span></li>
+              <li><span>ReasonML</span></li>
+              <li><span>Python</span></li>
+              <li><span>Go</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>JavaScript Framework</h3>
+            <ol>
+              <li><span>Next.js</span></li>
+              <li><span>Express.js</span></li>
+              <li><span>Nest.js</span></li>
+              <li><span>React.js</span></li>
+              <li><span>Vue.js</span></li>
+              <li><span>Nuxt.js</span></li>
+              <li><span>Electron.js</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>Styling</h3>
+            <ol>
+              <li><span>CSS</span></li>
+              <li><span>LESS</span></li>
+              <li><span>SASS</span></li>
+              <li><span>Tailwind</span></li>
+              <li><span>Emotion</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>UI Libraries</h3>
+            <ol>
+              <li><span>Antd</span></li>
+              <li><span>Material</span></li>
+              <li><span>Chakra UI</span></li>
+              <li><span>Bulma</span></li>
+              <li><span>Bootsrap</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>Testing</h3>
+            <ol>
+              <li><span>Jest</span></li>
+              <li><span>Vitest</span></li>
+              <li><span>React Testing Library</span></li>
+              <li><span>Cypress</span></li>
+              <li><span>Selenium</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>State Management</h3>
+            <ol>
+              <li><span>Zustand</span></li>
+              <li><span>Redux</span></li>
+              <li><span>Vuex</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>Data Fetching</h3>
+            <ol>
+              <li><span>Axios</span></li>
+              <li><span>React Query</span></li>
+              <li><span>useSWR</span></li>
+              <li><span>Redux Thunk</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>Database</h3>
+            <ol>
+              <li><span>SQL (Postgres)</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>Other</h3>
+            <ol>
+              <li><span>Webpack</span></li>
+              <li><span>Storybook</span></li>
+              <li><span>Docker</span></li>
+              <li><span>HTML</span></li>
+            </ol>
+          </li>
+          <li>
+            <h3>3rd Party Services</h3>
+            <ol>
+              <li><span>Github</span></li>
+              <li><span>Gitlab</span></li>
+              <li><span>JIRA</span></li>
+              <li><span>Grafana</span></li>
+              <li><span>Jenkins</span></li>
+              <li><span>Google Analytics</span></li>
+              <li><span>Google Lighthouse</span></li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="cmn_footer">
+      <div class="cmn_footer__inner cmn_container">
+        <div class="cmn_footer__links">
+          <div>
+            <ol class="cmn_footer__site_links">
+              <li><a class="cmn_footer__site_link" href="/index">Home</a></li>
+              <li>
+                <a class="cmn_footer__site_link" href="/contact">Contact</a>
+              </li>
+              <li>
+                <a class="cmn_footer__site_link" href="/portfolio">Portfolio</a>
+              </li>
+              <li><a class="cmn_footer__site_link" href="/about">About</a></li>
+            </ol>
+          </div>
+          <div>
+            <ol class="cmn_footer__social_medias">
+              <li>
+                <a href="https://www.linkedin.com/in/madnanrizqu/">
+                  <img
+                    height="24"
+                    width="24"
+                    src="/images/linkedin.svg"
+                    alt="LindedIn logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rizquadnan">
+                  <img
+                    height="24"
+                    width="24"
+                    src="/images/github.svg"
+                    alt="Github logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="mailto:madnanrizqullah@gmail.com">
+                  <img
+                    height="24"
+                    width="24"
+                    src="/images/google.svg"
+                    alt="Google logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/madnanrizqu">
+                  <img
+                    height="24"
+                    width="24"
+                    src="/images/x.svg"
+                    alt="X logo"
+                  />
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="cmn_footer__botttom">
+          <div class="cmn_footer__identity">
+            <div>
+              <img
+                src="/images/logo_white.png"
+                alt="Adnan Logo"
+                width="26"
+                height="19"
+              />
+            </div>
+            <span>Muhammad Adnan R</span>
+          </div>
+          <span class="cmn_footer__note">Made with ❤️ @ 2024 </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
