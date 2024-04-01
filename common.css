@@ -18,7 +18,7 @@ html {
   --btn-pad-x: 1.2rem;
   --btn-pad-y: 0.8rem;
   --btn-bor-rad: 0.6rem;
-  --btn-font-size-mobile: 1.4rem;
+  --btn-font-size-mobile: 1.6rem;
   --btn-font-size: 1.6rem;
 }
 
@@ -248,7 +248,7 @@ ol {
 }
 
 .cmn_button--outline_secondary:hover {
-  color: initial;
+  color: var(--secondary);
 }
 
 .cmn_button--solid_secondary {
