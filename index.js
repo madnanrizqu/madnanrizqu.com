@@ -46,16 +46,21 @@ function heroBackground() {
 
 function heroAnimatedHeadline() {
   const text = document.getElementById("hero__dynamic_text");
-  // Set to no content to avoid jitter
-  text.textContent = "";
 
-  var typed = new Typed("#hero__dynamic_text", {
-    strings: ["smooth", "reliable", "engaging", "aesthetic", "powerful"],
-    typeSpeed: 100,
-    startDelay: 300,
-    loop: true,
-    showCursor: false,
-  });
+  try {
+    // Set to no content to avoid jitter
+    text.textContent = "";
+
+    var typed = new Typed("#hero__dynamic_text", {
+      strings: ["smooth", "reliable", "engaging", "aesthetic", "powerful"],
+      typeSpeed: 100,
+      startDelay: 300,
+      loop: true,
+      showCursor: false,
+    });
+  } catch (error) {
+    text.textContent = "smooth"; // add fallback incase type.js fails to load
+  }
 }
 
 function initDrawerToggleListener() {
