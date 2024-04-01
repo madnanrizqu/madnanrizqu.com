@@ -14,12 +14,13 @@ html {
   --grey-3: #535353;
   --grey-4: #e2e2e2;
   --page-pad-x: 2.4rem;
-  --page-pad-top: 6.4rem;
+  --page-section-pad-y: 6.4rem;
   --btn-pad-x: 1.2rem;
   --btn-pad-y: 0.8rem;
   --btn-bor-rad: 0.6rem;
   --btn-font-size-mobile: 1.6rem;
   --btn-font-size: 1.6rem;
+  --font-bold: 700;
 }
 
 body {

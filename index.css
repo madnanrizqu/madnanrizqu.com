@@ -63,7 +63,7 @@
 }
 
 .hero__subheadline {
-  font-weight: 700;
+  font-weight: var(--font-bold);
 }
 
 @media screen and (min-height: 700px) {
@@ -140,8 +140,8 @@
   position: relative;
   background-color: var(--black);
   color: var(--white);
-  padding-top: 4.8rem;
-  padding-bottom: 6.4rem;
+  padding-top: var(--page-section-pad-y);
+  padding-bottom: var(--page-section-pad-y);
   display: flex;
   flex-direction: column;
   gap: 3.6rem;
@@ -154,7 +154,7 @@
 
 .portfolio__headline {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 2rem;
 }
 
@@ -165,15 +165,13 @@
 }
 
 .portfolio__emphasis {
-  font-weight: 700;
+  font-weight: var(--font-bold);
   color: var(--secondary);
 }
 
 .portfolio_stats {
   background-color: var(--black);
   color: var(--white);
-  padding-left: var(--page-pad-x);
-  padding-right: var(--page-pad-x);
   padding-top: 2.4rem;
   padding-bottom: 2.4rem;
 }
@@ -185,7 +183,7 @@
 
 .portfolio_stat__value {
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: var(--font-bold);
   color: var(--secondary);
 }
 
@@ -220,14 +218,14 @@
 
 /* SOCIAL PROOF SECTION */
 .social_proof {
-  padding-top: 4.8rem;
-  padding-bottom: 6.4rem;
+  padding-top: var(--page-section-pad-y);
+  padding-bottom: var(--page-section-pad-y);
   background-color: var(--grey);
 }
 
 .social_proof__headline {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 1.6rem;
 }
 
@@ -289,7 +287,7 @@
 }
 
 .testimony__person {
-  font-weight: 700;
+  font-weight: var(--font-bold);
   font-size: 1.4rem;
 }
 
@@ -300,13 +298,13 @@
 
 /* PROJECTS SECTION */
 .projects {
-  padding-top: 4.8rem;
-  padding-bottom: 4.8rem;
+  padding-top: var(--page-section-pad-y);
+  padding-bottom: var(--page-section-pad-y);
 }
 
 .projects__headline {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 2.4rem;
 }
 
@@ -358,7 +356,7 @@
 }
 
 .project__title {
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 1.6rem;
   display: inline-block;
 }
