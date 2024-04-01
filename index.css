@@ -219,7 +219,8 @@
 
 /* SOCIAL PROOF SECTION */
 .social_proof {
-  padding-bottom: 4.8rem;
+  padding-top: 4.8rem;
+  padding-bottom: 6.4rem;
   background-color: var(--grey);
 }
 
@@ -233,7 +234,9 @@
   list-style-type: none;
   display: grid;
   gap: 3.8rem;
+  margin-bottom: 3.6rem;
 }
+
 @media screen and (min-width: 650px) {
   .social_proof_list {
     grid-template-columns: 1fr 1fr;
@@ -267,6 +270,8 @@
 .testimony__button {
   border: none;
   color: var(--primary);
+  background-color: inherit;
+  display: none; /*hide detail functionality*/
 }
 
 .testimony__quote {
@@ -276,6 +281,11 @@
 
 .testimony__person {
   font-weight: 700;
+}
+
+.social_proof_footer,
+.social_proof_footer > a {
+  width: 100%;
 }
 
 /* PROJECTS SECTION */
