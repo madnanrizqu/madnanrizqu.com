@@ -92,6 +92,10 @@ ol {
   list-style-type: none;
 }
 
+::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 /* UTILS */
 /* dont touch the ordering of the u_hide classes */
 .u_hide_xs {
@@ -336,4 +340,32 @@ ol {
 
 .cmn_footer__note {
   font-size: 1rem;
+}
+
+.cmn_dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  padding-top: 8rem;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+}
+
+.cmn_dialog__close_btn {
+  border: 1px solid var(--grey-2);
+  border-radius: 6px;
+  background: inherit;
+  padding: 0.4rem;
+  position: absolute;
+  right: 1.8rem;
+  top: 1.8rem;
+}
+
+.cmn_dialog__close_btn img {
+  position: relative;
+  top: 0.4rem;
 }

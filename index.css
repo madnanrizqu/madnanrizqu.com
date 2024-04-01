@@ -271,12 +271,24 @@
   border: none;
   color: var(--primary);
   background-color: inherit;
-  display: none; /*hide detail functionality*/
 }
 
-.testimony__quote {
+.testimony__quote,
+.testimony__dialog_quote {
   font-style: italic;
   font-size: 1.4rem;
+}
+
+.testimony__dialog_quote {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.testimony__dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .testimony__person {
