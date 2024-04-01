@@ -309,7 +309,7 @@ ol {
 .cmn_footer__social_medias {
   list-style-type: none;
   display: flex;
-  gap: 1rem;
+  gap: 2.4rem;
   justify-content: center;
 }
 
