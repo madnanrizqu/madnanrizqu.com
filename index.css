@@ -243,11 +243,6 @@
     justify-content: center;
     justify-items: center;
   }
-
-  .social_proof_list > li:last-child {
-    grid-column: span 2;
-    width: 50%;
-  }
 }
 
 .testimony {
@@ -271,6 +266,7 @@
   border: none;
   color: var(--primary);
   background-color: inherit;
+  font-size: 1.4rem;
 }
 
 .testimony__quote,
@@ -293,6 +289,7 @@
 
 .testimony__person {
   font-weight: 700;
+  font-size: 1.4rem;
 }
 
 .social_proof_footer,
