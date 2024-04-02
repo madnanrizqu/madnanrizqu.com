@@ -37,7 +37,7 @@
 .projects {
   background-color: var(
     --grey
-  ); /*the only difference from the one on home page*/
+  ); /*one of the difference from the one on home page*/
   padding-top: var(--page-section-pad-y);
   padding-bottom: var(--page-section-pad-y);
 }
@@ -61,10 +61,7 @@
     justify-items: center;
   }
 
-  .projects__list > li:last-child {
-    grid-column: span 2;
-    width: 50%;
-  }
+  /*one of the difference from the one on home page: no centered 2nd row*/
 }
 
 .project {
