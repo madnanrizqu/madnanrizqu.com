@@ -1,0 +1,46 @@
+@import url("/common.css");
+
+.root {
+  padding-top: 12rem;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-bottom: 3.2rem;
+}
+
+.current__headline {
+  color: var(--primary);
+}
+
+.current_info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.learning {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
+.learning__headline {
+  color: var(--primary);
+}
+
+.reading {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-top: 3.2rem;
+  padding-bottom: 12rem;
+}
+
+.reading__headline {
+  color: var(--primary);
+}
