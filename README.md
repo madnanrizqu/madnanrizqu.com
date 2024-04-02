@@ -4,7 +4,7 @@ This is my personal website to show my profile, bio, photo, links, social media,
 
 ## Links
 
-- Website URL: [madnanrizqu](https://madnanrizqu)
+- Website URL: [madnanrizqu.com](https://madnanrizqu.com)
 - GitHub Repo: <https://github.com/rizquadnan/madnanrizqu.com>
 - Figma File: <https://www.figma.com/file/ifjWJ23xjCUhn1uM9kWYpN/madnanrizqu.com?type=design&node-id=0%3A1&mode=design&t=x3N2mFtZ48UBhXPL-1>
 
