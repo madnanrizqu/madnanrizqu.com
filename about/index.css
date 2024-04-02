@@ -4,6 +4,10 @@
   padding-top: 12rem;
 }
 
+.main_headline {
+  color: var(--primary);
+}
+
 .current {
   display: flex;
   flex-direction: column;
