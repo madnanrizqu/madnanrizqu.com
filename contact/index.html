@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body>
+  <body class="root">
     <header class="cmn_navbar">
       <div class="cmn_navbar__inner cmn_container">
         <div>
@@ -65,68 +65,76 @@
     </header>
 
     <main>
-      <h1>Contact</h1>
+      <section class="services cmn_container">
+        <h1 class="main_headline">Contact</h1>
 
-      <section>
-        <h2>Provided Services</h2>
-        <p>I provide these services</p>
-        <ol>
-          <li>
-            <span
-              >Web sites/apps/services/APIs development or redevelopment</span
-            >
-          </li>
-          <li><span>Web performacne optimization</span></li>
-          <li><span>Bug fixes</span></li>
-          <li><span>Mentoring</span></li>
-          <li><span>Workshop speaker</span></li>
-        </ol>
+        <div class="services__info">
+          <h2 class="services__headline">Provided Services</h2>
+          <p>I provide these services</p>
+          <ol class="services__list">
+            <li>
+              <span
+                >Web sites/apps/services/APIs development or redevelopment</span
+              >
+            </li>
+            <li><span>Web performacne optimization</span></li>
+            <li><span>Bug fixes</span></li>
+            <li><span>Mentoring</span></li>
+            <li><span>Workshop speaker</span></li>
+          </ol>
+        </div>
       </section>
 
-      <section>
-        <h2>Work Availability</h2>
-        <p>Available for:</p>
-        <ol>
-          <li>
-            <span
-              >Full-time but with remote, flexible schedule work
-              arrangements</span
-            >
-          </li>
-          <li><span>Part time</span></li>
-          <li><span>Project based</span></li>
-        </ol>
+      <section class="available cmn_container">
+        <h2 class="available__headline">Work Availability</h2>
+        <div class="available__info">
+          <p>Available for:</p>
+          <ol class="available__list">
+            <li>
+              <span
+                >Full-time but with remote, flexible schedule work
+                arrangements</span
+              >
+            </li>
+            <li><span>Part time</span></li>
+            <li><span>Project based</span></li>
+          </ol>
+        </div>
       </section>
 
-      <section>
-        <h2>Let's Talk</h2>
+      <section class="contact cmn_container">
+        <h2 class="contact__headline">Let's Talk</h2>
         <p>
           Are you looking for someone to solve your
-          <span>Web Development needs</span> ? Let's discuss more! Please fill
-          in this form
+          <span class="contact__emphasis">web development needs</span> ? Let's
+          discuss more! Please fill in this form
         </p>
 
-        <form action="/">
-          <div>
-            <label for="name">Your name</label><br />
+        <form action="/" class="contact__form">
+          <div class="contact__form_input_group">
+            <label class="cmn_label" for="name">Your name</label><br />
             <input
               type="text"
               id="name"
               name="name"
               required
               minlength="3"
-              size="14"
+              size="18"
             />
           </div>
-          <div>
+          <div class="contact__form_input_group">
             <label for="email">Email</label><br />
-            <input type="email" id="email" name="email" required size="14" />
+            <input type="email" id="email" name="email" required size="18" />
           </div>
-          <div>
+          <div class="contact__form_input_group">
             <label for="message">Message</label><br />
-            <textarea id="message" name="message" rows="5"></textarea>
+            <textarea id="message" name="message" rows="5" cols="1"></textarea>
           </div>
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit"
+            class="cmn_button--solid_secondary"
+          />
         </form>
       </section>
     </main>

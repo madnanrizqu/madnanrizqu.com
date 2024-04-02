@@ -1,1 +1,92 @@
 @import url("/common.css");
+
+.root {
+  padding-top: 12rem;
+}
+
+.main_headline {
+  color: var(--primary);
+}
+
+/* SERVICES SECTION */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-bottom: 3.2rem;
+}
+
+.services__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.services__list {
+  list-style-type: disc;
+  padding-left: 3.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.services__headline {
+  color: var(--primary);
+}
+
+/* AVAILABLE SECTION */
+.available {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
+.available__headline {
+  color: var(--primary);
+}
+
+.available__list {
+  list-style-type: disc;
+  padding-left: 3.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.available__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* CONTACT SECTION */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-top: 3.2rem;
+  padding-bottom: 12rem;
+}
+
+.contact__headline {
+  color: var(--primary);
+}
+
+.contact__emphasis {
+  color: var(--secondary);
+  font-weight: var(--font-bold);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contact__form_input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}

@@ -71,9 +71,22 @@ p,
 span,
 blockquote,
 a,
-button {
+button,
+label,
+input,
+textarea {
   font-size: 1.8rem;
   line-height: 2.4rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+}
+
+input[type="submit"] {
+  cursor: pointer;
 }
 
 a:active,
