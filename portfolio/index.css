@@ -1,12 +1,48 @@
 @import url("/common.css");
 
+.root {
+  padding-top: 12rem;
+}
+
+.main_headline {
+  color: var(--primary);
+}
+
+/* BACKGROUND SECTION */
+.background {
+  padding-bottom: var(--page-section-pad-y);
+}
+
+.background__headline {
+  color: var(--primary);
+  margin-bottom: 2.4rem;
+}
+
+.background__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.background__outside_work_list {
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.6rem;
+  gap: 2.4rem;
+}
+
 /* TODO: refactor projects css, reuse for portfolio and home page */
 /* PROJECTS SECTION */
 .projects {
+  background-color: var(
+    --grey
+  ); /*the only difference from the one on home page*/
   padding-top: var(--page-section-pad-y);
   padding-bottom: var(--page-section-pad-y);
 }
-projects .projects__headline {
+
+.projects__headline {
   color: var(--primary);
   font-weight: var(--font-bold);
   margin-bottom: 2.4rem;
@@ -109,7 +145,7 @@ projects .projects__headline {
 .social_proof {
   padding-top: var(--page-section-pad-y);
   padding-bottom: var(--page-section-pad-y);
-  background-color: var(--grey);
+  /*the only difference from the one on home page is no background color*/
 }
 
 .social_proof__headline {
