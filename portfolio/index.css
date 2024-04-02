@@ -220,3 +220,48 @@
 .social_proof_footer > a {
   width: 100%;
 }
+
+/* TECHNOLOGIES SECTION */
+.technologies {
+  padding-top: var(--page-section-pad-y);
+  padding-bottom: var(--page-section-pad-y);
+  background-color: var(--grey);
+}
+
+.technologies_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.technologies__headline {
+  color: var(--primary);
+}
+
+.technologies__categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.technologies__categories_item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.technologies__items {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+/* TODO: refactor to chip item cmn class. reuse on projects and here */
+/* TODO: add icon/logo of tech */
+.technologies__item {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 12px;
+  padding: 0.4rem 1rem;
+}
