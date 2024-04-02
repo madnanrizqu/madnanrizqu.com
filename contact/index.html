@@ -110,32 +110,77 @@
           discuss more! Please fill in this form
         </p>
 
-        <form action="/" class="contact__form">
-          <div class="contact__form_input_group">
-            <label class="cmn_label" for="name">Your name</label><br />
+        <div class="contact__content">
+          <form action="/" class="contact__form">
+            <div class="contact__form_input_group">
+              <label class="cmn_label" for="name">Your name</label><br />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                minlength="3"
+                size="18"
+              />
+            </div>
+            <div class="contact__form_input_group">
+              <label for="email">Email</label><br />
+              <input type="email" id="email" name="email" required size="18" />
+            </div>
+            <div class="contact__form_input_group">
+              <label for="message">Message</label><br />
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                cols="1"
+              ></textarea>
+            </div>
             <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              minlength="3"
-              size="18"
+              type="submit"
+              value="Submit"
+              class="cmn_button--solid_secondary"
             />
-          </div>
-          <div class="contact__form_input_group">
-            <label for="email">Email</label><br />
-            <input type="email" id="email" name="email" required size="18" />
-          </div>
-          <div class="contact__form_input_group">
-            <label for="message">Message</label><br />
-            <textarea id="message" name="message" rows="5" cols="1"></textarea>
-          </div>
-          <input
-            type="submit"
-            value="Submit"
-            class="cmn_button--solid_secondary"
-          />
-        </form>
+          </form>
+
+          <aside class="contact__alternative">
+            <span>You can also contact me through my social medias</span>
+
+            <ul class="contract__social_media_list">
+              <li>
+                <div class="contact__social_media">
+                  <div class="contact__social_media_img_container">
+                    <img
+                      src="/images/linkedin.svg"
+                      alt="linkedin logo"
+                      height="24"
+                      width="24"
+                    />
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/madnanrizqu"
+                    target="_blank"
+                    rel="noopener"
+                    >Linkdein</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="contact__social_media">
+                  <div class="contact__social_media_img_container">
+                    <img
+                      src="/images/email.svg"
+                      alt="Email icon"
+                      height="24"
+                      width="24"
+                    />
+                  </div>
+                  <a href="mailto:madnanrizqullah@gmail.com">Email</a>
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
       </section>
     </main>
 
