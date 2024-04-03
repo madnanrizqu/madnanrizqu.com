@@ -404,3 +404,18 @@
   display: inline-block;
   width: 100%;
 }
+
+.call_to_action {
+  background-color: var(--black);
+  padding-top: var(--page-section-pad-y);
+  padding-bottom: var(--page-section-pad-y);
+}
+
+.call_to_action__headline {
+  font-size: 6.4rem;
+  background: #1faac8;
+  background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6.4rem;
+}
