@@ -248,6 +248,25 @@ ol {
   color: initial;
 }
 
+.cmn_button--outline_primary {
+  display: inline-block;
+  border: 1px solid var(--primary);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--btn-bor-rad);
+  font-size: var(--btn-font-size-mobile);
+  text-align: center;
+  color: var(--primary);
+}
+@media screen and (min-width: 700px) {
+  .cmn_button--outline_primary {
+    font-size: var(--btn-font-size);
+  }
+}
+
+.cmn_button--outline_secondary:hover {
+  color: var(--secondary);
+}
+
 .cmn_button--outline_secondary {
   display: inline-block;
   border: 1px solid var(--secondary);

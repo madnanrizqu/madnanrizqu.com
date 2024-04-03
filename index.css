@@ -166,7 +166,6 @@
 
 .portfolio__emphasis {
   font-weight: var(--font-bold);
-  color: var(--secondary);
 }
 
 .portfolio_stats {
@@ -178,13 +177,19 @@
 
 .portfolio_stat__label {
   font-size: 1.6rem;
-  color: var(--secondary);
+  background: #1faac8;
+  background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .portfolio_stat__value {
   font-size: 3.2rem;
   font-weight: var(--font-bold);
-  color: var(--secondary);
+  background: #1faac8;
+  background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .portfolio_stats__inner {

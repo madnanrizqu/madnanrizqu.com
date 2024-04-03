@@ -222,7 +222,8 @@
 .technologies {
   padding-top: var(--page-section-pad-y);
   padding-bottom: var(--page-section-pad-y);
-  background-color: var(--grey);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .technologies_inner {
