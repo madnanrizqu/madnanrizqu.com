@@ -412,10 +412,19 @@
 }
 
 .call_to_action__headline {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 6.4rem;
+}
+
+.call_to_action__headline__emphasis {
+  display: block;
+  line-height: 7rem;
   font-size: 6.4rem;
+  font-weight: var(--font-bold);
   background: #1faac8;
   background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 6.4rem;
+  margin-top: 2.4rem;
 }
