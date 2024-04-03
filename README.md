@@ -15,4 +15,4 @@ Social media:
 - GitHub: [github.com/rizquadnan](https://github.com/rizquadnan)
 - Twitter/X: [twitter.com/madnanrizqu](https://twitter.com/madnanrizqu)
 - YouTube: [youtube.com/@madnanrizqu](https://youtube.com/@madnanrizqu)
-- CV/Resume: [cv.haidar.dev](https://cv.madnanrizqu.com)
+- CV/Resume: [COMING SOON]()
