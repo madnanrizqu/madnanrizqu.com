@@ -108,6 +108,7 @@
   font-size: inherit;
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
+  line-height: 8rem;
 }
 @media screen and (min-height: 700px) {
   .hero__dynamic_text {
