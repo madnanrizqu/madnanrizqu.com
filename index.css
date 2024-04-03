@@ -10,7 +10,7 @@
   gap: 1.6rem;
 }
 
-#hero_background {
+.hero_background {
   position: absolute;
 }
 
