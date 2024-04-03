@@ -53,10 +53,11 @@ function heroAnimatedHeadline() {
 
     var typed = new Typed("#hero__dynamic_text", {
       strings: ["smooth", "reliable", "engaging", "aesthetic", "powerful"],
-      typeSpeed: 100,
+      typeSpeed: 150,
       startDelay: 300,
       loop: true,
       showCursor: false,
+      backSpeed: 150,
     });
   } catch (error) {
     text.textContent = "smooth"; // add fallback incase type.js fails to load
