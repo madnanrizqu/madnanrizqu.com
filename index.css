@@ -82,6 +82,10 @@
   }
 }
 
+.hero__name {
+  color: var(--secondary);
+}
+
 .hero__dynamic_text_holder {
   display: flex;
   align-items: center;
