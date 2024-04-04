@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
   </head>
   <body class="root">
     <header class="cmn_navbar">
@@ -932,6 +931,274 @@
         </div>
       </div>
     </footer>
-    <script src="/portfolio/index.js"></script>
+    <script src="/portfolio/index.js" is:inline></script>
   </body>
 </html>
+
+<style>
+  @import url("/common.css");
+
+  .root {
+    padding-top: 12rem;
+  }
+
+  .main_headline {
+    color: var(--primary);
+  }
+
+  /* BACKGROUND SECTION */
+  .background {
+    padding-bottom: var(--page-section-pad-y);
+  }
+
+  .background__headline {
+    color: var(--primary);
+    margin-bottom: 2.4rem;
+  }
+
+  .background__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .background__outside_work_list {
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3.6rem;
+    gap: 2.4rem;
+  }
+
+  /* TODO: refactor projects css, reuse for portfolio and home page */
+  /* PROJECTS SECTION */
+  .projects {
+    background-color: var(
+      --grey
+    ); /*one of the difference from the one on home page*/
+    padding-top: var(--page-section-pad-y);
+    padding-bottom: var(--page-section-pad-y);
+  }
+
+  .projects__headline {
+    color: var(--primary);
+    font-weight: var(--font-bold);
+    margin-bottom: 2.4rem;
+  }
+
+  .projects__list {
+    list-style-type: none;
+    display: grid;
+    gap: 3.6rem;
+    margin-bottom: 2.4rem;
+  }
+  @media screen and (min-width: 650px) {
+    .projects__list {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    /*one of the difference from the one on home page: no centered 2nd row*/
+  }
+
+  .project {
+    background: var(--grey-2);
+    color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 650px) {
+    .project {
+      height: 100%;
+    }
+  }
+
+  .project__img_container > img {
+    width: 100%;
+    object-fit: fill;
+  }
+
+  .project__texts {
+    padding: 1.8rem;
+    padding-bottom: 0;
+    margin-bottom: 3.2rem;
+  }
+
+  .project__footer {
+    padding: 1.8rem;
+    padding-top: 0;
+  }
+
+  .project__title {
+    font-weight: var(--font-bold);
+    margin-bottom: 1.6rem;
+    display: inline-block;
+  }
+
+  .project__description {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+  }
+
+  .project__techs {
+    display: flex;
+    justify-content: start;
+  }
+
+  .project__techs__inner {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .project__tech {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+    padding: 0.4rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  .project__footer > a {
+    width: 100%;
+    background-color: var(--primary);
+  }
+
+  .projects__footer {
+    text-align: center;
+  }
+
+  .projects__footer > a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* TODO: refactor social proof css, reuse for portfolio and home page */
+  /* SOCIAL PROOF SECTION */
+  .social_proof {
+    padding-top: var(--page-section-pad-y);
+    padding-bottom: var(--page-section-pad-y);
+    /*the only difference from the one on home page is no background color*/
+  }
+
+  .social_proof__headline {
+    color: var(--primary);
+    font-weight: var(--font-bold);
+    margin-bottom: 1.6rem;
+  }
+
+  .social_proof_list {
+    list-style-type: none;
+    display: grid;
+    gap: 3.8rem;
+    margin-bottom: 3.6rem;
+  }
+
+  @media screen and (min-width: 650px) {
+    .social_proof_list {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      justify-items: center;
+    }
+  }
+
+  .testimony {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  @media screen and (min-width: 650px) {
+    .testimony {
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .testimony__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .testimony__button {
+    border: none;
+    color: var(--primary);
+    background-color: inherit;
+    font-size: 1.4rem;
+  }
+
+  .testimony__quote,
+  .testimony__dialog_quote {
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+
+  .testimony__dialog_quote {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .testimony__dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .testimony__person {
+    font-weight: var(--font-bold);
+    font-size: 1.4rem;
+  }
+
+  .social_proof_footer,
+  .social_proof_footer > a {
+    width: 100%;
+  }
+
+  /* TECHNOLOGIES SECTION */
+  .technologies {
+    padding-top: var(--page-section-pad-y);
+    padding-bottom: var(--page-section-pad-y);
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .technologies_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .technologies__headline {
+    color: var(--primary);
+  }
+
+  .technologies__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .technologies__categories_item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .technologies__items {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+
+  /* TODO: refactor to chip item cmn class. reuse on projects and here */
+  /* TODO: add icon/logo of tech */
+  .technologies__item {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    padding: 0.4rem 1rem;
+  }
+</style>

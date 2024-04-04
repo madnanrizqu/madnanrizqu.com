@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
   </head>
   <body class="root">
     <header class="cmn_navbar">
@@ -194,6 +193,59 @@
         </div>
       </div>
     </footer>
-    <script src="/about/index.js"></script>
+    <script src="/about/index.js" is:inline></script>
   </body>
 </html>
+
+<style>
+  @import url("/common.css");
+
+  .root {
+    padding-top: 12rem;
+  }
+
+  .main_headline {
+    color: var(--primary);
+  }
+
+  .current {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .current__headline {
+    color: var(--primary);
+  }
+
+  .current_info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .learning {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .learning__headline {
+    color: var(--primary);
+  }
+
+  .reading {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-top: 3.2rem;
+    padding-bottom: 12rem;
+  }
+
+  .reading__headline {
+    color: var(--primary);
+  }
+</style>

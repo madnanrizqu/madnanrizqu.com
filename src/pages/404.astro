@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M Adnan Rizqullah, Software Engineer | Not Found</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon_white.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/common.css" />
+  </head>
+  <body class="root">
+    <div class="main-content-border">
+      <main class="main-content">
+        <section>
+          <span class="pre-headline">This page is...</span>
+          <h1 class="headline">Not Found</h1>
+        </section>
+        <footer class="footer">
+          <p class="thanks-note">
+            We are sorry. Click <a class="email_link" href="/">here</a> to go back
+            to home
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  .root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-content {
+    max-width: 50rem;
+    width: 0px auto;
+    text-align: center;
+    background: var(--grey);
+    padding: 24px;
+  }
+
+  .main-content > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .main-content-border {
+    max-width: 320px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, #1faac8, #f75c03);
+    padding: 3px;
+  }
+
+  .pre-headline {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 1.4rem;
+  }
+
+  .headline {
+    background: #1faac8;
+    background: linear-gradient(to right, #1faac8 28%, #f75c03 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+
+  .thanks-note {
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+  }
+
+  .email_link {
+    color: #1faac8;
+  }
+</style>
