@@ -1,44 +1,29 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M Adnan Rizqullah, Software Engineer | Not Found</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon_white.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/common.css" />
-  </head>
-  <body class="root">
-    <div class="main-content-border">
-      <main class="main-content">
-        <section>
-          <span class="pre-headline">This page is...</span>
-          <h1 class="headline">Not Found</h1>
-        </section>
-        <footer class="footer">
-          <p class="thanks-note">
-            We are sorry. Click <a class="email_link" href="/">here</a> to go back
-            to home
-          </p>
-        </footer>
-      </main>
-    </div>
-  </body>
-</html>
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="M Adnan Rizqullah, Software Engineer | Not Found"
+  variant="centered"
+>
+  <div class="main-content-border">
+    <main class="main-content">
+      <section>
+        <span class="pre-headline">This page is...</span>
+        <h1 class="headline">Not Found</h1>
+      </section>
+      <footer class="footer">
+        <p class="thanks-note">
+          We are sorry. Click <a class="email_link" href="/">here</a> to go back
+          to home
+        </p>
+      </footer>
+    </main>
+  </div>
+</Layout>
 
 <style>
-  .root {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+  @import url("/common.css");
   .main-content {
     max-width: 50rem;
     width: 0px auto;
