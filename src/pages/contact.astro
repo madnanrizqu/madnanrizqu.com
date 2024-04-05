@@ -1,0 +1,277 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="M Adnan Rizqullah, Software Engineer | Contact"
+  variant="top-padding"
+>
+  <Navbar />
+
+  <main>
+    <section class="services cmn_container">
+      <h1 class="main_headline">Contact</h1>
+
+      <div class="services__info">
+        <h2 class="services__headline">Provided Services</h2>
+        <p>I provide these services</p>
+        <ol class="services__list">
+          <li>
+            <span
+              >Web sites/apps/services/APIs development or redevelopment</span
+            >
+          </li>
+          <li><span>Web performacne optimization</span></li>
+          <li><span>Bug fixes</span></li>
+          <li><span>Mentoring</span></li>
+          <li><span>Workshop speaker</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="available cmn_container">
+      <h2 class="available__headline">Work Availability</h2>
+      <div class="available__info">
+        <p>Available for:</p>
+        <ol class="available__list">
+          <li>
+            <span
+              >Full-time but with remote, flexible schedule work arrangements</span
+            >
+          </li>
+          <li><span>Part time</span></li>
+          <li><span>Project based</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact cmn_container">
+      <h2 class="contact__headline">Let's Talk</h2>
+      <p>
+        Are you looking for someone to solve your
+        <span class="contact__emphasis">web development needs</span> ? Let's discuss
+        more! Please fill in this form
+      </p>
+
+      <div class="contact__content">
+        <form action="/" class="contact__form">
+          <div class="contact__form_input_group">
+            <label class="cmn_label" for="name">Your name</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="3"
+              size="18"
+              disabled
+            />
+          </div>
+          <div class="contact__form_input_group">
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              disabled
+              size="18"
+            />
+          </div>
+          <div class="contact__form_input_group">
+            <label for="message">Message</label><br />
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              cols="1"
+              required
+              disabled></textarea>
+          </div>
+          <input
+            type="submit"
+            value="COMING SOON"
+            class="cmn_button--solid_secondary"
+            disabled
+          />
+        </form>
+
+        <aside class="contact__alternative">
+          <span>You can also contact me through my social medias</span>
+
+          <ul class="contract__social_media_list">
+            <li>
+              <div class="contact__social_media">
+                <div class="contact__social_media_img_container">
+                  <img
+                    src="/images/linkedin.svg"
+                    alt="linkedin logo"
+                    height="24"
+                    width="24"
+                  />
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/madnanrizqu"
+                  target="_blank"
+                  rel="noopener">Linkdein</a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="contact__social_media">
+                <div class="contact__social_media_img_container">
+                  <img
+                    src="/images/email.svg"
+                    alt="Email icon"
+                    height="24"
+                    width="24"
+                  />
+                </div>
+                <a href="mailto:madnanrizqullah@gmail.com">Email</a>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <script src="/contact/index.js" is:inline></script>
+</Layout>
+
+<style>
+  @import url("/common.css");
+
+  .main_headline {
+    color: var(--primary);
+  }
+
+  /* SERVICES SECTION */
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .services__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .services__list {
+    list-style-type: disc;
+    padding-left: 3.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .services__headline {
+    color: var(--primary);
+  }
+
+  /* AVAILABLE SECTION */
+  .available {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .available__headline {
+    color: var(--primary);
+  }
+
+  .available__list {
+    list-style-type: disc;
+    padding-left: 3.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .available__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  /* CONTACT SECTION */
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-top: 3.2rem;
+    padding-bottom: 12rem;
+  }
+
+  .contact__headline {
+    color: var(--primary);
+  }
+
+  .contact__emphasis {
+    color: var(--secondary);
+    font-weight: var(--font-bold);
+  }
+
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+  @media screen and (min-width: 650px) {
+    .contact__content {
+      flex-direction: row;
+    }
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    flex: 1;
+  }
+
+  .contact__form_input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .contract__social_media_list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .contact__social_media {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .contact__alternative {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    flex: 0;
+    flex-basis: 24rem;
+  }
+
+  .contact__social_media_img_container {
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: var(--secondary);
+    text-align: center;
+  }
+</style>

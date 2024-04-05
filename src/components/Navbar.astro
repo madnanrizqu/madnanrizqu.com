@@ -1,0 +1,127 @@
+<header class="navbar">
+  <div class="navbar__inner cmn_container">
+    <div>
+      <a href="/">
+        <img
+          alt="Adnan Logo"
+          src="/images/logo_black.png"
+          width="26"
+          height="19"
+        />
+      </a>
+    </div>
+    <nav class="navbar__nav">
+      <ul class="u_hide_xs navbar__links">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/about/">About</a></li>
+        <li>
+          <a href="/contact/" class="cmn_button--outline">Contact Me</a>
+        </li>
+      </ul>
+      <button
+        id="mobile_drawer_toggle"
+        class="u_hide_sm u_hide_md u_hide_lg navbar__hamburger"
+      >
+        <img
+          id="mobile_drawer_open"
+          src="/images/hamburger-menu.svg"
+          alt=""
+          width="24"
+          height="24"
+        />
+        <img
+          id="mobile_drawer_close"
+          class="u_hide_all"
+          src="/images/cross.svg"
+          alt=""
+          width="24"
+          height="24"
+        />
+      </button>
+    </nav>
+  </div>
+  <aside id="mobile_drawer" class="u_hide_all navbar__mobile_drawer">
+    <ul class="navbar__mobile_links">
+      <li><a href="/"> Home </a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </aside>
+</header>
+
+<style>
+  @import url("/common.css");
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--grey);
+    background: var(--white);
+    z-index: 1;
+  }
+
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__hamburger {
+    border: none;
+    background: inherit;
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .navbar__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .navbar__links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar__links li {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__mobile_drawer {
+    transition:
+      visibilty 250ms,
+      opacity 250ms;
+  }
+
+  .navbar__mobile_links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    width: 100%;
+    background: white;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    z-index: 2;
+  }
+
+  .navbar__mobile_links::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 196px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+</style>
