@@ -476,6 +476,9 @@ import Footer from "../components/Footer.astro";
   }
 
   .hero__img_container img {
+    height: 100%;
+  }
+  .hero__img_container {
     max-height: 320px;
   }
   /* for tablets */
@@ -484,14 +487,14 @@ import Footer from "../components/Footer.astro";
       order: 2;
     }
 
-    .hero__img_container img {
+    .hero__img_container {
       height: 50vh;
       max-height: none;
     }
   }
   /* for desktops */
   @media screen and (min-width: 1368px) {
-    .hero__img_container img {
+    .hero__img_container {
       height: 70vh;
       max-height: 700px;
       position: relative;
