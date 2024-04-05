@@ -69,31 +69,10 @@ function initDrawerToggleListener() {
   toggler.addEventListener("click", toggleMobileDrawer);
 }
 
-function initButtonDialogListener() {
-  const openButtons = document.querySelectorAll("[data-open-dialog-id]");
-  openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const openDialogId = btn.dataset.openDialogId;
-      const dialog = document.getElementById(openDialogId);
-      dialog.showModal();
-    });
-  });
-
-  const closeButtons = document.querySelectorAll("[data-close-dialog-id]");
-  closeButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const closeDialogId = btn.dataset.closeDialogId;
-      const dialog = document.getElementById(closeDialogId);
-      dialog.close();
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   heroBackground();
   heroAnimatedHeadline();
   initDrawerToggleListener();
-  initButtonDialogListener();
 });
 
 function toggleMobileDrawer() {
