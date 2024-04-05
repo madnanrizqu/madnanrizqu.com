@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -6,58 +8,7 @@ import Layout from "../layouts/Layout.astro";
   title="M Adnan Rizqullah, Software Engineer | About"
   variant="top-padding"
 >
-  <header class="cmn_navbar">
-    <div class="cmn_navbar__inner cmn_container">
-      <div>
-        <a href="/">
-          <img
-            alt="Adnan Logo"
-            src="/images/logo_black.png"
-            width="26"
-            height="19"
-          />
-        </a>
-      </div>
-      <nav class="cmn_navbar__nav">
-        <ul class="u_hide_xs cmn_navbar__links">
-          <li><a href="/"> Home </a></li>
-          <li><a href="/portfolio/">Portfolio</a></li>
-          <li><a href="/about/">About</a></li>
-          <li>
-            <a href="/contact/" class="cmn_button--outline">Contact Me</a>
-          </li>
-        </ul>
-        <button
-          id="mobile_drawer_toggle"
-          class="u_hide_sm u_hide_md u_hide_lg cmn_navbar__hamburger"
-        >
-          <img
-            id="mobile_drawer_open"
-            src="/images/hamburger-menu.svg"
-            alt=""
-            width="24"
-            height="24"
-          />
-          <img
-            id="mobile_drawer_close"
-            class="u_hide_all"
-            src="/images/cross.svg"
-            alt=""
-            width="24"
-            height="24"
-          />
-        </button>
-      </nav>
-    </div>
-    <aside id="mobile_drawer" class="u_hide_all cmn_navbar__mobile_drawer">
-      <ul class="cmn_navbar__mobile_links">
-        <li><a href="/"> Home </a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </aside>
-  </header>
+  <Navbar />
 
   <main>
     <section class="current cmn_container">
@@ -109,78 +60,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
   </main>
 
-  <footer class="cmn_footer">
-    <div class="cmn_footer__inner cmn_container">
-      <div class="cmn_footer__links">
-        <div>
-          <ol class="cmn_footer__site_links">
-            <li><a class="cmn_footer__site_link" href="/">Home</a></li>
-
-            <li>
-              <a class="cmn_footer__site_link" href="/portfolio">Portfolio</a>
-            </li>
-            <li><a class="cmn_footer__site_link" href="/about">About</a></li>
-            <li>
-              <a class="cmn_footer__site_link" href="/contact">Contact</a>
-            </li>
-          </ol>
-        </div>
-        <div>
-          <ol class="cmn_footer__social_medias">
-            <li>
-              <a href="https://www.linkedin.com/in/madnanrizqu/">
-                <img
-                  height="24"
-                  width="24"
-                  src="/images/linkedin.svg"
-                  alt="LindedIn logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/rizquadnan">
-                <img
-                  height="24"
-                  width="24"
-                  src="/images/github.svg"
-                  alt="Github logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:madnanrizqullah@gmail.com">
-                <img
-                  height="24"
-                  width="24"
-                  src="/images/google.svg"
-                  alt="Google logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/madnanrizqu">
-                <img height="24" width="24" src="/images/x.svg" alt="X logo" />
-              </a>
-            </li>
-          </ol>
-        </div>
-      </div>
-      <div class="cmn_footer__botttom">
-        <div class="cmn_footer__identity">
-          <div>
-            <img
-              src="/images/logo_white.png"
-              alt="Adnan Logo"
-              width="26"
-              height="19"
-            />
-          </div>
-          <span>Muhammad Adnan R</span>
-        </div>
-        <span class="cmn_footer__note">Made with ❤️ @ 2024 </span>
-      </div>
-    </div>
-  </footer>
+  <Footer />
   <script src="/about/index.js" is:inline></script>
 </Layout>
 

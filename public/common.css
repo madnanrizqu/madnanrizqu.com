@@ -28,6 +28,7 @@ body {
   font-optical-sizing: auto;
   background-color: var(--white);
   overflow-x: hidden;
+  margin: 0;
 }
 
 *,
@@ -166,75 +167,6 @@ ol {
   max-width: 900px;
 }
 
-.cmn_navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid var(--grey);
-  background: var(--white);
-  z-index: 1;
-}
-
-.cmn_navbar__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cmn_navbar__hamburger {
-  border: none;
-  background: inherit;
-  height: 2.4rem;
-  width: 2.4rem;
-}
-
-.cmn_navbar__nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.cmn_navbar__links {
-  display: flex;
-  gap: 2rem;
-}
-
-.cmn_navbar__links li {
-  display: flex;
-  align-items: center;
-}
-
-.cmn_navbar__mobile_drawer {
-  transition: visibilty 250ms, opacity 250ms;
-}
-
-.cmn_navbar__mobile_links {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: absolute;
-  width: 100%;
-  background: white;
-  align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  z-index: 2;
-}
-
-.cmn_navbar__mobile_links::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 196px;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
 .cmn_button--outline {
   display: inline-block;
   border: 1px solid var(--black);
@@ -348,53 +280,6 @@ ol {
 
 .cmn_button--solid_primary:hover {
   color: var(--white);
-}
-
-.cmn_footer {
-  background-color: var(--grey-3);
-  color: var(--white);
-  padding-top: 4.8rem;
-  padding-bottom: 4.8rem;
-}
-
-.cmn_footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-  margin-bottom: 6rem;
-}
-
-.cmn_footer__site_links,
-.cmn_footer__social_medias {
-  list-style-type: none;
-  display: flex;
-  gap: 2.4rem;
-  justify-content: center;
-}
-
-.cmn_footer__site_link {
-  color: var(--white);
-}
-
-.cmn_footer__site_link:hover {
-  color: var(--primary);
-}
-
-.cmn_footer__botttom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cmn_footer__identity {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1rem;
-}
-
-.cmn_footer__note {
-  font-size: 1rem;
 }
 
 .cmn_dialog {
