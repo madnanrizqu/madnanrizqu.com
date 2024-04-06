@@ -52,15 +52,17 @@
 </header>
 
 <script>
+  import { elNotFound } from "../scripts/error";
+
   const toggler = document.getElementById("mobile_drawer_toggle");
   if (!toggler) {
-    throw new Error("Element with id: mobile_drawer_toggle not found");
+    throw new Error(elNotFound("mobile_drawer_toggle"));
   }
 
   toggler.addEventListener("click", () => {
     const drawer = document.getElementById("mobile_drawer");
     if (!drawer) {
-      throw new Error("Element with id: mobile_drawer not found");
+      throw new Error(elNotFound("mobile_drawer"));
     }
 
     const [openIcon, closeIcon] = toggler.children;

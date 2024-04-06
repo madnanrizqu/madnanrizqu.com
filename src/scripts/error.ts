@@ -1,0 +1,1 @@
+export const elNotFound = (elIdentifier: string) => `Element with identifier ${elIdentifier} not found` 
