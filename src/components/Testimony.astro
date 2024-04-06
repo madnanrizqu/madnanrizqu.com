@@ -1,0 +1,67 @@
+---
+import Dialog from "./Dialog.astro";
+import DialogTrigger from "./DialogTrigger.astro";
+
+interface Props {
+  dialogId: string;
+  summary: string;
+  author: string;
+}
+
+const { dialogId, summary, author } = Astro.props;
+---
+
+<article class="testimony">
+  <blockquote class="testimony__quote">
+    {summary}
+  </blockquote>
+  <footer class="testimony__footer">
+    <Dialog dialogId={dialogId}>
+      <div class="testimony__dialog">
+        <blockquote>
+          <slot />
+        </blockquote>
+        <span class="testimony__person"></span>
+      </div>
+    </Dialog>
+    <DialogTrigger dialogId={dialogId}> Detail </DialogTrigger>
+    <span class="testimony__person">{author}</span>
+  </footer>
+</article>
+
+<style>
+  @import url("/common.css");
+
+  .testimony {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  @media screen and (min-width: 650px) {
+    .testimony {
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .testimony__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .testimony__quote {
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+
+  .testimony__dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .testimony__person {
+    font-weight: var(--font-bold);
+    font-size: 1.4rem;
+  }
+</style>

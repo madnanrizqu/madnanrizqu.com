@@ -1,7 +1,22 @@
 ---
+import { getCollection } from "astro:content";
+
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+import Testimony from "../components/Testimony.astro";
+
+// loads testimonies
+const testimoniesCollection = await getCollection("testimonies");
+const testimonies = await Promise.all(
+  testimoniesCollection.map(async (v: any) => {
+    const { Content } = await v.render();
+    return {
+      ...v,
+      Content,
+    };
+  })
+);
 ---
 
 <Layout
@@ -290,385 +305,19 @@ import Layout from "../layouts/Layout.astro";
       <div class="cmn_container">
         <h2 class="social_proof__headline">What Others Say About Me</h2>
         <ol class="social_proof_list">
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “Ultimately, what sets him apart from his peers is his hunger
-                and willingness to drive improvements within his team. He
-                communicates with his stakeholders effectively, and he is
-                capable of rounding up a group of stakeholders together to
-                deliver his impact effectively.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_1">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_1"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        "Adnan is one of the most passionate engineers I've met
-                        in my time at Grab. He clearly demonstrates his
-                        willingness to be excellent, and he clearly has an
-                        appetite for tackling difficult problems.
-                      </p>
-
-                      <p>
-                        Ultimately, what sets him apart from his peers is his
-                        hunger and willingness to drive improvements within his
-                        team. He communicates with his stakeholders effectively,
-                        and he is capable of rounding up a group of stakeholders
-                        together to deliver his impact effectively. I'd gladly
-                        have Adnan on my team again"
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Engineering Manager, Grab</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_1"
+          {
+            testimonies.map((v) => (
+              <li>
+                <Testimony
+                  dialogId={`dialog_testimony_${v.data.id}`}
+                  summary={v.data.shortVersion}
+                  author={v.data.author}
                 >
-                  Detail
-                </button>
-                <span class="testimony__person">Engineering Manager, Grab</span>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “He has really good technical skills and always have will to
-                improve himself by taking challenging projects, or plan what is
-                the next improvement for our service code base.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_2">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_2"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        "It's really good working with Adnan, for more than 1
-                        year he bring positive impact for the team and for me.
-                      </p>
-
-                      <p>
-                        He has really good technical skills and always have will
-                        to improve himself by taking challenging projects, or
-                        plan what is the next improvement for our service code
-                        base
-                      </p>
-
-                      <p>
-                        He is rare kind of engineer, always initiate to arrange
-                        discussion and team engagement. One of his idea is
-                        arrange weekly sharing to discuss about what team
-                        members learn this week and share."
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Senior Software Engineer, Grab</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_2"
-                >
-                  Detail
-                </button>
-                <span class="testimony__person"
-                  >Senior Software Engineer, Grab</span
-                >
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “He possesses exceptional technical skills, consistently
-                tackling difficult projects with great success and excellent
-                implementation. His code is reliable and well-structured, which
-                greatly contributes to the overall success of our projects.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_3">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_3"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        "It is a pleasure to work on the same team as Adnan, and
-                        I can confidently say that he is an exceptional
-                        colleague. He possesses exceptional technical skills,
-                        consistently tackling difficult projects with great
-                        success and excellent implementation. His code is
-                        reliable and well-structured, which greatly contributes
-                        to the overall success of our projects.
-                      </p>
-                      <p>
-                        In addition to his technical skills, Adnan excels as an
-                        excellent communicator. He has the ability to explain
-                        complex concepts in a clear and concise manner, ensuring
-                        that everyone on the team is on the same page. His
-                        effective communication and strong interpersonal skills
-                        contribute to a positive team dynamic and foster a
-                        productive work environment. Many of his excellent ideas
-                        and improvements have greatly contributed to the success
-                        and continuous improvement of our team. Adnan's
-                        willingness to share his knowledge and expertise has
-                        made him a trusted teammate to other team members,
-                        elevating the skills of the entire team.
-                      </p>
-                      <p>
-                        I highly endorse Adnan and have no doubt that he will
-                        succeed in any future projects/works he undertakes."
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Software Engineer, Grab</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_3"
-                >
-                  Detail
-                </button>
-                <span class="testimony__person">Software Engineer, Grab</span>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “Muhammad consistently demonstrated a deep understanding of
-                frontend development principles, effectively translating complex
-                concepts into practical solutions. His contributions
-                significantly enhanced the scalability and maintainability of
-                our projects, reflecting his commitment to excellence and
-                attention to detail.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_4">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_4"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        "I had the privilege of collaborating with Muhammad
-                        Adnan as a frontend engineer, where we delved into
-                        discussions on microfrontend implementation for merchant
-                        websites.
-                      </p>
-                      <p>
-                        Throughout our interactions, Muhammad consistently
-                        demonstrated a deep understanding of frontend
-                        development principles, effectively translating complex
-                        concepts into practical solutions. His contributions
-                        significantly enhanced the scalability and
-                        maintainability of our projects, reflecting his
-                        commitment to excellence and attention to detail
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Senior Frontend Engineer, AccelByte</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_4"
-                >
-                  Detail
-                </button>
-                <span class="testimony__person"
-                  >Senior Frontend Engineer, AccelByte</span
-                >
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “What set Adnan part is his ability to identify areas of growth
-                and oppurtunity within the team. His idea of "MR time slot"
-                improved our Merge Request review times and approval rates. His
-                initiation of both daily and weekly tech sharing sessions
-                transformed our team culture, cultivating ad thriving
-                environtment of contunous learning and mutual growth.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_5">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_5"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        It is pleasure to have Adnan in my team. I hired him and
-                        he impressed me through the hiring process with a
-                        striking 90% questions answered well seeing that his
-                        ability to integrate seamlessly into any team culture
-                        and ethos.
-                      </p>
-                      <p>
-                        As a fullstack engineer, Adnan consistently delivered,
-                        showcasing not just technical experience but also his
-                        commitment to meet dealines. He case not just about his
-                        task, but also care to other team member doing inside
-                        the working team. This person is team player.
-                      </p>
-                      <p>
-                        What set Adnan part is his ability to identify areas of
-                        growth and oppurtunity within the team. His idea of "MR
-                        time slot" improved our Merge Request review times and
-                        approval rates. His nitiation of both daily and weekly
-                        tech shareing sessions transformed our team culture,
-                        cultivating ad thriving environtment of contunous
-                        learning and mutual growth.
-                      </p>
-                      <p>
-                        I do recommend him to any organization looking to
-                        strengthen their team.
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Engineering Manager II, Grab</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_5"
-                >
-                  Detail
-                </button>
-                <span class="testimony__person"
-                  >Engineering Manager II, Grab</span
-                >
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="testimony">
-              <blockquote class="testimony__quote">
-                “Adnan's communication skills stand out. He has the ability to
-                encourage active discussions during meetings and improve the
-                overall output. Furthermore, he communicates effectively with
-                stakeholders. I truly enjoy our one-on-one sessions, there were
-                always insightful perspectives that I could gain from him.”
-              </blockquote>
-              <footer class="testimony__footer">
-                <dialog class="cmn_dialog" id="dialog_testimony_6">
-                  <button
-                    class="cmn_dialog__close_btn"
-                    data-close-dialog-id="dialog_testimony_6"
-                  >
-                    <img
-                      src="/images/cross.svg"
-                      alt=""
-                      width="24"
-                      height="24"
-                    />
-                  </button>
-                  <div class="testimony__dialog">
-                    <blockquote class="testimony__dialog_quote">
-                      <p>
-                        I strongly recommend Adnan based on his exceptional
-                        qualities and contributions as a team member. It's a
-                        pleasure to work with him.
-                      </p>
-                      <p>
-                        Adnan consistently demonstrates a proactive and
-                        responsible approach to his work. He has a great eye for
-                        areas that could be enhanced, and he is proactive in
-                        making things better. He also always offers a hand to
-                        help and demonstrates a high level of ownership.
-                      </p>
-                      <p>
-                        Adnan's communication skills stand out. He has the
-                        ability to encourage active discussions during meetings
-                        and improve the overall output. Furthermore, he
-                        communicates effectively with stakeholders. I truly
-                        enjoy our one-on-one sessions, there were always
-                        insightful perspectives that I could gain from him.
-                      </p>
-                      <p>
-                        As a fullstack developer, he demonstrates high-quality
-                        coding and possesses solid technical skills. He is keen
-                        on learning new things and can master them quickly. I
-                        also notice that he is a very detail-oriented person. He
-                        has made a lot of useful documentation that is extremely
-                        valuable for the team.
-                      </p>
-                      <p>
-                        If you are looking for a team player to make significant
-                        positive changes, I highly recommend him.
-                      </p>
-                    </blockquote>
-                    <span class="testimony__person"
-                      >Software Engineer, Grab</span
-                    >
-                  </div>
-                </dialog>
-                <button
-                  class="testimony__button"
-                  data-open-dialog-id="dialog_testimony_6"
-                >
-                  Detail
-                </button>
-                <span class="testimony__person">Software Engineer, Grab</span>
-              </footer>
-            </article>
-          </li>
+                  <v.Content />
+                </Testimony>
+              </li>
+            ))
+          }
         </ol>
       </div>
     </section>
@@ -954,53 +603,6 @@ import Layout from "../layouts/Layout.astro";
       justify-content: center;
       justify-items: center;
     }
-  }
-
-  .testimony {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-  }
-  @media screen and (min-width: 650px) {
-    .testimony {
-      height: 100%;
-      justify-content: space-between;
-    }
-  }
-
-  .testimony__footer {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .testimony__button {
-    border: none;
-    color: var(--primary);
-    background-color: inherit;
-    font-size: 1.4rem;
-  }
-
-  .testimony__quote,
-  .testimony__dialog_quote {
-    font-style: italic;
-    font-size: 1.4rem;
-  }
-
-  .testimony__dialog_quote {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  .testimony__dialog {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .testimony__person {
-    font-weight: var(--font-bold);
-    font-size: 1.4rem;
   }
 
   .social_proof_footer,
