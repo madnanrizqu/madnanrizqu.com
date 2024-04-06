@@ -1,0 +1,109 @@
+---
+interface Props {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  techs: string[];
+  projectHref?: string;
+}
+
+const props = Astro.props;
+---
+
+<article class="project">
+  <div class="project__img_container">
+    <img src={props.imageSrc} alt={props.imageAlt} height="237" />
+  </div>
+  <section class="project__texts">
+    <span class="project__title">{props.title}</span>
+    <p class="project__description">{props.description}</p>
+    <footer class="project__techs">
+      <div class="project__techs__inner">
+        {props.techs.map((t) => <span class="project__tech">{t}</span>)}
+      </div>
+    </footer>
+  </section>
+  {
+    props.projectHref && (
+      <footer class="project__footer">
+        <a
+          href={props.projectHref}
+          target="_blank"
+          rel="noopener"
+          class="cmn_button--solid_primary"
+        >
+          Visit
+        </a>
+      </footer>
+    )
+  }
+</article>
+
+<style>
+  @import url("/common.css");
+
+  .project {
+    background: var(--grey-2);
+    color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 650px) {
+    .project {
+      height: 100%;
+    }
+  }
+
+  .project__img_container > img {
+    width: 100%;
+    object-fit: fill;
+  }
+
+  .project__texts {
+    padding: 1.8rem;
+    padding-bottom: 0;
+    margin-bottom: 3.2rem;
+  }
+
+  .project__footer {
+    padding: 1.8rem;
+    padding-top: 0;
+  }
+
+  .project__title {
+    font-weight: var(--font-bold);
+    margin-bottom: 1.6rem;
+    display: inline-block;
+  }
+
+  .project__description {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+  }
+
+  .project__techs {
+    display: flex;
+    justify-content: start;
+  }
+
+  .project__techs__inner {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .project__tech {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+    padding: 0.4rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  .project__footer > a {
+    width: 100%;
+    background-color: var(--primary);
+  }
+</style>

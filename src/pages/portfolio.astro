@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Testimony from "../components/Testimony.astro";
+import Project from "../components/Project.astro";
 
 // loads testimonies
 const testimoniesCollection = await getCollection("testimonies");
@@ -17,6 +18,10 @@ const testimonies = await Promise.all(
     };
   })
 );
+
+// loads projects
+const projectCollection = await getCollection("projects");
+const projects = projectCollection;
 ---
 
 <Layout
@@ -106,197 +111,13 @@ const testimonies = await Promise.all(
       <div class="cmn_container">
         <h2 class="projects__headline">Projects</h2>
         <ol class="projects__list">
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/grab_illustration.svg"
-                  alt="Grab food delivery app"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title">Grab Food Merchant Portal</span>
-                <p class="project__description">
-                  Grab Food Merchant Portal is an public facing application to
-                  help merchants manage all information related to their
-                  business
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">React</span>
-                    <span class="project__tech">TypeScript</span>
-                    <span class="project__tech">Redux</span>
-                    <span class="project__tech">Antd</span>
-                  </div>
-                </footer>
-              </section>
-              <footer class="project__footer">
-                <a
-                  href="https://merchant.grab.com/portal"
-                  target="_blank"
-                  rel="noopener"
-                  class="cmn_button--solid_primary"
-                >
-                  Visit
-                </a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/mading_illustration.svg"
-                  alt="Project picture"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title">Kautsar Design System Mading</span>
-                <p class="project__description">
-                  Mading is a library to help software engineers build uniform
-                  high quality UI faster
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">Vue</span>
-                    <span class="project__tech">JavaScript</span>
-                    <span class="project__tech">Storybook</span>
-                    <span class="project__tech">LESS</span>
-                  </div>
-                </footer>
-              </section>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/ruangguru_illustration.svg"
-                  alt="Project picture"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title">Ruangguru E-Learning Web App</span>
-                <p class="project__description">
-                  Ruangguru E-Learning is a web app to help students learn
-                  subjects in various formats and form
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">Next</span>
-                    <span class="project__tech">TypeScript</span>
-                    <span class="project__tech">Zustand</span>
-                    <span class="project__tech">Chakra UI</span>
-                  </div>
-                </footer>
-              </section>
-              <footer class="project__footer">
-                <a
-                  href="https://app.ruangguru.com"
-                  target="_blank"
-                  rel="noopener"
-                  class="cmn_button--solid_primary"
-                >
-                  Visit
-                </a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/ruangguru_illustration.svg"
-                  alt="Project picture"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title"
-                  >Ruangguru Indonesia Universities Info Web</span
-                >
-                <p class="project__description">
-                  This website helps prospective undergraduate students pick
-                  their major by providing comprehensive information
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">Next</span>
-                    <span class="project__tech">TypeScript</span>
-                    <span class="project__tech">Zustand</span>
-                    <span class="project__tech">Chakra UI</span>
-                  </div>
-                </footer>
-              </section>
-              <footer class="project__footer">
-                <a
-                  href="https://kampus.ruangguru.com"
-                  target="_blank"
-                  rel="noopener"
-                  class="cmn_button--solid_primary"
-                >
-                  Visit
-                </a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/grab_illustration.svg"
-                  alt="Project picture"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title">Grab Food CMS</span>
-                <p class="project__description">
-                  Grab Food CMS is an internal application to help the company
-                  manage information for all food related services
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">React</span>
-                    <span class="project__tech">TypeScript</span>
-                    <span class="project__tech">Redux</span>
-                    <span class="project__tech">Antd</span>
-                  </div>
-                </footer>
-              </section>
-            </article>
-          </li>
-          <li>
-            <article class="project">
-              <div class="project__img_container">
-                <img
-                  src="/images/ruangguru_illustration.svg"
-                  alt="Project picture"
-                  height="237"
-                />
-              </div>
-              <section class="project__texts">
-                <span class="project__title"
-                  >Ruangguru E-Learning Desktop App</span
-                >
-                <p class="project__description">
-                  Ruangguru E-Learning is a desktop (Mac and Windows) app to
-                  help students learn subjects in various formats and form
-                </p>
-                <footer class="project__techs">
-                  <div class="project__techs__inner">
-                    <span class="project__tech">React</span>
-                    <span class="project__tech">ReasonML</span>
-                    <span class="project__tech">CSS</span>
-                    <span class="project__tech">Electron</span>
-                  </div>
-                </footer>
-              </section>
-            </article>
-          </li>
+          {
+            projects.map((p) => (
+              <li>
+                <Project {...p.data} />
+              </li>
+            ))
+          }
         </ol>
       </div>
     </section>

@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Testimony from "../components/Testimony.astro";
+import Project from "../components/Project.astro";
 
 // loads first 3 testimonies
 const testimoniesCollections = await getCollection("testimonies");
@@ -17,6 +18,10 @@ const testimonies = await Promise.all(
     };
   })
 );
+
+// loads first 3 projects
+const projectsCollection = await getCollection("projects");
+const projects = projectsCollection.slice(0, 3);
 ---
 
 <Layout title="M Adnan Rizqullah, Software Engineer">
@@ -161,104 +166,13 @@ const testimonies = await Promise.all(
     <section class="projects cmn_container">
       <h2 class="projects__headline">Projects</h2>
       <ol class="projects__list">
-        <li>
-          <article class="project">
-            <div class="project__img_container">
-              <img
-                src="/images/grab_illustration.svg"
-                alt="Grab food delivery app"
-                height="237"
-              />
-            </div>
-            <section class="project__texts">
-              <span class="project__title">Grab Food Merchant Portal</span>
-              <p class="project__description">
-                Grab Food Merchant Portal is an public facing application to
-                help merchants manage all information related to their business
-              </p>
-              <footer class="project__techs">
-                <div class="project__techs__inner">
-                  <span class="project__tech">React</span>
-                  <span class="project__tech">TypeScript</span>
-                  <span class="project__tech">Redux</span>
-                  <span class="project__tech">Antd</span>
-                </div>
-              </footer>
-            </section>
-            <footer class="project__footer">
-              <a
-                href="https://merchant.grab.com/portal"
-                target="_blank"
-                rel="noopener"
-                class="cmn_button--solid_primary"
-              >
-                Visit
-              </a>
-            </footer>
-          </article>
-        </li>
-        <li>
-          <article class="project">
-            <div class="project__img_container">
-              <img
-                src="/images/mading_illustration.svg"
-                alt="Project picture"
-                height="237"
-              />
-            </div>
-            <section class="project__texts">
-              <span class="project__title">Kautsar Design System Mading</span>
-              <p class="project__description">
-                Mading is a library to help software engineers build uniform
-                high quality UI faster
-              </p>
-              <footer class="project__techs">
-                <div class="project__techs__inner">
-                  <span class="project__tech">Vue</span>
-                  <span class="project__tech">JavaScript</span>
-                  <span class="project__tech">Storybook</span>
-                  <span class="project__tech">LESS</span>
-                </div>
-              </footer>
-            </section>
-          </article>
-        </li>
-        <li>
-          <article class="project">
-            <div class="project__img_container">
-              <img
-                src="/images/ruangguru_illustration.svg"
-                alt="Project picture"
-                height="237"
-              />
-            </div>
-            <section class="project__texts">
-              <span class="project__title">Ruangguru E-Learning Web App</span>
-              <p class="project__description">
-                Ruangguru E-Learning is a web app to help students learn
-                subjects in various formats and form
-              </p>
-              <footer class="project__techs">
-                <div class="project__techs__inner">
-                  <span class="project__tech">Next</span>
-                  <span class="project__tech">TypeScript</span>
-                  <span class="project__tech">Zustand</span>
-                  <span class="project__tech">Chakra UI</span>
-                </div>
-              </footer>
-            </section>
-            <footer class="project__footer">
-              <a
-                href="https://app.ruangguru.com"
-                target="_blank"
-                rel="noopener"
-                class="cmn_button--solid_primary"
-              >
-                Visit
-              </a>
-            </footer>
-          </article>
-        </li>
+        {
+          projects.map((p) => (
+            <li>
+              <Project {...p.data} />
+            </li>
+          ))
+        }
       </ol>
 
       <footer class="projects__footer">
@@ -670,70 +584,6 @@ const testimonies = await Promise.all(
       grid-column: span 2;
       width: 50%;
     }
-  }
-
-  .project {
-    background: var(--grey-2);
-    color: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  @media screen and (min-width: 650px) {
-    .project {
-      height: 100%;
-    }
-  }
-
-  .project__img_container > img {
-    width: 100%;
-    object-fit: fill;
-  }
-
-  .project__texts {
-    padding: 1.8rem;
-    padding-bottom: 0;
-    margin-bottom: 3.2rem;
-  }
-
-  .project__footer {
-    padding: 1.8rem;
-    padding-top: 0;
-  }
-
-  .project__title {
-    font-weight: var(--font-bold);
-    margin-bottom: 1.6rem;
-    display: inline-block;
-  }
-
-  .project__description {
-    display: inline-block;
-    margin-bottom: 2.4rem;
-  }
-
-  .project__techs {
-    display: flex;
-    justify-content: start;
-  }
-
-  .project__techs__inner {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .project__tech {
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    border-radius: 12px;
-    padding: 0.4rem 1rem;
-    font-size: 1.4rem;
-  }
-
-  .project__footer > a {
-    width: 100%;
-    background-color: var(--primary);
   }
 
   .projects__footer {
