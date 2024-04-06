@@ -51,6 +51,44 @@
   </aside>
 </header>
 
+<script>
+  const toggler = document.getElementById("mobile_drawer_toggle");
+  if (!toggler) {
+    throw new Error("Element with id: mobile_drawer_toggle not found");
+  }
+
+  toggler.addEventListener("click", () => {
+    const drawer = document.getElementById("mobile_drawer");
+    if (!drawer) {
+      throw new Error("Element with id: mobile_drawer not found");
+    }
+
+    const [openIcon, closeIcon] = toggler.children;
+
+    const hideClassName = "u_hide_all";
+
+    if (closeIcon.classList.contains(hideClassName)) {
+      // Open drawer
+
+      // Change icons
+      closeIcon.classList.remove(hideClassName);
+      openIcon.classList.add(hideClassName);
+
+      // Show drawer
+      drawer.classList.remove(hideClassName);
+    } else {
+      // Close drawer
+
+      // Change icons
+      closeIcon.classList.add(hideClassName);
+      openIcon.classList.remove(hideClassName);
+
+      // Hide drawer
+      drawer.classList.add(hideClassName);
+    }
+  });
+</script>
+
 <style>
   @import url("/common.css");
 
