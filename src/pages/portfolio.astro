@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Testimony from "../components/Testimony.astro";
 import Project from "../components/Project.astro";
+import { slugify } from "../scripts/url";
 
 // loads testimonies
 const testimoniesCollection = await getCollection("testimonies");
@@ -110,7 +111,10 @@ const projects = projectCollection;
           {
             projects.map((p) => (
               <li>
-                <Project {...p.data} />
+                <Project
+                  {...p.data}
+                  projectDetailSlug={`/projects/${slugify(p.data.title)}`}
+                />
               </li>
             ))
           }

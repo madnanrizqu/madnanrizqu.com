@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description: string;
   techs: string[];
+  projectDetailSlug: string;
   projectHref?: string;
 }
 
@@ -24,20 +25,28 @@ const props = Astro.props;
       </div>
     </footer>
   </section>
-  {
-    props.projectHref && (
-      <footer class="project__footer">
+  <footer class="project__footer">
+    {
+      props.projectHref && (
         <a
           href={props.projectHref}
           target="_blank"
           rel="noopener"
-          class="cmn_button--solid_primary"
+          class="cmn_button--outline_primary"
         >
           Visit
         </a>
-      </footer>
-    )
-  }
+      )
+    }
+    <a
+      href={props.projectDetailSlug}
+      target="_blank"
+      rel="noopener"
+      class="cmn_button--outline_primary"
+    >
+      Detail
+    </a>
+  </footer>
 </article>
 
 <style>
@@ -74,6 +83,9 @@ const props = Astro.props;
   .project__footer {
     padding: 1.8rem;
     padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
   }
 
   .project__title {
@@ -109,6 +121,5 @@ const props = Astro.props;
 
   .project__footer > a {
     width: 100%;
-    background-color: var(--primary);
   }
 </style>
