@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar.astro";
 
 interface Props {
   title: string;
-  variant?: "centered" | "no-top-padding" | "top-padding";
+  variant?: "empty" | "no-top-padding" | "top-padding";
 }
 
 const { title, variant = "no-top-padding" } = Astro.props;
@@ -42,23 +42,24 @@ const isProd = import.meta.env.PROD;
     }
   </head>
   <body
-    class={variant === "centered"
-      ? "root_centered"
+    class={variant === "empty"
+      ? "empty"
       : variant === "top-padding"
         ? "root_top_padding"
         : undefined}
   >
-    <Navbar />
+    {variant !== "empty" && <Navbar />}
     <slot />
-    <Footer />
+    {variant !== "empty" && <Footer />}
   </body>
 
   <style is:global>
+    @import url("/common.css");
     .root_top_padding {
       padding-top: 12rem;
     }
 
-    .root_centered {
+    .empty {
       height: 100vh;
       height: 100dvh;
       display: flex;

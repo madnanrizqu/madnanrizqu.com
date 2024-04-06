@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "../../scripts/url";
+import Layout from "../../layouts/Layout.astro";
+import MdContainer from "../../components/MdContainer.astro";
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("projects");
+  return projectEntries.map((entry) => ({
+    params: { slug: slugify(entry.data.title) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={`M Adnan Rizqullah, Software Engineer | Projects - ${entry.data.title}`}
+  variant="top-padding"
+>
+  <div class="cmn_container root">
+    <MdContainer>
+      <Content />
+    </MdContainer>
+  </div>
+</Layout>
+
+<style>
+  .root {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12rem;
+  }
+</style>

@@ -1,0 +1,18 @@
+<div class="root">
+  <slot />
+</div>
+
+<style>
+  .root {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .root :global(img) {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+</style>
