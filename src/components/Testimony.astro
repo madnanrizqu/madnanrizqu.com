@@ -18,7 +18,9 @@ const { dialogId, summary, author } = Astro.props;
   <footer class="testimony__footer">
     <Dialog dialogId={dialogId}>
       <div class="testimony__dialog">
-        <blockquote>
+        <blockquote
+          class="prose prose-xl lg:prose-2xl prose-headings:text-[--primary]"
+        >
           <slot />
         </blockquote>
         <span class="testimony__person"></span>
