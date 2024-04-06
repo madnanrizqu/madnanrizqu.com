@@ -1,4 +1,7 @@
 ---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
 interface Props {
   title: string;
   variant?: "centered" | "no-top-padding" | "top-padding";
@@ -45,7 +48,9 @@ const isProd = import.meta.env.PROD;
         ? "root_top_padding"
         : undefined}
   >
+    <Navbar />
     <slot />
+    <Footer />
   </body>
 
   <style is:global>
