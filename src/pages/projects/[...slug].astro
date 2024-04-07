@@ -21,11 +21,28 @@ const { Content } = await entry.render();
   variant="top-padding"
 >
   <div class="cmn_container root">
-    <MdContainer>
-      <Content />
-    </MdContainer>
+    <div>
+      <button id="back_button" class="cmn_button--outline">Go back</button>
+
+      <MdContainer>
+        <Content />
+      </MdContainer>
+    </div>
   </div>
 </Layout>
+
+<script>
+  import { elNotFound } from "../../scripts/error";
+
+  const button = document.getElementById("back_button");
+  if (!button) {
+    throw new Error(elNotFound("back_button"));
+  }
+
+  button.addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
 
 <style>
   .root {
