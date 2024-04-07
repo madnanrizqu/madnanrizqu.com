@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// loads work availability
+import * as workInfo from "../info/work-availability.md";
 ---
 
 <Layout
@@ -29,18 +32,11 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="available cmn_container">
       <h2 class="available__headline">Work Availability</h2>
-      <div class="available__info">
-        <p>Available for:</p>
-        <ol class="available__list">
-          <li>
-            <span
-              >Full-time but with remote, flexible schedule work arrangements</span
-            >
-          </li>
-          <li><span>Part time</span></li>
-          <li><span>Project based</span></li>
-        </ol>
-      </div>
+      <p>
+        Right now, <span class="available__emphasis"
+          >{workInfo.frontmatter.message}</span
+        >
+      </p>
     </section>
 
     <section class="contact cmn_container">
@@ -193,6 +189,10 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+  }
+
+  .available__emphasis {
+    font-weight: var(--font-bold);
   }
 
   /* CONTACT SECTION */

@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Testimony from "../components/Testimony.astro";
 import Project from "../components/Project.astro";
 import { slugify } from "../scripts/url";
+import { getEntry } from "astro:content";
 
 // loads first 3 testimonies
 const testimoniesCollections = await getCollection("testimonies");
@@ -21,6 +22,9 @@ const testimonies = await Promise.all(
 // loads first 3 projects
 const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.slice(0, 3);
+
+// loads work availability
+import * as workInfo from "../info/work-availability.md";
 ---
 
 <Layout title="M Adnan Rizqullah, Software Engineer">
@@ -93,10 +97,8 @@ const projects = projectsCollection.slice(0, 3);
             </p>
 
             <p>
-              Right now I am
-              <span class="portfolio__emphasis">currently available</span> for
-              <span class="portfolio__emphasis"
-                >remote part time / project based work</span
+              Right now, <span class="portfolio__emphasis"
+                >{workInfo.frontmatter.message}</span
               >
             </p>
           </div>
