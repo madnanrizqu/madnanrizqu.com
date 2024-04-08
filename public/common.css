@@ -21,6 +21,7 @@ html {
   --btn-font-size-mobile: 1.6rem;
   --btn-font-size: 1.6rem;
   --font-bold: 700;
+  --input-bor-rad: 0.6rem;
 }
 
 body {
@@ -84,6 +85,8 @@ input,
 textarea {
   width: 100%;
   padding: 1rem 1.2rem;
+  background-color: var(--grey);
+  border-radius: var(--input-bor-rad);
 }
 
 input[type="submit"] {
