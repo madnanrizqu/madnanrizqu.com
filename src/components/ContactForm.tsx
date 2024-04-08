@@ -10,7 +10,6 @@ type Inputs = {
 };
 const ContactForm = () => {
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
-  const [contactKey, setContactKey] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -18,12 +17,11 @@ const ContactForm = () => {
     handleSubmit: validate,
     watch,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
 
   const handleSubmit = async (e: Inputs) => {
     setIsLoading(true);
-
-    console.log(e);
 
     try {
       const formData = new FormData();
@@ -38,17 +36,16 @@ const ContactForm = () => {
       const data = await response.json();
 
       setResponseMessage(data.message);
-      setContactKey((prev) => prev + 1);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
+      reset();
     }
   };
 
   return (
     <form
-      key={contactKey}
       action="/"
       className={classes.contact__form}
       onSubmit={validate(handleSubmit)}
