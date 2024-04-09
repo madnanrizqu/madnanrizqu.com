@@ -197,7 +197,7 @@ ol {
 }
 
 .cmn_button--outline:hover {
-  color: initial;
+  color: var(--secondary);
 }
 
 .cmn_button--outline_white {
@@ -216,7 +216,7 @@ ol {
 }
 
 .cmn_button--outline_white:hover {
-  color: initial;
+  color: var(--secondary);
 }
 
 .cmn_button--outline_primary {
