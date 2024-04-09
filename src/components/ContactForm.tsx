@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import classes from "./ContactForm.module.css";
+import Alert from "./Alert";
 
 type Inputs = {
   name: string;
@@ -114,19 +115,10 @@ const ContactForm = () => {
         className="cmn_button--solid_secondary"
       />
       {responseMessage && (
-        <div className={classes.contract__form_submit_status}>
-          <span className={classes.contract__form_submit_status_label}>
-            {responseMessage}
-          </span>
-
-          <button
-            type="button"
-            className={classes.contact__form_submit_status__close}
-            onClick={() => setResponseMessage(null)}
-          >
-            <img src="/images/cross_white.svg" alt="" width="18" height="18" />
-          </button>
-        </div>
+        <Alert
+          label={responseMessage}
+          onClose={() => setResponseMessage(null)}
+        />
       )}
     </form>
   );
