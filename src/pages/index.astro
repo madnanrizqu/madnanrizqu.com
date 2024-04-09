@@ -5,7 +5,6 @@ import Layout from "../layouts/Layout.astro";
 import Testimony from "../components/Testimony.astro";
 import Project from "../components/Project.astro";
 import { slugify } from "../scripts/url";
-import { getEntry } from "astro:content";
 
 // loads first 3 testimonies
 const testimoniesCollections = await getCollection("testimonies");
@@ -193,10 +192,7 @@ import * as workInfo from "../info/work-availability.md";
             difference.</span
           >
         </h2>
-        <a
-          href="/contact/"
-          class="cmn_button--outline_white call_to_action__button">Contact me</a
-        >
+        <a href="/contact/" class="cmn_button--outline">Contact me</a>
       </div>
     </section>
   </main>
@@ -248,11 +244,13 @@ import * as workInfo from "../info/work-availability.md";
 
     // Setting up the draw function
     const draw = () => {
-      ctx.fillStyle = "rgba(255, 255, 255, .1)";
+      ctx.fillStyle = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue("--bg-color-hero");
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillStyle = "rgba(31, 169, 200, 0.221)";
+        ctx.fillStyle = "rgba(31, 169, 200, 0.25)";
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
         drops[i]++;
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
@@ -262,7 +260,7 @@ import * as workInfo from "../info/work-availability.md";
     };
 
     // Loop the animation
-    setInterval(draw, 99);
+    setInterval(draw, 80);
   };
 
   const setHeroAnimatedHeadline = () => {
@@ -307,6 +305,7 @@ import * as workInfo from "../info/work-availability.md";
 
   .hero_background {
     position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .hero__img_container img {
@@ -401,8 +400,12 @@ import * as workInfo from "../info/work-availability.md";
   }
 
   .hero__dynamic_text {
-    background: #1faac8;
-    background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+    background: var(--primary);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
@@ -438,8 +441,8 @@ import * as workInfo from "../info/work-availability.md";
   /* PORTFOLIO SECTION */
   .portfolio {
     position: relative;
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--bg-color);
+    color: var(--font-color);
     padding-top: var(--page-section-pad-y);
     padding-bottom: var(--page-section-pad-y);
     display: flex;
@@ -469,16 +472,20 @@ import * as workInfo from "../info/work-availability.md";
   }
 
   .portfolio_stats {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--bg-color);
+    color: var(--font-color);
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
   }
 
   .portfolio_stat__label {
     font-size: 1.6rem;
-    background: #1faac8;
-    background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+    background: var(--primary);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -486,8 +493,12 @@ import * as workInfo from "../info/work-availability.md";
   .portfolio_stat__value {
     font-size: 3.2rem;
     font-weight: var(--font-bold);
-    background: #1faac8;
-    background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+    background: var(--primary);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -525,7 +536,7 @@ import * as workInfo from "../info/work-availability.md";
   .social_proof {
     padding-top: var(--page-section-pad-y);
     padding-bottom: var(--page-section-pad-y);
-    background-color: var(--grey);
+    background-color: var(--bg-color);
   }
 
   .social_proof__headline {
@@ -595,14 +606,14 @@ import * as workInfo from "../info/work-availability.md";
   }
 
   .call_to_action {
-    background-color: var(--black);
+    background-color: var(--bg-color);
+    color: var(--font-color);
     padding-top: var(--page-section-pad-y);
     padding-bottom: var(--page-section-pad-y);
   }
 
   .call_to_action__headline {
     font-size: 1.8rem;
-    color: var(--white);
     margin-bottom: 6.4rem;
   }
 
@@ -612,8 +623,12 @@ import * as workInfo from "../info/work-availability.md";
     line-height: 6rem;
     font-size: 5.2rem;
     font-weight: var(--font-bold);
-    background: #1faac8;
-    background: linear-gradient(to right, #f75c03 28%, #1faac8 100%);
+    background: var(--primary);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 2.4rem;
@@ -637,7 +652,11 @@ import * as workInfo from "../info/work-availability.md";
     opacity: 0.4;
     transform: scale(1.04);
     filter: blur(2rem) contrast(200%);
-    background-image: linear-gradient(90deg, #f75c03 0%, #1faac8 100%);
+    background-image: linear-gradient(
+      90deg,
+      var(--secondary) 0%,
+      var(--primary) 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
   }
