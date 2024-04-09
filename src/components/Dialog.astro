@@ -27,7 +27,6 @@ const { dialogId } = Astro.props;
 
 <script>
   const openButtons = document.querySelectorAll("[data-open-dialog-id]");
-  console.log(openButtons);
   openButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       //@ts-ignore
