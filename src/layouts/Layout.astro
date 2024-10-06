@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
@@ -40,6 +41,8 @@ const isProd = import.meta.env.PROD;
         />
       )
     }
+
+    <ViewTransitions />
   </head>
   <body
     class={variant === "empty"
@@ -48,12 +51,10 @@ const isProd = import.meta.env.PROD;
         ? "root_top_padding"
         : undefined}
   >
-    {variant !== "empty" && <Navbar />}
+    {variant !== "empty" && <Navbar transition:persist />}
     <slot />
-    {variant !== "empty" && <Footer />}
-  </body>
-
-  <style is:global>
+    {variant !== "empty" && <Footer transition:persist />}
+  </body><style is:global>
     @import url("/common.css");
     .root_top_padding {
       padding-top: 12rem;
