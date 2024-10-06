@@ -5,7 +5,7 @@ import Logo from "./Logo.astro";
 import ThemePicker from "./ThemePicker";
 ---
 
-<div class="navbar_anchor">
+<div class="navbar_anchor" transition:persist>
   <header class="navbar">
     <div class="navbar__inner cmn_container">
       <div>
@@ -58,7 +58,7 @@ import ThemePicker from "./ThemePicker";
             </svg>
           </button>
         </nav>
-        <Dialog dialogId="dialog_theme">
+        <Dialog dialogId="dialog_theme" transition:persist>
           <ThemePicker client:load />
         </Dialog>
         <DialogTrigger dialogId="dialog_theme">

@@ -10,14 +10,24 @@ const ThemePicker = () => {
   const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
 
   useEffect(() => {
-    if (localStorage.getItem("data-theme")) {
-      document.documentElement.setAttribute(
-        "data-theme",
-        localStorage.getItem("data-theme") as string
-      );
+    const initTheme = () => {
+      if (localStorage.getItem("data-theme")) {
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("data-theme") as string
+        );
 
-      setActiveTheme(localStorage.getItem("data-theme") as ThemeVariant);
-    }
+        setActiveTheme(localStorage.getItem("data-theme") as ThemeVariant);
+      }
+    };
+
+    initTheme();
+
+    document.addEventListener("astro:after-swap", initTheme);
+
+    return () => {
+      document.removeEventListener("astro:after-swap", initTheme);
+    };
   }, []);
 
   const handleClickTheme = (theme: ThemeVariant) => {

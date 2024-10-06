@@ -286,8 +286,16 @@ import * as workInfo from "../info/work-availability.md";
     }
   };
 
-  setHeroBackground();
-  setHeroAnimatedHeadline();
+  const init = () => {
+    setHeroBackground();
+    setHeroAnimatedHeadline();
+  };
+
+  init();
+
+  document.addEventListener("astro:after-swap", () => {
+    init();
+  });
 </script>
 
 <style>

@@ -14,7 +14,7 @@ const isProd = import.meta.env.PROD;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:persist>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -53,7 +53,7 @@ const isProd = import.meta.env.PROD;
   >
     {variant !== "empty" && <Navbar />}
     <slot />
-    {variant !== "empty" && <Footer transition:persist />}
+    {variant !== "empty" && <Footer />}
   </body><style is:global>
     @import url("/common.css");
     .root_top_padding {
