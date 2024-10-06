@@ -51,7 +51,7 @@ const isProd = import.meta.env.PROD;
         ? "root_top_padding"
         : undefined}
   >
-    {variant !== "empty" && <Navbar transition:persist />}
+    {variant !== "empty" && <Navbar />}
     <slot />
     {variant !== "empty" && <Footer transition:persist />}
   </body><style is:global>
