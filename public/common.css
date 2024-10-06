@@ -48,11 +48,21 @@ html {
   --bg-color: var(--black);
   --font-color: var(--white);
   --bg-color-hero: rgba(0, 0, 0, 0.1);
+  --scrollbar-color: var(--secondary);
 }
 :root[data-theme="light"] {
   --bg-color: var(--white);
   --font-color: var(--black);
   --bg-color-hero: rgba(255, 255, 255, 0.1);
+  --scrollbar-color: var(--primary);
+}
+
+html {
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: auto;
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
