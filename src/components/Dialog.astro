@@ -26,27 +26,33 @@ const { dialogId } = Astro.props;
 </dialog>
 
 <script>
-  const openButtons = document.querySelectorAll("[data-open-dialog-id]");
-  openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      //@ts-ignore
-      const openDialogId = btn.dataset.openDialogId;
-      const dialog = document.getElementById(openDialogId);
-      //@ts-ignore
-      dialog.showModal();
+  const initDialog = () => {
+    const openButtons = document.querySelectorAll("[data-open-dialog-id]");
+    openButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        //@ts-ignore
+        const openDialogId = btn.dataset.openDialogId;
+        const dialog = document.getElementById(openDialogId);
+        //@ts-ignore
+        dialog.showModal();
+      });
     });
-  });
 
-  const closeButtons = document.querySelectorAll("[data-close-dialog-id]");
-  closeButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      //@ts-ignore
-      const closeDialogId = btn.dataset.closeDialogId;
-      const dialog = document.getElementById(closeDialogId);
-      //@ts-ignore
-      dialog.close();
+    const closeButtons = document.querySelectorAll("[data-close-dialog-id]");
+    closeButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        //@ts-ignore
+        const closeDialogId = btn.dataset.closeDialogId;
+        const dialog = document.getElementById(closeDialogId);
+        //@ts-ignore
+        dialog.close();
+      });
     });
-  });
+  };
+
+  initDialog();
+
+  document.addEventListener("astro:after-swap", initDialog);
 </script>
 
 <style>

@@ -5,7 +5,7 @@ import Logo from "./Logo.astro";
 import ThemePicker from "./ThemePicker";
 ---
 
-<div class="navbar_anchor" transition:persist>
+<div class="navbar_anchor">
   <header class="navbar">
     <div class="navbar__inner cmn_container">
       <div>
@@ -89,41 +89,47 @@ import ThemePicker from "./ThemePicker";
 <script>
   import { elNotFound } from "../scripts/error";
 
-  const toggler = document.getElementById("mobile_drawer_toggle");
-  if (!toggler) {
-    throw new Error(elNotFound("mobile_drawer_toggle"));
-  }
-
-  toggler.addEventListener("click", () => {
-    const drawer = document.getElementById("mobile_drawer");
-    if (!drawer) {
-      throw new Error(elNotFound("mobile_drawer"));
+  const initNavbar = () => {
+    const toggler = document.getElementById("mobile_drawer_toggle");
+    if (!toggler) {
+      throw new Error(elNotFound("mobile_drawer_toggle"));
     }
 
-    const [openIcon, closeIcon] = toggler.children;
+    toggler.addEventListener("click", () => {
+      const drawer = document.getElementById("mobile_drawer");
+      if (!drawer) {
+        throw new Error(elNotFound("mobile_drawer"));
+      }
 
-    const hideClassName = "u_hide_all";
+      const [openIcon, closeIcon] = toggler.children;
 
-    if (closeIcon.classList.contains(hideClassName)) {
-      // Open drawer
+      const hideClassName = "u_hide_all";
 
-      // Change icons
-      closeIcon.classList.remove(hideClassName);
-      openIcon.classList.add(hideClassName);
+      if (closeIcon.classList.contains(hideClassName)) {
+        // Open drawer
 
-      // Show drawer
-      drawer.classList.remove(hideClassName);
-    } else {
-      // Close drawer
+        // Change icons
+        closeIcon.classList.remove(hideClassName);
+        openIcon.classList.add(hideClassName);
 
-      // Change icons
-      closeIcon.classList.add(hideClassName);
-      openIcon.classList.remove(hideClassName);
+        // Show drawer
+        drawer.classList.remove(hideClassName);
+      } else {
+        // Close drawer
 
-      // Hide drawer
-      drawer.classList.add(hideClassName);
-    }
-  });
+        // Change icons
+        closeIcon.classList.add(hideClassName);
+        openIcon.classList.remove(hideClassName);
+
+        // Hide drawer
+        drawer.classList.add(hideClassName);
+      }
+    });
+  };
+
+  initNavbar();
+
+  document.addEventListener("astro:after-swap", initNavbar);
 </script>
 
 <style>

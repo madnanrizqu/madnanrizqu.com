@@ -34,14 +34,20 @@ const { Content } = await entry.render();
 <script>
   import { elNotFound } from "../../scripts/error";
 
-  const button = document.getElementById("back_button");
-  if (!button) {
-    throw new Error(elNotFound("back_button"));
-  }
+  const backFunctionality = () => {
+    const button = document.getElementById("back_button");
+    if (!button) {
+      throw new Error(elNotFound("back_button"));
+    }
 
-  button.addEventListener("click", () => {
-    window.history.back();
-  });
+    button.addEventListener("click", () => {
+      window.history.back();
+    });
+  };
+
+  backFunctionality();
+
+  document.addEventListener("astro:after-swap", backFunctionality);
 </script>
 
 <style>
