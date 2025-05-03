@@ -8,6 +8,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), tailwind(), react()],
-  output: "hybrid",
-  adapter: vercel()
+  output: "static",
+  adapter: vercel(),
 });
