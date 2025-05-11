@@ -126,14 +126,7 @@ a {
   text-decoration: none;
 }
 
-p,
-span,
-blockquote,
-a,
-button,
-label,
-input,
-textarea {
+* {
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
