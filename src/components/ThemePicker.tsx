@@ -7,38 +7,21 @@ type ThemeVariant = "system" | "light" | "dark";
 
 const ThemePicker = () => {
   const [showNews, setShowNews] = useState(true);
-  const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
+  const [activeTheme, setActiveTheme] = useState<ThemeVariant>(() =>
+    typeof window !== "undefined"
+      ? (document.documentElement.getAttribute("data-theme") as ThemeVariant)
+      : "system",
+  );
 
   useEffect(() => {
-    const initTheme = () => {
-      if (localStorage.getItem("data-theme")) {
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("data-theme") as string
-        );
-
-        setActiveTheme(localStorage.getItem("data-theme") as ThemeVariant);
-      }
-    };
-
-    initTheme();
-
-    document.addEventListener("astro:after-swap", initTheme);
-
-    return () => {
-      document.removeEventListener("astro:after-swap", initTheme);
-    };
-  }, []);
+    setActiveTheme(
+      document.documentElement.getAttribute("data-theme") as ThemeVariant,
+    );
+  }, [document.documentElement.getAttribute("data-theme")]);
 
   const handleClickTheme = (theme: ThemeVariant) => {
-    if (theme === "system") {
-      localStorage.removeItem("data-theme");
-      document.documentElement.removeAttribute("data-theme");
-    } else {
-      localStorage.setItem("data-theme", theme);
-      document.documentElement.setAttribute("data-theme", theme);
-    }
-
+    localStorage.setItem("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
     setActiveTheme(theme);
   };
 

@@ -43,6 +43,23 @@ const isProd = import.meta.env.PROD;
     }
 
     <ViewTransitions />
+
+    <script is:inline>
+      const initTheme = () => {
+        if (
+          localStorage.getItem('data-theme')
+        ) {
+          document.documentElement.setAttribute(
+            "data-theme",
+            localStorage.getItem("data-theme"),
+          );
+        }
+      };
+
+      initTheme();
+      // Runs on view transitions navigation
+      document.addEventListener("astro:after-swap", initTheme);
+    </script>
   </head>
   <body
     class={variant === "empty"
