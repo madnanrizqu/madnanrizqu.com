@@ -6,7 +6,9 @@ import clsx from "clsx";
 type ThemeVariant = "system" | "light" | "dark";
 
 const ThemePicker = () => {
-  const [showNews, setShowNews] = useState(true);
+  const [showNews, setShowNews] = useState(() => {
+    return localStorage.getItem("hasSeenNews") !== "true";
+  });
   const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
 
   useEffect(() => {
@@ -29,7 +31,10 @@ const ThemePicker = () => {
       {showNews && (
         <Alert
           label="More customization options are coming soon!"
-          onClose={() => setShowNews(false)}
+          onClose={() => {
+            setShowNews(false);
+            localStorage.setItem("hasSeenNews", "true");
+          }}
         />
       )}
 
