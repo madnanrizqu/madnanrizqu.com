@@ -7,15 +7,12 @@ type ThemeVariant = "system" | "light" | "dark";
 
 const ThemePicker = () => {
   const [showNews, setShowNews] = useState(true);
-  const [activeTheme, setActiveTheme] = useState<ThemeVariant>(() =>
-    typeof window !== "undefined"
-      ? (document.documentElement.getAttribute("data-theme") as ThemeVariant)
-      : "system",
-  );
+  const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
 
   useEffect(() => {
     setActiveTheme(
-      document.documentElement.getAttribute("data-theme") as ThemeVariant,
+      (document.documentElement.getAttribute("data-theme") as ThemeVariant) ??
+        "system",
     );
   }, [document.documentElement.getAttribute("data-theme")]);
 
