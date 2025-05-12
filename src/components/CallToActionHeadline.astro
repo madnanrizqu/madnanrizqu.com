@@ -1,0 +1,59 @@
+<h2 class="call_to_action__headline">
+  Are you in need of a web development talent ?
+  <span class="call_to_action__headline__emphasis"
+    >Don't settle for average. Let's discuss how I can make a
+    difference.</span
+  >
+</h2>
+
+<style>
+/* Call to action section */
+.call_to_action__headline {
+  font-size: 1.8rem;
+  margin-bottom: 6.4rem;
+}
+
+.call_to_action__headline__emphasis {
+  position: relative;
+  display: block;
+  line-height: 6rem;
+  font-size: 5.2rem;
+  font-weight: var(--font-bold);
+  background: var(--primary);
+  background: linear-gradient(
+    to right,
+    var(--secondary) 28%,
+    var(--primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 2.4rem;
+}
+@media screen and (min-width: 650px) {
+  .call_to_action__headline__emphasis {
+    font-size: 6.4rem;
+    line-height: 7rem;
+  }
+}
+
+.call_to_action__headline__emphasis::after {
+  content: "Don't settle for average. Let's discuss how I can make a difference.";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.4;
+  transform: scale(1.04);
+  filter: blur(2rem) contrast(200%);
+  background-image: linear-gradient(
+    90deg,
+    var(--secondary) 0%,
+    var(--primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+</style>

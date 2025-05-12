@@ -1,0 +1,75 @@
+<h1 class="hero__headline">
+    I help you create
+    <span class="hero__dynamic_text_holder">
+    <span id="hero__dynamic_text" class="hero__dynamic_text">smooth</span>
+    </span>
+    web apps!
+</h1>
+
+<style>
+  /* Keep original hero classes styling */
+  .hero__headline {
+    font-size: 3.8rem;
+  }
+
+  @media screen and (min-height: 700px) {
+    .hero__headline {
+      font-size: 4.6rem;
+    }
+  }
+  @media screen and (min-height: 800px) {
+    .hero__headline {
+      font-size: 5.4rem;
+    }
+  }
+  @media screen and (min-width: 1368px) {
+    .hero__headline {
+      font-size: 6.2rem;
+    }
+  }
+
+  .hero__dynamic_text_holder {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    height: 2rem;
+  }
+  @media screen and (min-height: 700px) {
+    .hero__dynamic_text_holder {
+      height: 5rem;
+    }
+  }
+  @media screen and (min-height: 800px) {
+    .hero__dynamic_text_holder {
+      height: 6rem;
+    }
+  }
+
+  .hero__dynamic_text {
+    background: var(--primary);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    font-size: inherit;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    line-height: 8rem;
+  }
+  @media screen and (min-height: 700px) {
+    .hero__dynamic_text {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  @media screen and (min-height: 1000px) {
+    .hero__dynamic_text {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+</style>

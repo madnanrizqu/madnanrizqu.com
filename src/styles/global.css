@@ -1,3 +1,56 @@
+@import "./variables.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-headline-1 font-bold;
+}
+
+h2 {
+  @apply text-headline-2 font-bold;
+}
+
+h3 {
+  @apply text-headline-3 font-bold;
+}
+
+a {
+  @apply text-skin-base no-underline;
+}
+
+a:active,
+a:focus,
+a:hover {
+  @apply text-secondary;
+}
+
+p,
+span,
+blockquote,
+a,
+button,
+label,
+input,
+textarea,
+li {
+  @apply text-base;
+}
+
+input,
+textarea {
+  @apply w-full p-4 bg-grey rounded-input;
+}
+
+input[type="submit"] {
+  @apply cursor-pointer;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+ul,
+ol {
+  @apply list-none;
+}

@@ -2,7 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import "../styles/global.css";
+import '../styles/global.css'
+
 interface Props {
   title: string;
   variant?: "empty" | "no-top-padding" | "top-padding";
@@ -63,26 +64,12 @@ const isProd = import.meta.env.PROD;
   </head>
   <body
     class={variant === "empty"
-      ? "empty"
+      ? "h-screen h-[100dvh] flex justify-center items-center"
       : variant === "top-padding"
-        ? "root_top_padding"
+        ? "pt-[12rem]"
         : undefined}
   >
     {variant !== "empty" && <Navbar />}
     <slot />
     {variant !== "empty" && <Footer />}
-  </body><style is:global>
-    @import url("/common.css");
-    .root_top_padding {
-      padding-top: 12rem;
-    }
-
-    .empty {
-      height: 100vh;
-      height: 100dvh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
 </html>
