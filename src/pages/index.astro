@@ -1,222 +1,82 @@
 ---
-import { getCollection } from "astro:content";
-
 import Layout from "../layouts/Layout.astro";
-import Testimony from "../components/Testimony.astro";
-import Project from "../components/Project.astro";
-import { slugify } from "../scripts/url";
-
-// loads first 3 testimonies
-const testimoniesCollections = await getCollection("testimonies");
-const testimonies = await Promise.all(
-  testimoniesCollections.slice(0, 3).map(async (v) => {
-    const { Content } = await v.render();
-    return {
-      ...v,
-      Content,
-    };
-  })
-);
-
-// loads first 3 projects
-const projectsCollection = await getCollection("projects");
-const projects = projectsCollection.slice(0, 3);
-
-// loads work availability
-import * as workInfo from "../info/work-availability.md";
-import HeadlineText from "../components/HeadlineText.astro";
-import CallToActionHeadline from "../components/CallToActionHeadline.astro";
 ---
 
-<Layout title="M Adnan Rizqullah, Software Engineer">
-  <main>
-    <section id="hero" class="relative">
-      <div class="relative h-screen pt-[5.4rem] flex flex-col gap-6 cmn_container md:flex-row md:items-center md:justify-between">
-        <div class="flex justify-center max-h-[320px] flex-1 md:order-2 md:h-[50vh] md:max-h-none lg:h-[70vh] lg:max-h-[700px] lg:relative lg:-bottom-12">
-          <img
-            class="h-full grayscale"
-            alt="Picture of Adnan smiling"
-            srcset="/images/hero_mobile.png 500w, /images/hero.png 1000w"
-            sizes="(max-width: 600px) 480px, 1000px"
-          />
-        </div>
-        <div class="text-start flex flex-col gap-[0.2rem] flex-1">
-          <span>
-            Hi, I'm <span class="font-bold">Adnan</span> a Software Engineer
+<Layout title="M Adnan Rizqullah - Home" variant="empty">
+  <main class="space-y-12 flex flex-col items-center justify-center h-screen text-center mx-auto px-[var(--page-pad-x)] max-w-4xl">
+    <div class="mb-8">
+      <img
+        class="h-w-80 w-80 rounded-full object-cover mx-auto grayscale"
+        alt="Picture of Adnan smiling"
+        src="/images/hero.png"
+      />
+    </div>
+    <div>
+        <h1 class="font-bold text-base mb-4 text-[var(--font-color)]">
+          Hello, I'm Adnan a Software Engineer
+        </h1>
+        <div class="text-lg text-[var(--font-color)]">
+          <span
+            class="call-to-action-emphasis-text block text-7xl"
+            data-text="I don't just develop Web Applications"
+          >
+            I don't just develop Web Applications. I Engineer them
           </span>
-          <HeadlineText />
         </div>
-        <footer class="absolute bottom-6">
-          <div class="flex gap-1.5 w-full">
-            <a href="/#portfolio_target" class="cmn_button--outline">Learn More</a>
-            <a href="/contact/" class="cmn_button--solid_secondary">Contact Me</a>
-          </div>
-        </footer>
-      </div>
-    </section>
-
-    <section class="relative bg-skin-base text-skin-base py-section-py flex flex-col gap-14">
-      <div class="cmn_container">
-        <div id="portfolio_target" class="absolute -top-24"></div>
-        <div>
-          <h2 class="text-primary font-bold mb-8">Summary</h2>
-          <div class="flex flex-col gap-10">
-            <p>
-              Adnan is a Web Development Software Engineer with 4 years of
-              experience across various company sizes from innovative seed
-              startups to industry leading decacorns. He specializes in React,
-              Next.js, Express.js, and TypeScript, building web apps and
-              defining engineering best practices. With a bachelor's in
-              Informatics and pursuing a Master's in Computer Science, He also
-              contributes to the tech community through mentoring, speaking at
-              workshops, and creating educational content.
-            </p>
-
-            <p>
-              Skills: React.js, Next.js, Vue.js, Nuxt.js, Node.js, Express.js,
-              Electron.js, Javascript, Typescript, ReasonML, Golang, Redux,
-              Zustand, Docker, Ant Design, Material UI, Chakra UI, Tailwind,
-              Emotion, Storybook, Playwright, Selenium, Jest, Vitest, SASS,
-              LESS, HTML, CSS
-            </p>
-
-            <p>
-              By the way, this website is created with Astro. Which i don't list
-              on my skills used professionally. I believe any skills needed for
-              a job can just be learned :D
-            </p>
-
-            <p>
-              Right now, <span class="font-bold">{workInfo.frontmatter.message}</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <aside class="bg-skin-base text-skin-base py-10">
-        <div class="cmn_container grid grid-cols-2 gap-8 md:grid-cols-3 lg:flex lg:justify-between">
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Companies</span>
-            <span class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">5</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Projects</span>
-            <span class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">20+</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Users</span>
-            <span class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">10M+</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Speaker Events</span>
-            <span class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">10+</span>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Mentees</span>
-            <span class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">6</span>
-          </div>
-        </div>
-      </aside>
-      <footer class="cmn_container w-full">
-        <a href="/portfolio/#background" class="cmn_button--outline_primary w-full block">
-          Read More About My Work
+    </div>
+    <div class="flex flex-col sm:flex-row sm:justify-center gap-4">
+        <a
+          href="/me"
+          class="inline-block border border-primary text-primary rounded-[0.6rem] py-[0.8rem] px-[1.2rem] text-[1.6rem] font-medium hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200"
+        >
+          View portfolio
         </a>
-      </footer>
-    </section>
-
-    <section class="py-section-py">
-      <div class="cmn_container">
-        <h2 class="text-primary font-bold mb-6">What Others Say About Me</h2>
-        <ol class="grid gap-16 mb-14 md:grid-cols-2 md:justify-center md:justify-items-center">
-          {
-            testimonies.map((v) => (
-              <li>
-                <Testimony
-                  dialogId={`dialog_testimony_${v.data.id}`}
-                  summary={v.data.shortVersion}
-                  author={v.data.author}
-                >
-                  <v.Content />
-                </Testimony>
-              </li>
-            ))
-          }
-        </ol>
-        <footer class="w-full">
-          <a
-            href="/portfolio/#social_proof"
-            class="cmn_button--outline_secondary block w-full">
-            Read More Testimonies
-          </a>
-        </footer>
-      </div>
-    </section>
-
-    <section class="py-section-py cmn_container">
-      <h2 class="text-primary font-bold mb-10">Projects</h2>
-      <ol class="grid gap-14 mb-10 md:grid-cols-2 md:justify-center md:justify-items-center">
-        {
-          projects.map((p) => (
-            <li class="md:last:col-span-2 md:last:w-1/2">
-              <Project
-                {...p.data}
-                projectDetailSlug={`/projects/${slugify(p.data.title)}`}
-              />
-            </li>
-          ))
-        }
-      </ol>
-
-      <footer class="text-center">
-        <a href="/portfolio/#projects" class="cmn_button--outline_secondary inline-block w-full">
-          Read More Projects
+        <a
+          href="/blog"
+          class="inline-block border border-primary text-primary rounded-[0.6rem] py-[0.8rem] px-[1.2rem] text-[1.6rem] font-medium hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200"
+        >
+          View engineering case studies
         </a>
-      </footer>
-    </section>
-
-    <section class="bg-skin-base text-skin-base py-section-py">
-      <div class="cmn_container">
-        <CallToActionHeadline />
-        <a href="/contact/" class="cmn_button--outline">Contact me</a>
-      </div>
-    </section>
+    </div>
   </main>
 </Layout>
 
-<script>
-  import Typed from "typed.js";
+<style>
+  .call-to-action-emphasis-text {
+    position: relative;
+    /* display: block; is handled by Tailwind 'block' class */
+    font-weight: var(--font-bold);
+    background: linear-gradient(
+      to right,
+      var(--secondary) 28%,
+      var(--primary) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for text-fill-color */
+  }
 
-  import { elNotFound } from "../scripts/error";
-
-  const setHeroAnimatedHeadline = () => {
-    const text = document.getElementById("hero__dynamic_text");
-    if (!text) {
-      throw new Error(elNotFound("hero__dynamic_text"));
-    }
-
-    try {
-      // Set to no content to avoid jitter
-      text.textContent = "";
-
-      new Typed("#hero__dynamic_text", {
-        strings: ["smooth", "reliable", "engaging", "aesthetic", "powerful"],
-        typeSpeed: 150,
-        startDelay: 300,
-        loop: true,
-        showCursor: false,
-        backSpeed: 150,
-      });
-    } catch (error) {
-      text.textContent = "smooth"; // add fallback incase type.js fails to load
-    }
-  };
-
-  const init = () => {
-    setHeroAnimatedHeadline();
-  };
-
-  init();
-
-  document.addEventListener("astro:after-swap", () => {
-    init();
-  });
-</script>
+  .call-to-action-emphasis-text::after {
+    content: attr(data-text); /* Uses the text from the data-text attribute */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1; /* Places the glow behind the main text */
+    opacity: 0.4;
+    transform: scale(1.04);
+    filter: blur(2rem) contrast(200%); /* From CallToActionHeadline.astro */
+    background-image: linear-gradient(
+      90deg, /* Equivalent to 'to right' */
+      var(--secondary) 0%,
+      var(--primary) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for text-fill-color */
+  }
+</style>

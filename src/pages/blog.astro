@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+import { slugify } from "../scripts/url";
+
+// Fetch all projects
+const projectCollection = await getCollection("projects");
+const projects = projectCollection;
+---
+
+<Layout
+  title="M Adnan Rizqullah - Software Engineer | Blog"
+>
+  <main>
+    <section class="projects_section cmn_container">
+        <div class="space-y-2 mb-8">
+            <h1 class="main_headline">Project Showcase</h1>
+            <p>
+              Welcome to my project showcase. Here you'll find a collection of my work,
+              detailing the challenges, technologies, and solutions involved.
+            </p>
+        </div>
+
+      {projects.length > 0 ? (
+        <ol class="projects_list">
+          {
+            projects.map((p) => (
+              <li>
+                <Project
+                  {...p.data}
+                  projectDetailSlug={`/projects/${slugify(p.data.title)}`}
+                />
+              </li>
+            ))
+          }
+        </ol>
+      ) : (
+        <p>No projects found at the moment. Please check back later!</p>
+      )}
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* Reusing and adapting styles similar to portfolio.astro for consistency */
+  .projects_section {
+    padding-top: var(--page-section-pad-y); /* Or adjust as needed */
+    padding-bottom: var(--page-section-pad-y);
+  }
+
+  .main_headline {
+    color: var(--primary);
+    margin-bottom: 1.6rem; /* Adjust spacing */
+  }
+
+  .section_description {
+    margin-bottom: 3.2rem; /* Adjust spacing */
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem; /* leading-7 */
+  }
+
+  .projects_list {
+    list-style-type: none;
+    display: grid;
+    gap: 3.6rem; /* Consistent with portfolio */
+  }
+
+  @media screen and (min-width: 650px) {
+    .projects_list {
+      grid-template-columns: 1fr 1fr; /* Consistent with portfolio */
+    }
+  }
+</style>
