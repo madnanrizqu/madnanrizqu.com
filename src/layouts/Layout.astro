@@ -62,10 +62,10 @@ const isProd = import.meta.env.PROD;
   </head>
   <body
     class={variant === "empty"
-      ? "h-screen h-[100dvh] flex justify-center items-center"
+      ? "h-[100dvh] flex justify-center items-center"
       : variant === "top-padding"
-        ? "min-h-screen min-h-[100dvh] flex flex-col pt-[12rem]"
-        : "min-h-screen min-h-[100dvh] flex flex-col"}
+        ? "min-h-[100dvh] flex flex-col pt-[12rem]"
+        : "min-h-[100dvh] flex flex-col"}
   >
     {variant !== "empty" && <Navbar />}
     <slot />
