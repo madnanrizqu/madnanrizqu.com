@@ -242,10 +242,6 @@ ol {
   }
 }
 
-.cmn_button--outline:hover {
-  color: var(--secondary);
-}
-
 .cmn_button--outline_white {
   display: inline-block;
   border: 1px solid var(--bg-color);
@@ -259,10 +255,6 @@ ol {
   .cmn_button--outline_white {
     font-size: var(--btn-font-size);
   }
-}
-
-.cmn_button--outline_white:hover {
-  color: var(--secondary);
 }
 
 .cmn_button--outline_primary {
@@ -280,10 +272,6 @@ ol {
   }
 }
 
-.cmn_button--outline_secondary:hover {
-  color: var(--secondary);
-}
-
 .cmn_button--outline_secondary {
   display: inline-block;
   border: 1px solid var(--secondary);
@@ -297,10 +285,6 @@ ol {
   .cmn_button--outline_secondary {
     font-size: var(--btn-font-size);
   }
-}
-
-.cmn_button--outline_secondary:hover {
-  color: var(--secondary);
 }
 
 .cmn_button--solid_secondary {
@@ -319,10 +303,6 @@ ol {
   }
 }
 
-.cmn_button--solid_secondary:hover {
-  color: var(--white);
-}
-
 .cmn_button--solid_primary {
   display: inline-block;
   border: none;
@@ -337,8 +317,4 @@ ol {
   .cmn_button--solid_primary {
     font-size: var(--btn-font-size);
   }
-}
-
-.cmn_button--solid_primary:hover {
-  color: var(--white);
 }

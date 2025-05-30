@@ -108,9 +108,6 @@ export default {
           borderRadius: "var(--btn-bor-rad)",
           fontSize: "var(--btn-font-size-mobile)",
           textAlign: "center",
-          "&:hover": {
-            color: "var(--secondary)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },
@@ -135,9 +132,6 @@ export default {
           fontSize: "var(--btn-font-size-mobile)",
           textAlign: "center",
           color: "var(--secondary)",
-          "&:hover": {
-            color: "var(--secondary)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },
@@ -151,9 +145,6 @@ export default {
           background: "var(--secondary)",
           color: "var(--white)",
           textAlign: "center",
-          "&:hover": {
-            color: "var(--white)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },

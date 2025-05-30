@@ -11,33 +11,34 @@ const projects = projectCollection;
 
 <Layout
   title="M Adnan Rizqullah - Software Engineer | Blog"
+  variant="top-padding"
 >
   <main>
     <section class="projects_section cmn_container">
-        <div class="space-y-2 mb-8">
-            <h1 class="main_headline">Project Showcase</h1>
-            <p>
-              Welcome to my project showcase. Here you'll find a collection of my work,
-              detailing the challenges, technologies, and solutions involved.
-            </p>
-        </div>
+      <div class="space-y-2 mb-8">
+        <h1 class="main_headline">Project Showcase</h1>
+        <p>
+          Welcome to my project showcase. Here you'll find a collection of my
+          work, detailing the challenges, technologies, and solutions involved.
+        </p>
+      </div>
 
-      {projects.length > 0 ? (
-        <ol class="projects_list">
-          {
-            projects.map((p) => (
+      {
+        projects.length > 0 ? (
+          <ol class="projects_list">
+            {projects.map((p) => (
               <li>
                 <Project
                   {...p.data}
                   projectDetailSlug={`/projects/${slugify(p.data.title)}`}
                 />
               </li>
-            ))
-          }
-        </ol>
-      ) : (
-        <p>No projects found at the moment. Please check back later!</p>
-      )}
+            ))}
+          </ol>
+        ) : (
+          <p>No projects found at the moment. Please check back later!</p>
+        )
+      }
     </section>
   </main>
 </Layout>
