@@ -17,10 +17,8 @@ const testimonies = await Promise.all(
   }),
 );
 
-const projects = await getCollection("projects"); // Renamed to avoid conflict with 'projects' variable if it was meant to be different
+const projects = await getCollection("projects");
 
-// loads work availability
-import * as workInfo from "../info/work-availability.md";
 import CallToActionHeadline from "../components/CallToActionHeadline.astro";
 ---
 
@@ -55,15 +53,9 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
             </p>
 
             <p>
-              By the way, this website is created with Astro. Which i don't list
-              on my skills used professionally. I believe any skills needed for
-              a job can just be learned :D
-            </p>
-
-            <p>
-              Right now, <span class="font-bold"
-                >{workInfo.frontmatter.message}</span
-              >
+              By the way, this website is created with Astro. Which is not
+              listed used professionally. Any skills needed for a job should
+              learnable, as long as ones fundementals are appropriate
             </p>
           </div>
         </div>
@@ -125,11 +117,8 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
         </div>
       </aside>
       <footer class="cmn_container w-full">
-        <a
-          href="/portfolio/#background"
-          class="cmn_button--outline_primary w-full block"
-        >
-          Read More About My Work
+        <a href="/contact" class="cmn_button--outline_primary w-full block">
+          Contact me
         </a>
       </footer>
     </section>
