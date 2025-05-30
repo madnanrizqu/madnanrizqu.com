@@ -11,42 +11,14 @@ import ContactForm from "../components/ContactForm";
   variant="top-padding"
 >
   <main>
-    <section class="services cmn_container">
-      <h1 class="main_headline">Contact</h1>
-
-      <div class="services__info">
-        <h2 class="services__headline">Provided Services</h2>
-        <p>I provide these services</p>
-        <ol class="services__list">
-          <li>
-            <span
-              >Web sites/apps/services/APIs development or redevelopment</span
-            >
-          </li>
-          <li><span>Web performacne optimization</span></li>
-          <li><span>Bug fixes</span></li>
-          <li><span>Mentoring</span></li>
-          <li><span>Workshop speaker</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="available cmn_container">
-      <h2 class="available__headline">Work Availability</h2>
-      <p>
-        Right now, <span class="available__emphasis"
-          >{workInfo.frontmatter.message}</span
-        >
-      </p>
-    </section>
-
     <section class="contact cmn_container">
-      <h2 class="contact__headline">Let's Talk</h2>
+      <h1 class="contact__headline">Let's Talk</h1>
       <p>
         Are you looking for someone to solve your
         <span class="contact__emphasis">web development needs</span> ? Let's discuss
-        more! Please fill in this form
+        more!
       </p>
+      <p>Please fill in this form</p>
 
       <div class="contact__content">
         <ContactForm client:visible />
