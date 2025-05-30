@@ -80,17 +80,6 @@ export default {
         "::backdrop": {
           background: "rgba(0, 0, 0, 0.3)",
         },
-        "body::-webkit-scrollbar": {
-          width: "8px",
-        },
-        "body::-webkit-scrollbar-track": {
-          boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.3)",
-        },
-        "body::-webkit-scrollbar-thumb": {
-          backgroundImage:
-            "linear-gradient(180deg, rgba(31, 170, 200, 0.4), rgba(31, 170, 200, 0.4))",
-          borderRadius: "10px",
-        },
       });
 
       // Component classes mapped from common.css
