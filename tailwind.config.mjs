@@ -80,17 +80,6 @@ export default {
         "::backdrop": {
           background: "rgba(0, 0, 0, 0.3)",
         },
-        "body::-webkit-scrollbar": {
-          width: "8px",
-        },
-        "body::-webkit-scrollbar-track": {
-          boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.3)",
-        },
-        "body::-webkit-scrollbar-thumb": {
-          backgroundImage:
-            "linear-gradient(180deg, rgba(31, 170, 200, 0.4), rgba(31, 170, 200, 0.4))",
-          borderRadius: "10px",
-        },
       });
 
       // Component classes mapped from common.css
@@ -108,9 +97,6 @@ export default {
           borderRadius: "var(--btn-bor-rad)",
           fontSize: "var(--btn-font-size-mobile)",
           textAlign: "center",
-          "&:hover": {
-            color: "var(--secondary)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },
@@ -135,9 +121,6 @@ export default {
           fontSize: "var(--btn-font-size-mobile)",
           textAlign: "center",
           color: "var(--secondary)",
-          "&:hover": {
-            color: "var(--secondary)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },
@@ -151,9 +134,6 @@ export default {
           background: "var(--secondary)",
           color: "var(--white)",
           textAlign: "center",
-          "&:hover": {
-            color: "var(--white)",
-          },
           "@media screen and (min-width: 700px)": {
             fontSize: "var(--btn-font-size)",
           },

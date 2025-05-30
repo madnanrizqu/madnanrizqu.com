@@ -1,53 +1,108 @@
-<footer class="footer" transition:persist>
+---
+import Logo from "./Logo.astro";
+---
+
+<footer class="footer mt-auto" transition:persist>
   <div class="footer__inner cmn_container">
     <div class="footer__links">
       <div>
-        <ol class="footer__site_links">
-          <li><a class="footer__site_link" href="/">Home</a></li>
-          <li>
-            <a class="footer__site_link" href="/portfolio/">Portfolio</a>
-          </li>
-          <li><a class="footer__site_link" href="/about/">About</a></li>
-          <li>
-            <a class="footer__site_link" href="/contact/">Contact</a>
-          </li>
-        </ol>
-      </div>
-      <div>
         <ol class="footer__social_medias">
           <li>
-            <a href="https://www.linkedin.com/in/madnanrizqu/">
-              <img
-                height="24"
+            <a
+              class="footer__site_link"
+              href="https://www.linkedin.com/in/madnanrizqu/"
+            >
+              <svg
                 width="24"
-                src="/images/linkedin.svg"
-                alt="LindedIn logo"
-              />
+                height="24"
+                viewBox="0 0 12 12"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_2011_348)">
+                  <path
+                    d="M11.1117 0H0.885937C0.396094 0 0 0.386719 0 0.864844V11.1328C0 11.6109 0.396094 12 0.885937 12H11.1117C11.6016 12 12 11.6109 12 11.1352V0.864844C12 0.386719 11.6016 0 11.1117 0ZM3.56016 10.2258H1.77891V4.49766H3.56016V10.2258ZM2.66953 3.71719C2.09766 3.71719 1.63594 3.25547 1.63594 2.68594C1.63594 2.11641 2.09766 1.65469 2.66953 1.65469C3.23906 1.65469 3.70078 2.11641 3.70078 2.68594C3.70078 3.25312 3.23906 3.71719 2.66953 3.71719ZM10.2258 10.2258H8.44687V7.44141C8.44687 6.77812 8.43516 5.92266 7.52109 5.92266C6.59531 5.92266 6.45469 6.64687 6.45469 7.39453V10.2258H4.67813V4.49766H6.38437V5.28047H6.40781C6.64453 4.83047 7.22578 4.35469 8.09063 4.35469C9.89297 4.35469 10.2258 5.54063 10.2258 7.08281V10.2258Z"
+                    fill="currentColor"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2011_348">
+                    <rect width="12" height="12" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
             </a>
           </li>
           <li>
-            <a href="https://github.com/rizquadnan">
-              <img
-                height="24"
+            <a class="footer__site_link" href="https://github.com/rizquadnan">
+              <svg
                 width="24"
-                src="/images/github.svg"
-                alt="Github logo"
-              />
+                height="24"
+                viewBox="0 0 12 12"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_2011_357)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.00496 0C2.68437 0 0 2.70416 0 6.04958C0 8.72376 1.71997 10.9874 4.10603 11.7886C4.40435 11.8488 4.51362 11.6584 4.51362 11.4982C4.51362 11.358 4.50378 10.8773 4.50378 10.3764C2.83335 10.737 2.4855 9.65522 2.4855 9.65522C2.21705 8.9541 1.81929 8.7739 1.81929 8.7739C1.27255 8.40331 1.85911 8.40331 1.85911 8.40331C2.46558 8.44338 2.78381 9.02429 2.78381 9.02429C3.32059 9.94567 4.18555 9.68533 4.53353 9.52505C4.58319 9.13442 4.74237 8.864 4.91138 8.7138C3.57908 8.57355 2.17734 8.05275 2.17734 5.72902C2.17734 5.06797 2.4158 4.52714 2.79365 4.10652C2.73403 3.95631 2.5252 3.33522 2.85338 2.50393C2.85338 2.50393 3.36042 2.34365 4.50366 3.12491C4.99313 2.99248 5.4979 2.92512 6.00496 2.92455C6.512 2.92455 7.02886 2.99474 7.50614 3.12491C8.64951 2.34365 9.15655 2.50393 9.15655 2.50393C9.48473 3.33522 9.27577 3.95631 9.21616 4.10652C9.60396 4.52714 9.83259 5.06797 9.83259 5.72902C9.83259 8.05275 8.43085 8.56347 7.0886 8.7138C7.30739 8.90407 7.49619 9.26459 7.49619 9.83553C7.49619 10.6468 7.48635 11.2979 7.48635 11.4981C7.48635 11.6584 7.59575 11.8488 7.89395 11.7887C10.28 10.9873 12 8.72376 12 6.04958C12.0098 2.70416 9.3156 0 6.00496 0Z"
+                    fill="currentColor"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2011_357">
+                    <rect width="12" height="12" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
             </a>
           </li>
           <li>
-            <a href="mailto:madnanrizqullah@gmail.com">
-              <img
-                height="24"
+            <a
+              class="footer__site_link"
+              href="mailto:madnanrizqullah@gmail.com"
+            >
+              <svg
                 width="24"
-                src="/images/google.svg"
-                alt="Google logo"
-              />
+                height="24"
+                viewBox="0 0 12 12"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_2011_350)">
+                  <path
+                    d="M6 4.90918V7.23282H9.22908C9.08729 7.98009 8.66178 8.61284 8.02361 9.03829L9.97087 10.5492C11.1054 9.50197 11.76 7.96378 11.76 6.13651C11.76 5.71107 11.7218 5.30194 11.6509 4.90925L6 4.90918Z"
+                    fill="currentColor"></path>
+                  <path
+                    d="M2.63731 7.14209L2.19813 7.47828L0.643555 8.68917C1.63082 10.6473 3.65431 12.0001 5.99975 12.0001C7.61971 12.0001 8.97787 11.4655 9.97062 10.5492L8.02336 9.03827C7.48881 9.39827 6.80699 9.61647 5.99975 9.61647C4.43976 9.61647 3.11434 8.56375 2.63976 7.14555L2.63731 7.14209Z"
+                    fill="currentColor"></path>
+                  <path
+                    d="M0.64359 3.31079C0.234521 4.11803 0 5.02895 0 5.99984C0 6.97074 0.234521 7.88166 0.64359 8.6889C0.64359 8.69432 2.63999 7.13981 2.63999 7.13981C2.51999 6.77981 2.44906 6.39802 2.44906 5.99978C2.44906 5.60155 2.51999 5.21975 2.63999 4.85976L0.64359 3.31079Z"
+                    fill="currentColor"></path>
+                  <path
+                    d="M5.99987 2.38909C6.88352 2.38909 7.66896 2.69454 8.29623 3.28363L10.0144 1.56547C8.97258 0.594583 7.61989 0 5.99987 0C3.65443 0 1.63082 1.34727 0.643555 3.31091L2.63989 4.86001C3.11441 3.44181 4.43988 2.38909 5.99987 2.38909Z"
+                    fill="currentColor"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2011_350">
+                    <rect width="12" height="12" fill="currentColor"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/madnanrizqu">
-              <img height="24" width="24" src="/images/x.svg" alt="X logo" />
+            <a class="footer__site_link" href="https://twitter.com/madnanrizqu">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 12 12"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.16314 0.951904H10.8499L7.16486 5.16365L11.5 10.8949H8.10562L5.44702 7.41892L2.40497 10.8949H0.717216L4.65872 6.38995L0.5 0.951904H3.98055L6.3837 4.12907L9.16314 0.951904ZM8.57115 9.88529H9.50579L3.4727 1.90847H2.46973L8.57115 9.88529Z"
+                  fill="currentColor"></path>
+              </svg>
             </a>
           </li>
         </ol>
@@ -56,16 +111,10 @@
     <div class="footer__botttom">
       <div class="footer__identity">
         <div>
-          <img
-            src="/images/logo_white.png"
-            alt="Adnan Logo"
-            width="26"
-            height="19"
-          />
+          <Logo />
         </div>
         <span class="footer__identity_name">Muhammad Adnan R</span>
       </div>
-      <span class="footer__note">Made with ❤️ @ 2024 </span>
     </div>
   </div>
 </footer>
@@ -74,17 +123,17 @@
   @import url("/common.css");
 
   .footer {
-    background-color: var(--grey-3);
-    color: var(--white);
-    padding-top: 4.8rem;
-    padding-bottom: 4.8rem;
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
   }
 
   .footer__links {
     display: flex;
     flex-direction: column;
     gap: 2.6rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3.2rem;
   }
 
   .footer__site_links,
@@ -96,17 +145,12 @@
   }
 
   .footer__site_link {
-    color: var(--white);
-    font-size: 1.6rem;
-  }
-
-  .footer__site_link:hover {
-    color: var(--primary);
+    color: var(--bg-color);
   }
 
   .footer__botttom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
@@ -118,10 +162,6 @@
   }
 
   .footer__identity_name {
-    font-size: 1rem;
-  }
-
-  .footer__note {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 </style>

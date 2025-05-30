@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { slugify } from "../scripts/url";
+import BlogCard from "../components/BlogCard.astro";
+
+const blogCollection = await getCollection("blogs");
+const posts = blogCollection.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout
+  title="M Adnan Rizqullah - Software Engineer | Blog"
+  variant="top-padding"
+>
+  <main class="cmn_container pb-32">
+    <section>
+      <div class="mb-8 md:mb-12 md:text-left">
+        <h1 class="text-primary">My Blog</h1>
+        <p>
+          Welcome to my blog. Here I share my thoughts on web development,
+          technology, and other interesting topics.
+        </p>
+      </div>
+
+      {
+        posts.length > 0 ? (
+          <ol class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {posts.map((post) => (
+              <li>
+                <BlogCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  pubDate={post.data.pubDate}
+                  slug={`/blog/${slugify(post.data.title)}`}
+                  imageSrc={post.data.imageSrc}
+                  imageAlt={post.data.imageAlt}
+                />
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p class="text-center text-gray-600 dark:text-gray-400 py-10">
+            No blog posts found at the moment. Please check back later!
+          </p>
+        )
+      }
+    </section>
+  </main>
+</Layout>

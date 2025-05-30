@@ -2,11 +2,11 @@
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import '../styles/global.css'
+import "../styles/global.css";
 
 interface Props {
   title: string;
-  variant?: "empty" | "no-top-padding" | "top-padding";
+  variant?: "empty" | "no-top-padding" | "top-padding" | "navbar-only";
 }
 
 const { title, variant = "no-top-padding" } = Astro.props;
@@ -47,9 +47,7 @@ const isProd = import.meta.env.PROD;
 
     <script is:inline>
       const initTheme = () => {
-        if (
-          localStorage.getItem('data-theme')
-        ) {
+        if (localStorage.getItem("data-theme")) {
           document.documentElement.setAttribute(
             "data-theme",
             localStorage.getItem("data-theme"),
@@ -66,10 +64,11 @@ const isProd = import.meta.env.PROD;
     class={variant === "empty"
       ? "h-screen h-[100dvh] flex justify-center items-center"
       : variant === "top-padding"
-        ? "pt-[12rem]"
-        : undefined}
+        ? "min-h-screen min-h-[100dvh] flex flex-col pt-[12rem]"
+        : "min-h-screen min-h-[100dvh] flex flex-col"}
   >
     {variant !== "empty" && <Navbar />}
     <slot />
-    {variant !== "empty" && <Footer />}
+    {variant !== "empty" && variant !== "navbar-only" && <Footer />}
+  </body>
 </html>

@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
-import Alert from "./Alert";
 import classes from "./ThemePicker.module.css";
 import clsx from "clsx";
 
 type ThemeVariant = "system" | "light" | "dark";
 
 const ThemePicker = () => {
-  const [showNews, setShowNews] = useState(() => {
-    return localStorage.getItem("hasSeenNews") !== "true";
-  });
   const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
 
   useEffect(() => {
@@ -28,16 +24,6 @@ const ThemePicker = () => {
     <section className={classes.root}>
       <span className={classes.theme_headline}>Pick a theme</span>
 
-      {showNews && (
-        <Alert
-          label="More customization options are coming soon!"
-          onClose={() => {
-            setShowNews(false);
-            localStorage.setItem("hasSeenNews", "true");
-          }}
-        />
-      )}
-
       <ul className={classes.theme_list}>
         <li>
           <button
@@ -46,9 +32,7 @@ const ThemePicker = () => {
             })}
             onClick={() => handleClickTheme("system")}
           >
-            <span className={classes.theme_option__label}>
-              Sync with system / auto
-            </span>
+            <span className={classes.theme_option__label}>Detect system</span>
             <svg
               width={24}
               height={24}

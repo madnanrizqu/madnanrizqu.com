@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  slug: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
+---
+
+<article
+  class="bg-grey-2 text-white rounded-xl overflow-hidden flex flex-col h-full shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1"
+>
+  {
+    imageSrc && (
+      <div class="w-full max-h-62 overflow-hidden flex justify-center items-center bg-grey-3">
+        <a href={slug}>
+          <img
+            src={imageSrc}
+            alt={imageAlt || title}
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </a>
+      </div>
+    )
+  }
+  <section class="p-8 md:p-6 flex-grow">
+    <a href={slug}>
+      <h3 class="font-bold mb-2 text-primary hover:underline">
+        {title}
+      </h3>
+    </a>
+    <time datetime={pubDate.toISOString()} class="text-[1.4rem]">
+      {
+        pubDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }
+    </time>
+    <p class="leading-relaxed mb-4 line-clamp-3">
+      {description}
+    </p>
+  </section>
+  <footer class="p-8 md:p-6 pt-0 mt-auto">
+    <a href={slug} class="cmn_button--outline_primary w-full block text-center">
+      Read more
+    </a>
+  </footer>
+</article>

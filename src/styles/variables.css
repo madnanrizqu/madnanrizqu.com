@@ -2,8 +2,8 @@
   --primary: #1faac8;
   --primary-100: #d4f5f9;
   --primary-300: #77d7e9;
-  --secondary: #f75c03;
-  --secondary-100: #ffeed3;
+  --secondary: #9a031e;
+  --secondary-100: #f40530;
   --success: #49d49d;
   --success-200: #a9f1ce;
   --success-700: #067653;
@@ -42,12 +42,10 @@
   --bg-color: var(--black);
   --font-color: var(--white);
   --bg-color-hero: rgba(0, 0, 0, 0.1);
-  --scrollbar-color: var(--secondary);
 }
 
 :root[data-theme="light"] {
   --bg-color: var(--white);
   --font-color: var(--black);
   --bg-color-hero: rgba(255, 255, 255, 0.1);
-  --scrollbar-color: var(--primary);
 }

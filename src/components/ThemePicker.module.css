@@ -23,8 +23,9 @@
 }
 
 .theme_option--active {
-  border-color: var(--success-700);
-  background-color: var(--success);
+  border-color: var(--secondary);
+  background-color: var(--secondary-100);
+  color: white;
 }
 
 .theme_option__label {
