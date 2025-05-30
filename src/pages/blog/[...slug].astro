@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "../../scripts/url";
+import Layout from "../../layouts/Layout.astro";
+import MdContainer from "../../components/MdContainer.astro"; // This already uses Tailwind's prose
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blogs");
+  return blogEntries.map((entry) => ({
+    params: { slug: slugify(entry.data.title) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={`M Adnan Rizqullah, Software Engineer | Blog - ${entry.data.title}`}
+  variant="top-padding"
+>
+  <div class="cmn_container py-8 md:py-12 flex flex-col items-center">
+    <div class="w-full">
+      <button
+        id="back_button"
+        class="cmn_button--outline mb-6 md:mb-8 inline-block"
+      >
+        Go back to Blog
+      </button>
+
+      <MdContainer>
+        {/* MdContainer uses Tailwind prose classes */}
+        <header>
+          {
+            entry.data.imageSrc && (
+              <div class="mb-6 md:mb-8">
+                <Image
+                  src={entry.data.imageSrc}
+                  alt={entry.data.imageAlt || entry.data.title}
+                  width={770}
+                  height={400}
+                  class="w-full h-auto object-cover rounded-lg shadow-md"
+                />
+              </div>
+            )
+          }
+          <h1 class="text-secondary font-bold">
+            {entry.data.title}
+          </h1>
+          <time datetime={entry.data.pubDate.toISOString()}>
+            {
+              entry.data.pubDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+          <p>
+            {entry.data.description}
+          </p>
+        </header>
+        <Content />
+      </MdContainer>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // import { elNotFound } from "../../scripts/error"; // elNotFound is not used here
+
+  const backFunctionality = () => {
+    const button = document.getElementById("back_button");
+    if (!button) {
+      // console.warn("Back button not found"); // elNotFound was not defined in your provided scripts
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      window.location.href = "/blog";
+    });
+  };
+
+  backFunctionality();
+  document.addEventListener("astro:after-swap", backFunctionality);
+</script>

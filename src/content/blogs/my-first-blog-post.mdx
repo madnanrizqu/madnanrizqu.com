@@ -1,0 +1,36 @@
+---
+title: "My First Blog Post"
+description: "This is a short description of my very first blog post on this new platform!"
+pubDate: 2024-03-15
+imageSrc: "/images/grab_illustration.svg" # Example image
+imageAlt: "Illustration for the first blog post" # Example alt text
+---
+
+import { Picture } from "astro:assets";
+import MdImageContainer from "../../components/MdImageContainer.astro"; // Assuming path from content dir
+
+# Welcome to My Blog!
+
+This is the content of my first blog post. I'm excited to start sharing my thoughts and experiences here.
+
+## Markdown Works!
+
+You can use all the standard markdown features:
+
+-   Lists
+-   **Bold text**
+-   *Italic text*
+-   [Links](https://astro.build)
+
+<MdImageContainer>
+  <Picture
+    src="/images/grab_illustration.svg"
+    alt="A descriptive alt text for the image"
+    width="770"
+    height="400"
+  />
+</MdImageContainer>
+
+You can also include components, like this image container.
+
+Stay tuned for more posts!
