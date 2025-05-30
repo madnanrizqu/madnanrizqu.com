@@ -1,0 +1,531 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+import Testimony from "../components/Testimony.astro";
+import Project from "../components/Project.astro";
+import { slugify } from "../scripts/url";
+
+const testimoniesCollections = await getCollection("testimonies");
+const testimonies = await Promise.all(
+  testimoniesCollections.map(async (v) => {
+    const { Content } = await v.render();
+    return {
+      ...v,
+      Content,
+    };
+  }),
+);
+
+const projects = await getCollection("projects"); // Renamed to avoid conflict with 'projects' variable if it was meant to be different
+
+// loads work availability
+import * as workInfo from "../info/work-availability.md";
+import CallToActionHeadline from "../components/CallToActionHeadline.astro";
+---
+
+<Layout
+  title="M Adnan Rizqullah, Software Engineer | Portfolio"
+  variant="top-padding"
+>
+  <main class="space-y-32 my-36">
+    <section class="relative bg-skin-base text-skin-base flex flex-col gap-14">
+      <div class="cmn_container">
+        <div id="portfolio_target" class="absolute -top-24"></div>
+        <div>
+          <h2 class="text-secondary font-bold mb-8">Summary</h2>
+          <div class="flex flex-col gap-10">
+            <p>
+              Adnan is a Web Development Software Engineer with 4 years of
+              experience across various company sizes from innovative seed
+              startups to industry leading decacorns. He specializes in React,
+              Next.js, Express.js, and TypeScript, building web apps and
+              defining engineering best practices. With a bachelor's in
+              Informatics and pursuing a Master's in Computer Science, He also
+              contributes to the tech community through mentoring, speaking at
+              workshops, and creating educational content.
+            </p>
+
+            <p>
+              Skills: React.js, Next.js, Vue.js, Nuxt.js, Node.js, Express.js,
+              Electron.js, Javascript, Typescript, ReasonML, Golang, Redux,
+              Zustand, Docker, Ant Design, Material UI, Chakra UI, Tailwind,
+              Emotion, Storybook, Playwright, Selenium, Jest, Vitest, SASS,
+              LESS, HTML, CSS
+            </p>
+
+            <p>
+              By the way, this website is created with Astro. Which i don't list
+              on my skills used professionally. I believe any skills needed for
+              a job can just be learned :D
+            </p>
+
+            <p>
+              Right now, <span class="font-bold"
+                >{workInfo.frontmatter.message}</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <aside class="bg-skin-base text-skin-base py-10">
+        <div
+          class="cmn_container grid grid-cols-2 gap-8 md:grid-cols-3 lg:flex lg:justify-between"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Companies</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >5</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Projects</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >20+</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Users</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >10M+</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Speaker Events</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >10+</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Mentees</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >6</span
+            >
+          </div>
+        </div>
+      </aside>
+      <footer class="cmn_container w-full">
+        <a
+          href="/portfolio/#background"
+          class="cmn_button--outline_primary w-full block"
+        >
+          Read More About My Work
+        </a>
+      </footer>
+    </section>
+
+    <section id="projects" class="bg-[var(--bg-color)]">
+      <div class="cmn_container">
+        <h2 class="text-secondary font-bold mb-[2.4rem]">Projects</h2>
+        <ol
+          class="list-none grid gap-[3.6rem] mb-[2.4rem] min-[650px]:grid-cols-2 min-[650px]:justify-center min-[650px]:justify-items-center"
+        >
+          {
+            projects.map((p) => (
+              <li>
+                <Project
+                  {...p.data}
+                  projectDetailSlug={`/projects/${slugify(p.data.title)}`}
+                />
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="social_proof" id="social_proof">
+      <div class="cmn_container">
+        <h2 class="text-secondary font-bold mb-[1.6rem]">
+          What Others Say About Me
+        </h2>
+        <ol
+          class="list-none grid gap-[3.8rem] mb-[3.6rem] min-[650px]:grid-cols-2 min-[650px]:justify-center min-[650px]:justify-items-center"
+        >
+          {
+            testimonies.map((v) => (
+              <li>
+                <Testimony
+                  dialogId={`dialog_testimony_${v.data.id}`}
+                  summary={v.data.shortVersion}
+                  author={v.data.author}
+                >
+                  <v.Content />
+                </Testimony>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-[var(--bg-color)] text-[var(--font-color)]">
+      <div class="cmn_container flex flex-col gap-[2.4rem]">
+        <h2 class="text-secondary">Technologies I Use</h2>
+        <p>These are the tech that I have used professionaly</p>
+
+        <ol class="flex flex-col gap-[2.4rem]">
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Progamming Language</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >TypeScript</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Node.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >JavaScript</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >ReasonML</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Python</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Go</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>JavaScript Framework</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Next.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Express.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Nest.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >React.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Vue.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Nuxt.js</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Electron.js</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Styling</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >CSS</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >LESS</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >SASS</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Tailwind</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Emotion</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>UI Libraries</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Antd</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Material</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Chakra UI</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Bulma</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Bootsrap</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Testing</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Jest</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Vitest</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >React Testing Library</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Cypress</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Selenium</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>State Management</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Zustand</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Redux</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Vuex</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Data Fetching</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Axios</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >React Query</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >useSWR</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Redux Thunk</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Database</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >SQL (Postgres)</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Other</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Webpack</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Storybook</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Docker</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >HTML</span
+                >
+              </li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>3rd Party Services</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Github</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Gitlab</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >JIRA</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Grafana</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Jenkins</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Google Analytics</span
+                >
+              </li>
+              <li>
+                <span
+                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
+                  >Google Lighthouse</span
+                >
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-skin-base text-skin-base">
+      <div class="cmn_container">
+        <CallToActionHeadline />
+        <a href="/contact/" class="cmn_button--outline">Contact me</a>
+      </div>
+    </section>
+  </main>
+</Layout>
