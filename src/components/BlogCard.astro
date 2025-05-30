@@ -16,7 +16,7 @@ const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
 >
   {
     imageSrc && (
-      <div class="w-full max-h-52 overflow-hidden flex justify-center items-center bg-grey-3">
+      <div class="w-full max-h-62 overflow-hidden flex justify-center items-center bg-grey-3">
         <a href={slug}>
           <img
             src={imageSrc}
@@ -28,13 +28,13 @@ const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
       </div>
     )
   }
-  <section class="p-4 md:p-6 flex-grow">
+  <section class="p-8 md:p-6 flex-grow">
     <a href={slug}>
       <h3 class="font-bold mb-2 text-primary hover:underline">
         {title}
       </h3>
     </a>
-    <time datetime={pubDate.toISOString()}>
+    <time datetime={pubDate.toISOString()} class="text-[1.4rem]">
       {
         pubDate.toLocaleDateString("en-US", {
           year: "numeric",
@@ -43,11 +43,11 @@ const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
         })
       }
     </time>
-    <p class="text-sm md:text-base leading-relaxed mb-4 line-clamp-3">
+    <p class="leading-relaxed mb-4 line-clamp-3">
       {description}
     </p>
   </section>
-  <footer class="p-4 md:p-6 pt-0 mt-auto">
+  <footer class="p-8 md:p-6 pt-0 mt-auto">
     <a href={slug} class="cmn_button--outline_primary w-full block text-center">
       Read more
     </a>

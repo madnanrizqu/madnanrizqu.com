@@ -21,7 +21,7 @@ const { Content } = await entry.render();
   title={`M Adnan Rizqullah, Software Engineer | Blog - ${entry.data.title}`}
   variant="top-padding"
 >
-  <div class="cmn_container py-8 md:py-12 flex flex-col items-center">
+  <div class="cmn_container pb-32 flex flex-col items-center">
     <div class="w-full">
       <button
         id="back_button"
@@ -69,12 +69,9 @@ const { Content } = await entry.render();
 </Layout>
 
 <script>
-  // import { elNotFound } from "../../scripts/error"; // elNotFound is not used here
-
   const backFunctionality = () => {
     const button = document.getElementById("back_button");
     if (!button) {
-      // console.warn("Back button not found"); // elNotFound was not defined in your provided scripts
       return;
     }
 

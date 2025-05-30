@@ -1,0 +1,35 @@
+---
+title: "E2E Testing: Our Secret Weapon for Fearless Engineering Improvements"
+description: "A blog post about how E2E testing helped us achieve more impactful engineering initiatives."
+pubDate: 2025-03-30
+imageSrc: "/images/engineered-e2e.jpg"
+imageAlt: "Illustration for E2E testing blog post"
+---
+
+import { Picture } from "astro:assets";
+import MdImageContainer from "../../components/MdImageContainer.astro";
+
+# E2E Testing: Our Secret Weapon for Fearless Engineering Improvements 💪
+
+One day we faced a demanding task: Upgrading two major versions of our web framework. Without automated testing in our codebase, this was a significant risk that could kept us up at night 😱
+
+The solution: We implemented Playwright for E2E testing, giving us a quick way to validate critical user paths, focusing on high-impact coverage. Essentially the E2E works as a smoke tests for us, ensuring the upgrade wouldn't break the app in painfully obvious ways (for those not familiar with E2E, I'll leave a link in comments).
+
+We worked from 0% code coverage to 79.92% with just 65 test suites in only 2 weeks of writing tests. Kudos to the team for achieving this Azad Shukor Adam Sulthoni Akbar Iqbal Mohamad Zainuddin 🤝
+
+Eventually, we had zero detected regression issues related to the upgrade 🎉
+
+That's not all! Besides the web framework upgrade, we used E2E to guide us in making many other risky engineering work:
+
+1.  Optimizing our docker image size by 51%
+2.  Improving maintainability of our codebase by removing 3,353 unused lines of code, eliminating 7 unused dependencies, and increasing code collocation by 1,353 lines of code
+3.  Migrating our codebase to a monorepo architecture
+4.  Upgrading our Node.js version from 18.X to the latest 20.X
+
+And there's bound to be more to come! Having E2E has been a game changer for us, guiding us to achieve more impactful engineering initiatives 🎯
+
+In the future, we're planning to add more proper and comprehensive automated testing, starting from integration down to unit tests, which will better alert us to any potentially breaking changes.
+
+Back to you: Do you have automated testing in your codebase? What benefits do you find them provide?
+
+That's it! Hopefully that was useful. See you later in the next one 👋
