@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// loads work availability
-import * as workInfo from "../info/work-availability.md";
 import ContactForm from "../components/ContactForm";
 ---
 
@@ -21,7 +19,7 @@ import ContactForm from "../components/ContactForm";
       <p>Please fill in this form</p>
 
       <div class="contact__content">
-        <ContactForm client:visible />
+        <ContactForm client:idle />
 
         <aside class="contact__alternative">
           <span>You can also contact me through my social medias</span>
