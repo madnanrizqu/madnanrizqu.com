@@ -4,7 +4,7 @@ shortVersion: “He possesses exceptional technical skills, consistently
   tackling difficult projects with great success and excellent
   implementation. His code is reliable and well-structured, which
   greatly contributes to the overall success of our projects.”
-author: Software Engineer, Grab
+author: Novi Steven, Software Engineer, Grab
 ---
 
 "It is a pleasure to work on the same team as Adnan, and

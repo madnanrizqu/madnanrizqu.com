@@ -5,7 +5,7 @@ shortVersion: “Adnan's communication skills stand out. He has the ability to
   overall output. Furthermore, he communicates effectively with
   stakeholders. I truly enjoy our one-on-one sessions, there were
   always insightful perspectives that I could gain from him.”
-author: Software Engineer, Grab
+author: Muhammad Hidayat, Software Engineer, Grab
 ---
 
 "I strongly recommend Adnan based on his exceptional
