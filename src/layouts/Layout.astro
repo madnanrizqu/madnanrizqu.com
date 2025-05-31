@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
@@ -43,7 +43,7 @@ const isProd = import.meta.env.PROD;
       )
     }
 
-    <ViewTransitions />
+    <ClientRouter />
 
     <script is:inline>
       const initTheme = () => {
@@ -62,13 +62,17 @@ const isProd = import.meta.env.PROD;
   </head>
   <body
     class={variant === "empty"
-      ? "h-screen h-[100dvh] flex justify-center items-center"
+      ? "h-[100dvh] flex justify-center items-center"
       : variant === "top-padding"
-        ? "min-h-screen min-h-[100dvh] flex flex-col pt-[12rem]"
-        : "min-h-screen min-h-[100dvh] flex flex-col"}
+        ? "min-h-[100dvh] flex flex-col pt-[12rem]"
+        : "min-h-[100dvh] flex flex-col"}
   >
     {variant !== "empty" && <Navbar />}
-    <slot />
+
+    <dir transition:animate={fade({ duration: "0.5s" })}>
+      <slot />
+    </dir>
+
     {variant !== "empty" && variant !== "navbar-only" && <Footer />}
   </body>
 </html>

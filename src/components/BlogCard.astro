@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   title: string;
   description: string;
@@ -16,13 +18,14 @@ const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
 >
   {
     imageSrc && (
-      <div class="w-full max-h-62 overflow-hidden flex justify-center items-center bg-grey-3">
+      <div class="w-full relative overflow-hidden flex justify-center items-center bg-grey-3">
         <a href={slug}>
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt || title}
             loading="lazy"
-            class="w-full h-full object-cover"
+            height={620}
+            width={416}
           />
         </a>
       </div>
@@ -30,7 +33,7 @@ const { title, description, pubDate, slug, imageSrc, imageAlt } = Astro.props;
   }
   <section class="p-8 md:p-6 flex-grow">
     <a href={slug}>
-      <h3 class="font-bold mb-2 text-primary hover:underline">
+      <h3 class="font-bold mb-2 text-primary hover:text-secondary">
         {title}
       </h3>
     </a>

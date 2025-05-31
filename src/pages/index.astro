@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="M Adnan Rizqullah, Software Engineer" variant="navbar-only">
   <main
-    class="relative h-screen pt-[5.4rem] cmn_container flex md:items-center"
+    class="relative h-screen pt-[3rem] md:pt-[5rem] cmn_container flex md:items-center"
   >
     <div
       class="md:relative md:bottom-[92px] flex flex-col md:flex-row items-center md:justify-between gap-16 md:gap-6"
@@ -19,7 +19,9 @@ import Layout from "../layouts/Layout.astro";
           sizes="(max-width: 600px) 480px, 1000px"
         />
       </div>
-      <div class="text-center md:text-start flex flex-col gap-6 flex-1">
+      <div
+        class="text-center md:text-start flex flex-col gap-3 md:gap-6 flex-1"
+      >
         <h1 class="text-4xl md:text-5xl">Hi! I'm Adnan</h1>
         <span
           class="block text-7xl [@media(min-height:800px)_and_(min-width:400px)]:text-[5.5rem] [@media(min-height:800px)_and_(min-width:500px)]:text-8xl font-bold"
@@ -29,7 +31,9 @@ import Layout from "../layouts/Layout.astro";
             >develop</span
           > engineer web applications
         </span>
-        <span>Well at least I try my best to do so!</span>
+        <span class="text-[1.2rem] md:text-base"
+          >Well at least I try my best to do so!</span
+        >
       </div>
     </div>
     <footer
@@ -76,15 +80,15 @@ import Layout from "../layouts/Layout.astro";
     content: "";
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: 30%;
     left: 0;
     width: 100%;
-    height: 20%;
-    background: linear-gradient(175deg, var(--grey-2) 0%, var(--grey-4) 100%);
+    height: 70%;
+    background: linear-gradient(175deg, var(--font-color) 0%, var(--grey) 100%);
     border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
     animation: animatedBorderRadius 4s infinite ease-in-out;
     animation-delay: 1.25s;
-    transform: translateY(500%);
+    transform: translateY(15%);
     filter: blur(30px);
     opacity: 0.8;
   }
