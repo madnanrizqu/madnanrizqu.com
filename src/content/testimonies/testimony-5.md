@@ -7,6 +7,7 @@ shortVersion: What set Adnan part is his ability to identify areas of growth
   transformed our team culture, cultivating ad thriving
   environtment of contunous learning and mutual growth.
 author: Nuruddin Ashr, Engineering Manager II, Grab
+order: 2
 ---
 
 "It is pleasure to have Adnan in my team. I hired him and

@@ -4,6 +4,7 @@ shortVersion: “He has really good technical skills and always have will to
   improve himself by taking challenging projects, or plan what is
   the next improvement for our service code base.”
 author: Muhammad Arfandy, Senior Software Engineer, Grab
+order: 3
 ---
 
 "It's really good working with Adnan, for more than 1

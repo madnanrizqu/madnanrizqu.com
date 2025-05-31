@@ -6,6 +6,7 @@ const testimonyCollections = defineCollection({
     id: z.number(),
     shortVersion: z.string(),
     author: z.string(),
+    order: z.number().optional(),
   }),
 });
 
@@ -18,7 +19,7 @@ const projectCollection = defineCollection({
     imageSrc: z.string(),
     imageAlt: z.string(),
     projectHref: z.optional(z.string()),
-    order: z.number().optional(), // Added order field
+    order: z.number().optional(),
   }),
 });
 

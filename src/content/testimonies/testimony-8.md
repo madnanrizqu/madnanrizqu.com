@@ -2,6 +2,7 @@
 id: 8
 shortVersion: “Adnan has done a lot during his 1 year working at Grab. And I, as a co-worker, feel that I got a lot of new knowledge and experience while working with him.”
 author: Husni Habil, Senior Software Engineer, Grab
+order: 4
 ---
 
 "Adnan has done a lot during his 1 year working at Grab. And I, as a co-worker, feel that I got a lot of new knowledge and experience while working with him

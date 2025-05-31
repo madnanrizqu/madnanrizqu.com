@@ -7,7 +7,7 @@ import Project from "../components/Project.astro";
 import { slugify } from "../scripts/url";
 
 const testimoniesCollections = await getCollection("testimonies");
-const testimonies = await Promise.all(
+const testimoniesUnsorted = await Promise.all(
   testimoniesCollections.map(async (v) => {
     const { Content } = await v.render();
     return {
@@ -16,6 +16,13 @@ const testimonies = await Promise.all(
     };
   }),
 );
+
+// Sort projects by the 'order' field, handling undefined 'order' by placing them at the end.
+const testimonies = testimoniesUnsorted.sort((a, b) => {
+  const orderA = a.data.order ?? Infinity;
+  const orderB = b.data.order ?? Infinity;
+  return orderA - orderB;
+});
 
 const projectCollection = await getCollection("projects");
 // Sort projects by the 'order' field, handling undefined 'order' by placing them at the end.

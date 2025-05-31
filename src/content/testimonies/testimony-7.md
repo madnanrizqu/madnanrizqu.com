@@ -2,6 +2,7 @@
 id: 7
 shortVersion: “Adnan is an engineer with passion and brings energy to the team. His eagerness to perform and active participation, infects the team to want to do the same.”
 author: Ming Kit Luk, Engineering Manager II, Grab
+order: 1
 ---
 
 "Adnan is an engineer with passion and brings energy to the team. His eagerness to perform and active participation, infects the team to want to do the same.
