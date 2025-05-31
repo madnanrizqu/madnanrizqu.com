@@ -6,7 +6,7 @@ shortVersion: “Muhammad consistently demonstrated a deep understanding of
   significantly enhanced the scalability and maintainability of
   our projects, reflecting his commitment to excellence and
   attention to detail.”
-author: Senior Frontend Engineer, AccelByte
+author: Daniel Listyo Emanuel, Senior Frontend Engineer, AccelByte
 ---
 
 "I had the privilege of collaborating with Muhammad

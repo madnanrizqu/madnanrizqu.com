@@ -51,6 +51,8 @@ const { dialogId, summary, author } = Astro.props;
   .testimony__footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
   }
 
   .testimony__quote {
@@ -67,6 +69,7 @@ const { dialogId, summary, author } = Astro.props;
   .testimony__person {
     font-weight: var(--font-bold);
     font-size: 1.4rem;
+    text-align: right;
   }
 
   .testimony__detail_text {

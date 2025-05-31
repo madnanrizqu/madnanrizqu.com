@@ -3,11 +3,18 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import { slugify } from "../scripts/url";
 import BlogCard from "../components/BlogCard.astro";
+import TagPill from "../components/TagPill.astro";
 
 const blogCollection = await getCollection("blogs");
+// Sort by newest first
 const posts = blogCollection.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+// Extract all unique tags for filter buttons
+const allTags = [
+  ...new Set(posts.flatMap((post) => post.data.tags || [])),
+].sort();
 ---
 
 <Layout
@@ -19,16 +26,41 @@ const posts = blogCollection.sort(
       <div class="mb-8 md:mb-12 md:text-left">
         <h1 class="text-primary">My Blog</h1>
         <p>
-          Welcome to my blog. Here I share my thoughts on web development,
-          technology, and other interesting topics.
+          Welcome to my blog. Here I share my thoughts on software engineering,
+          web development, artificial intelligence, academia research and other
+          interesting topics.
         </p>
       </div>
 
       {
+        allTags.length > 0 && (
+          <div class="mb-8 md:mb-12" id="tag-filters">
+            <span class="font-semibold mr-2">Filter by Tag:</span>
+            {allTags.map((tag) => (
+              <TagPill tag={tag} elementType="button" isFilterControl={true} />
+            ))}
+            <button
+              id="clear-filters-button"
+              class="inline-block border border-gray-500 text-gray-500 rounded-full px-5 py-1 text-[1.2rem] font-semibold mr-2 mb-2 hover:bg-gray-100"
+              style="display: none;"
+            >
+              Clear Filters
+            </button>
+          </div>
+        )
+      }
+
+      {
         posts.length > 0 ? (
-          <ol class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <ol
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+            id="blog-posts-list"
+          >
             {posts.map((post) => (
-              <li>
+              <li
+                data-tags={(post.data.tags || []).join(",")}
+                class="blog-post-item"
+              >
                 <BlogCard
                   title={post.data.title}
                   description={post.data.description}
@@ -36,6 +68,7 @@ const posts = blogCollection.sort(
                   slug={`/blog/${slugify(post.data.title)}`}
                   imageSrc={post.data.imageSrc}
                   imageAlt={post.data.imageAlt}
+                  tags={post.data.tags}
                 />
               </li>
             ))}
@@ -46,6 +79,117 @@ const posts = blogCollection.sort(
           </p>
         )
       }
+      <p
+        id="no-posts-message"
+        class="text-center text-gray-600 dark:text-gray-400 py-10"
+        style="display: none;"
+      >
+        No posts found matching your selected tags.
+      </p>
     </section>
   </main>
 </Layout>
+
+<script define:vars={{ initialPosts: posts }}>
+  document.addEventListener("astro:page-load", () => {
+    const tagFilterButtons = document.querySelectorAll(
+      ".tag-filter-button[data-tag]",
+    );
+    const clearFiltersButton = document.getElementById("clear-filters-button");
+    const blogPostItems = document.querySelectorAll(".blog-post-item");
+    const noPostsMessage = document.getElementById("no-posts-message");
+
+    // State of the page
+    let activeFilters = new Set();
+
+    // Initial filter application based on URL
+    const initialURLParams = new URLSearchParams(window.location.search);
+    const tagsFromURL = initialURLParams.get("tags");
+    if (tagsFromURL) {
+      tagsFromURL.split(",").forEach((tag) => activeFilters.add(tag));
+    }
+    applyFilters();
+
+    // Event listeners
+    tagFilterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tag = button.dataset.tag;
+        if (activeFilters.has(tag)) {
+          activeFilters.delete(tag);
+        } else {
+          activeFilters.add(tag);
+        }
+        updateURL();
+        applyFilters();
+      });
+    });
+
+    if (clearFiltersButton) {
+      clearFiltersButton.addEventListener("click", () => {
+        activeFilters.clear();
+        updateURL();
+        applyFilters();
+      });
+    }
+
+    // Helpers
+    function updateURL() {
+      const params = new URLSearchParams(window.location.search);
+      if (activeFilters.size > 0) {
+        params.set("tags", Array.from(activeFilters).join(","));
+      } else {
+        params.delete("tags");
+      }
+      const newRelativePathQuery =
+        window.location.pathname +
+        (params.toString() ? "?" + params.toString() : "");
+      history.pushState(null, "", newRelativePathQuery);
+    }
+
+    function applyFilters() {
+      let postsFound = false;
+      blogPostItems.forEach((item) => {
+        const itemTags = (item.dataset.tags || "").split(",");
+        if (activeFilters.size === 0) {
+          item.style.display = "";
+          postsFound = true;
+        } else {
+          const matches = Array.from(activeFilters).every((filterTag) =>
+            itemTags.includes(filterTag),
+          );
+          item.style.display = matches ? "" : "none";
+          if (matches) postsFound = true;
+        }
+      });
+
+      // Update button styles and visibility
+      tagFilterButtons.forEach((button) => {
+        if (activeFilters.has(button.dataset.tag)) {
+          button.classList.add("bg-primary", "text-white");
+          button.classList.remove(
+            "border",
+            "border-primary",
+            "text-primary",
+            "hover:bg-primary-100",
+          );
+        } else {
+          button.classList.remove("bg-primary", "text-white");
+          button.classList.add(
+            "border",
+            "border-primary",
+            "text-primary",
+            "hover:bg-primary-100",
+          );
+        }
+      });
+
+      if (clearFiltersButton) {
+        clearFiltersButton.style.display =
+          activeFilters.size > 0 ? "inline-block" : "none";
+      }
+      if (noPostsMessage) {
+        noPostsMessage.style.display = postsFound ? "none" : "block";
+      }
+    }
+  });
+</script>

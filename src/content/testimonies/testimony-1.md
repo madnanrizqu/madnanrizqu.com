@@ -5,7 +5,7 @@ shortVersion: “Ultimately, what sets him apart from his peers is his hunger
   communicates with his stakeholders effectively, and he is
   capable of rounding up a group of stakeholders together to
   deliver his impact effectively.”
-author: Engineering Manager, Grab
+author: Benjamin Tanone, Engineering Manager, Grab
 ---
 
 "Adnan is one of the most passionate engineers I've met
