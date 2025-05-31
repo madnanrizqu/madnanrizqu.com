@@ -12,109 +12,48 @@ interface Props {
 const props = Astro.props;
 ---
 
-<article class="project">
-  <div class="project__img_container">
-    <img src={props.imageSrc} alt={props.imageAlt} height="237" />
+<article class="bg-grey-2 text-white rounded-[20px] overflow-hidden sm:h-full">
+  <div class="flex justify-center">
+    <img
+      src={props.imageSrc}
+      alt={props.imageAlt}
+      height="237"
+      class="object-fill h-[237px]"
+    />
   </div>
-  <section class="project__texts">
-    <span class="project__title">{props.title}</span>
-    <p class="project__description">{props.description}</p>
-    <footer class="project__techs">
-      <div class="project__techs__inner">
-        {props.techs.map((t) => <span class="project__tech">{t}</span>)}
+  <section class="p-[18px] pb-0 mb-[32px]">
+    <span class="font-bold mb-[16px] line-clamp-1">{props.title}</span>
+    <p class="mb-[24px] line-clamp-3">{props.description}</p>
+    <footer class="flex justify-start">
+      <div class="flex justify-start flex-wrap gap-[10px]">
+        {
+          props.techs.map((t) => (
+            <span class="text-primary border border-primary rounded-[12px] py-[4px] px-[10px] text-[14px]">
+              {t}
+            </span>
+          ))
+        }
       </div>
     </footer>
   </section>
-  <footer class="project__footer">
+  <footer class="p-[18px] pt-0 flex flex-col gap-[12px] mt-auto">
     {
       props.projectHref && (
         <a
           href={props.projectHref}
           target="_blank"
           rel="noopener"
-          class="cmn_button--outline_primary"
+          class="w-full inline-block border border-primary py-[8px] px-[12px] rounded-[6px] text-[16px] text-center text-primary"
         >
           Visit
         </a>
       )
     }
-    <a href={props.projectDetailSlug} class="cmn_button--outline_primary">
+    <a
+      href={props.projectDetailSlug}
+      class="w-full inline-block border border-primary py-[8px] px-[12px] rounded-[6px] text-[16px] text-center text-primary"
+    >
       Detail
     </a>
   </footer>
 </article>
-
-<style>
-  @import url("/common.css");
-
-  .project {
-    background: var(--grey-2);
-    color: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  @media screen and (min-width: 650px) {
-    .project {
-      height: 100%;
-    }
-  }
-
-  .project__img_container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .project__img_container > img {
-    object-fit: fill;
-    height: 237px;
-  }
-
-  .project__texts {
-    padding: 1.8rem;
-    padding-bottom: 0;
-    margin-bottom: 3.2rem;
-  }
-
-  .project__footer {
-    padding: 1.8rem;
-    padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .project__title {
-    font-weight: var(--font-bold);
-    margin-bottom: 1.6rem;
-    display: inline-block;
-  }
-
-  .project__description {
-    display: inline-block;
-    margin-bottom: 2.4rem;
-  }
-
-  .project__techs {
-    display: flex;
-    justify-content: start;
-  }
-
-  .project__techs__inner {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .project__tech {
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    border-radius: 12px;
-    padding: 0.4rem 1rem;
-    font-size: 1.4rem;
-  }
-
-  .project__footer > a {
-    width: 100%;
-  }
-</style>
