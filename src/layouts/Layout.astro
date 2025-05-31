@@ -1,8 +1,9 @@
 ---
-import { ClientRouter, fade } from "astro:transitions";
+import { ClientRouter } from "astro:transitions"; // The 'fade' import might become unused if not used elsewhere
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
+import PageContainer from "./PageContainer.astro";
 
 interface Props {
   title: string;
@@ -60,18 +61,12 @@ const isProd = import.meta.env.PROD;
       document.addEventListener("astro:after-swap", initTheme);
     </script>
   </head>
-  <body
-    class={variant === "empty"
-      ? "min-h-dvh flex justify-center items-center"
-      : variant === "top-padding"
-        ? "min-h-dvh flex flex-col pt-[12rem]"
-        : "min-h-dvh flex flex-col"}
-  >
+  <body>
     {variant !== "empty" && <Navbar />}
 
-    <dir transition:animate={fade({ duration: "0.5s" })}>
+    <PageContainer variant={variant}>
       <slot />
-    </dir>
+    </PageContainer>
 
     {variant !== "empty" && variant !== "navbar-only" && <Footer />}
   </body>
