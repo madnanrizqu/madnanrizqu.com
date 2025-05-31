@@ -1,0 +1,158 @@
+---
+title: "Why JS Frameworks Use Virtual DOM: A Todo App Example"
+description: "An explanation of Virtual DOM's role in separating concerns, demonstrated by comparing declarative (Virtual DOM) and imperative (Direct DOM) approaches in a todo application."
+pubDate: 2025-03-05
+imageSrc: "/images/engineered-vdom.webp"
+imageAlt: "Visual comparison of Virtual DOM and Direct DOM approaches in a Todo App"
+---
+
+import { Picture } from "astro:assets";
+import MdImageContainer from "../../components/MdImageContainer.astro";
+
+# Why do JS Frameworks introduce the concept of Virtual DOM?
+
+While there are many reasons, let's focus on one reason: Separating application logic from DOM handling logic. Virtual DOM abstracts the concept of handling the DOM so that developers can focus on logic that matters for the end user.
+
+Let's compare the declarative method of interacting with the DOM versus the imperative approach. What better way to compare than by building a todo app? Link of github repo here: https://github.com/madnanrizqu/virtual-dom-direct-dom
+
+This is just your normal todo app with these features:
+1. Add todo
+2. Render todo/empty state
+3. Mark done
+4. Delete todo
+
+<MdImageContainer>
+  <Picture
+    src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kvc8zken7dhsrr1bvsx8.png"
+    alt="Todo app UI showing Virtual DOM and Direct DOM implementations side-by-side"
+    width="770"
+    height="468"
+  />
+</MdImageContainer>
+
+The difference is theres a side by side comparison of how virtual DOM and a direct DOM would look like. Spoiler: it behaves the same!
+
+Here's how the declarative method using Virtual DOM works for the Add todo feature:
+```typescript
+const addTodo = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (input.trim()) {
+      setTodos([
+        ...todos,
+        { id: Date.now(), text: input.trim(), completed: false },
+      ]);
+      setInput("");
+    }
+  };
+```
+
+Here's an imperative way to achieve the same thing:
+```javascript
+addTodo(e) {
+    e.preventDefault();
+    const text = this.input.value.trim();
+    if (text) {
+      this.todos.push({ id: Date.now(), text, completed: false });
+      this.input.value = "";
+      this.saveAndRender(); // notice this method
+    }
+  }
+```
+What's this saveAndRender method below? It's a method that's responsible for interacting with the DOM directly:
+
+```javascript
+saveAndRender() {
+    localStorage.setItem("todos", JSON.stringify(this.todos));
+    this.render();
+  }
+
+  render() {
+    while (this.list.firstChild) {
+      this.list.removeChild(this.list.firstChild);
+    }
+
+    this.todos.forEach((todo) => {
+      const todoDiv = document.createElement("div");
+      todoDiv.className = `flex items-center justify-between p-4 rounded-lg ${
+        todo.completed ? "bg-gray-50" : "bg-white"
+      } border border-gray-200 shadow-sm transition-all duration-200`;
+
+      const leftSection = document.createElement("div");
+      leftSection.className = "flex items-center gap-3 flex-1";
+
+      const toggleButton = document.createElement("button");
+      toggleButton.className = `focus:outline-none transition-colors duration-200 ${
+        todo.completed ? "text-green-500" : "text-gray-400 hover:text-gray-500"
+      }`;
+      toggleButton.addEventListener("click", () => this.toggleTodo(todo.id));
+
+      const toggleSvg = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg"
+      );
+      toggleSvg.setAttribute("width", "24");
+      toggleSvg.setAttribute("height", "24");
+      toggleSvg.setAttribute("viewBox", "0 0 24 24");
+      toggleSvg.setAttribute("fill", "none");
+      toggleSvg.setAttribute("stroke", "currentColor");
+      toggleSvg.setAttribute("stroke-width", "2");
+
+      if (todo.completed) {
+        toggleSvg.innerHTML = `
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12l3 3 5-5"/>
+        `;
+      } else {
+        toggleSvg.innerHTML = `
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M15 9l-6 6"/>
+          <path d="M9 9l6 6"/>
+        `;
+      }
+      toggleButton.appendChild(toggleSvg);
+
+      const textSpan = document.createElement("span");
+      textSpan.className = `flex-1 text-gray-800 ${
+        todo.completed ? "line-through text-gray-500" : ""
+      }`;
+      textSpan.textContent = todo.text;
+
+      const deleteButton = document.createElement("button");
+      deleteButton.className =
+        "text-red-500 hover:text-red-600 focus:outline-none transition-colors duration-200";
+      deleteButton.addEventListener("click", () => this.deleteTodo(todo.id));
+
+      const deleteSvg = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg"
+      );
+      deleteSvg.setAttribute("width", "20");
+      deleteSvg.setAttribute("height", "20");
+      deleteSvg.setAttribute("viewBox", "0 0 24 24");
+      deleteSvg.setAttribute("fill", "none");
+      deleteSvg.setAttribute("stroke", "currentColor");
+      deleteSvg.setAttribute("stroke-width", "2");
+      deleteSvg.innerHTML = `
+        <path d="M3 6h18"/>
+        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+      `;
+      deleteButton.appendChild(deleteSvg);
+
+      leftSection.appendChild(toggleButton);
+      leftSection.appendChild(textSpan);
+      todoDiv.appendChild(leftSection);
+      todoDiv.appendChild(deleteButton);
+
+      this.list.appendChild(todoDiv);
+    });
+
+    this.emptyState.style.display = this.todos.length ? "none" : "block";
+  }
+```
+
+You can see that in the imperative approach, there needs to be code that handles interacting with the DOM. With Virtual DOM, this burden is lifted from the developer, allowing them to focus on just writing application logic.
+
+Thats all! Back to you, what other ways to separate concern of writing application code with DOM manipulation code is done on other web frameworks?
+
+See you later on the next one 👋
