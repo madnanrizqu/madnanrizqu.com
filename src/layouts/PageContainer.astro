@@ -1,0 +1,20 @@
+---
+import { fade } from "astro:transitions";
+
+interface Props {
+  variant?: "empty" | "no-top-padding" | "top-padding" | "navbar-only";
+}
+
+const { variant = "no-top-padding" } = Astro.props;
+---
+
+<div
+  class={variant === "empty"
+    ? "min-h-dvh flex justify-center items-center"
+    : variant === "top-padding"
+      ? "min-h-dvh flex flex-col pt-[12rem]"
+      : "min-h-dvh flex flex-col"}
+  transition:animate={fade({ duration: "0.75s" })}
+>
+  <slot />
+</div>

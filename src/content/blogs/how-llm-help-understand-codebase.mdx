@@ -1,0 +1,80 @@
+---
+title: "Testing LLM Comprehension on Complex Open Source Projects"
+description: "An experiment using Claude 3.7 Reasoning and GitHub Copilot Chat to understand the NextFaster open source project."
+pubDate: 2025-03-15
+imageSrc: "/images/engineered-llm-codebase.png"
+imageAlt: "Copilot Chat + Claude 3.7 Reasoning"
+---
+
+import { Picture } from "astro:assets";
+import MdImageContainer from "../../components/MdImageContainer.astro";
+
+# How would latest reasoning LLM fare in understanding complex open source project? 🤔
+
+Lets go back a bit with some motivation...
+
+I needed to learn Next.js 15 for an upcoming project at my company. Reading documentation plus learning the official course alone didn't seem sufficient, yet taking another full course felt like overkill for me at this stage.
+
+I thought, what better way to augment theory than with real-world application by studying an open source project? After some research, I discovered this codebase: https://github.com/ethanniser/NextFaster
+
+This codebase is particularly interesting because it's officially supported by Vercel and claims to implement all best practices for optimal web performance in Next.js 15. ⚡
+
+The codebase is deployed in the Vercel platform with some impressive stats:
+- ~1 million page views
+- ~1 million unique product pages
+- 45k unique users
+- 100 perfect Google Lighthouse scores
+
+It seemed perfect for learning how to properly utilize Next.js 15 features for enhanced performance.
+
+Then my lazy mind had an idea: Why not leverage LLMs for this task? 🧪
+
+Unsurprisingly, the LLM performed quite well! However, it did provide some surprising answers... The LLM answered 6 out of 8 questions correctly, while providing misleading or incomplete responses to the others. 📊
+
+I used both Claude 3.7 Reasoning in conjunction with GitHub Copilot Chat in my IDE. Copilot Chat acts as a tooling layer, providing the codebase to the chat's context. This allowed the LLM to get the context of the codebase more comprehensively.
+
+<MdImageContainer>
+  <Picture
+    src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/devs2g1wnwih6projh3d.png"
+    alt="Copilot Chat + Claude 3.7 Reasoning"
+    width="770"
+    height="730"
+  />
+</MdImageContainer>
+
+It would be interesting to replicate this experiment with other AI tools and LLMs.
+
+Here are the questions I asked to understand the NextFaster:
+
+## What Next.js technologies is this codebase using? ✅
+The LLM provided a useful summary of the Next.js-specific features and technologies used in the codebase. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/1_next_js_technologies_answer.md
+
+## What project structure is this codebase using? ✅
+I feel it mostly hit the mark, explaining all directories within the project. However, it didn't delve deeply into each directory or attempt to understand the subdirectories. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/2_project_structure_answer.md
+
+## What rendering strategy is this codebase using? ✅
+The response was quite good! I was surprised that it examined multiple sources where rendering strategy might be explained: the README file, Next.js config file, and page.tsx file. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/3_rendering_answer.md
+
+## What state management solution is this codebase using? ⚠️
+I think this answer was somewhat misleading. I wouldn't classify Next.js server actions as a state management solution. Looking at the codebase more closely, there's still some useState being used, which would have been worth mentioning. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/4_state_management_answer.md
+
+## What styling solution is this codebase using? ⚠️
+This response was a bit disappointing. While the LLM correctly identified Tailwind, it failed to mention Radix and Lucide, which are significant parts of the styling solution used in the codebase. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/5_styling_answer.md
+
+## What data fetching approach is this codebase using? ✅
+I was impressed by the detail in this response! The answer seems correct, and the LLM even explained advanced techniques specific to this codebase. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/6_data_fetch_answer.md
+
+## What testing strategies is this codebase going to using? ✅
+The LLM correctly noted that there's currently no testing in place. This was actually a trick question! However, it failed to understand that there was never a plan for end-to-end testing in the codebase; @playwright/test was merely a peer dependency of another dependency. Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/7_testing_answer.md
+
+## What input validation strategy is this codebase using? ✅
+The LLM answered correctly and thoroughly explained how validation is used throughout the codebase. Impressive! Here's the LLM's answer: https://github.com/madnanrizqu/nextfaster-llm-analysis/blob/main/claude_3_7_thinking/8_input_validation_answer.md
+
+## Key takeaway 💡
+LLMs definitely make the process of understanding codebases easier and faster. However, they still generate some incorrect answers, so we need to keep that in mind.
+
+I'll definitely continue using LLMs to bootstrap my understanding of new codebases going forward! Heres the complete experiment codebase: https://github.com/madnanrizqu/nextfaster-llm-analysis
+
+What do you think about my Copilot Chat + Claude 3.7 Reasoning approach? Do you think there's a better way to use LLMs to explain codebases?
+
+See you in the next one 👋
