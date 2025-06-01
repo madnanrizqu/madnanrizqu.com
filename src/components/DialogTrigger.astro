@@ -1,12 +1,17 @@
 ---
 interface Props {
   dialogId: string;
+  ariaLabel?: string;
 }
 
-const { dialogId } = Astro.props;
+const { dialogId, ariaLabel } = Astro.props;
 ---
 
-<button class="trigger" data-open-dialog-id={dialogId}><slot /></button>
+<button
+  aria-label={ariaLabel}
+  class="trigger group focus:text-secondary hover:text-secondary"
+  data-open-dialog-id={dialogId}><slot /></button
+>
 
 <style>
   .trigger {

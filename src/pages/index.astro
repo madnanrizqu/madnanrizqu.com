@@ -109,12 +109,21 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @keyframes border-angle-rotate {
-    from {
+    0% {
       --border-angle: 0deg;
-    }
-    to {
+    } /* Headshot Left-ish -> Button Border Left */
+    25% {
+      --border-angle: 180deg;
+    } /* Headshot Right-ish -> Button Border Right */
+    50% {
       --border-angle: 360deg;
-    }
+    } /* Headshot Left-ish -> Button Border Left */
+    75% {
+      --border-angle: 540deg;
+    } /* Headshot Right-ish -> Button Border Right */
+    100% {
+      --border-angle: 720deg;
+    } /* Headshot Left-ish -> Button Border Left */
   }
 
   .animated-border-button {
@@ -157,7 +166,7 @@ import Layout from "../layouts/Layout.astro";
 
   .animate-border-shape {
     border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    animation: animatedBorderRadius 4s infinite ease-in-out;
+    animation: animatedBorderRadius 5s infinite linear;
     animation-delay: var(--animation-delay);
   }
 
@@ -171,7 +180,7 @@ import Layout from "../layouts/Layout.astro";
     height: 70%;
     background: linear-gradient(175deg, var(--font-color) 0%, var(--grey) 100%);
     border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    animation: animatedBorderRadius 4s infinite ease-in-out;
+    animation: animatedBorderRadius 5s infinite linear;
     animation-delay: var(--animation-delay);
     transform: translateY(15%);
     filter: blur(30px);

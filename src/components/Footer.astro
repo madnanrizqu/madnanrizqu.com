@@ -2,14 +2,18 @@
 import Logo from "./Logo.astro";
 ---
 
-<footer class="footer mt-auto" transition:persist>
-  <div class="footer__inner cmn_container">
-    <div class="footer__links">
+<footer
+  class="mt-auto bg-[var(--font-color)] text-[var(--bg-color)] pt-[3.6rem] pb-[3.6rem]"
+  transition:persist
+>
+  <div class="cmn_container">
+    <div class="flex flex-col gap-[2.6rem] mb-[3.2rem]">
       <div>
-        <ol class="footer__social_medias">
+        <ol class="list-none flex gap-[2.4rem] justify-center">
           <li>
             <a
-              class="footer__site_link"
+              class="text-[var(--bg-color)]"
+              aria-label="Go to Adnan's Linkedin"
               href="https://www.linkedin.com/in/madnanrizqu/"
             >
               <svg
@@ -33,7 +37,11 @@ import Logo from "./Logo.astro";
             </a>
           </li>
           <li>
-            <a class="footer__site_link" href="https://github.com/rizquadnan">
+            <a
+              class="text-[var(--bg-color)]"
+              aria-label="Go to Adnan's Github"
+              href="https://github.com/rizquadnan"
+            >
               <svg
                 width="24"
                 height="24"
@@ -58,7 +66,8 @@ import Logo from "./Logo.astro";
           </li>
           <li>
             <a
-              class="footer__site_link"
+              class="text-[var(--bg-color)]"
+              aria-label="Email Adnan"
               href="mailto:madnanrizqullah@gmail.com"
             >
               <svg
@@ -91,7 +100,11 @@ import Logo from "./Logo.astro";
             </a>
           </li>
           <li>
-            <a class="footer__site_link" href="https://twitter.com/madnanrizqu">
+            <a
+              class="text-[var(--bg-color)]"
+              aria-label="Go to Adnan's twitter"
+              href="https://twitter.com/madnanrizqu"
+            >
               <svg
                 width="24"
                 height="24"
@@ -108,58 +121,16 @@ import Logo from "./Logo.astro";
         </ol>
       </div>
     </div>
-    <div class="footer__botttom">
-      <div class="footer__identity">
-        <div>
+    <div class="flex justify-center items-center">
+      <div class="flex items-center gap-4 text-[1rem]">
+        <a
+          href="/"
+          aria-label="Go to homepage"
+          class="text-[var(--text-color)]"
+        >
           <Logo />
-        </div>
-        <span class="footer__identity_name">Muhammad Adnan R</span>
+        </a>
       </div>
     </div>
   </div>
 </footer>
-
-<style>
-  .footer {
-    background-color: var(--font-color);
-    color: var(--bg-color);
-    padding-top: 3.6rem;
-    padding-bottom: 3.6rem;
-  }
-
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    gap: 2.6rem;
-    margin-bottom: 3.2rem;
-  }
-
-  .footer__site_links,
-  .footer__social_medias {
-    list-style-type: none;
-    display: flex;
-    gap: 2.4rem;
-    justify-content: center;
-  }
-
-  .footer__site_link {
-    color: var(--bg-color);
-  }
-
-  .footer__botttom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footer__identity {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-  }
-
-  .footer__identity_name {
-    font-size: 1.4rem;
-  }
-</style>

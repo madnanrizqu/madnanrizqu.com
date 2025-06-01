@@ -163,6 +163,9 @@ const url = Astro.request.url;
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-to-content-link">
+      Skip to main content
+    </a>
     {variant !== "empty" && <Navbar />}
 
     <PageContainer variant={variant}>

@@ -9,21 +9,26 @@ import ThemePicker from "./ThemePicker";
   <header class="navbar">
     <div class="navbar__inner py-4 cmn_container">
       <div>
-        <a href="/">
+        <a href="/" aria-label="Go to homepage">
           <Logo />
         </a>
       </div>
       <div class="navbar__right">
         <nav class="navbar__nav">
           <ul class="u_hide_xs navbar__links">
-            <li><a href="/portfolio"> Portfolio </a></li>
-            <li><a href="/blog/">Blog</a></li>
             <li>
-              <a href="/contact/">Contact</a>
+              <a href="/portfolio" aria-label="Go to  portfolio page">
+                Portfolio
+              </a>
+            </li>
+            <li><a href="/blog/" aria-label="Go to blog page">Blog</a></li>
+            <li>
+              <a href="/contact/" aria-label="Go to contact page">Contact</a>
             </li>
           </ul>
           <button
             id="mobile_drawer_toggle"
+            aria-label="Open navigation drawer"
             class="u_hide_sm u_hide_md u_hide_lg navbar__hamburger"
           >
             <svg
@@ -61,7 +66,10 @@ import ThemePicker from "./ThemePicker";
           <ThemePicker client:only />
         </Dialog>
         <div class="min-h-6 min-w-6 flex justify-center items-center">
-          <DialogTrigger dialogId="dialog_theme">
+          <DialogTrigger
+            dialogId="dialog_theme"
+            ariaLabel="Open theme switcher"
+          >
             <svg
               width="24"
               height="24"
@@ -77,11 +85,16 @@ import ThemePicker from "./ThemePicker";
       </div>
     </div>
   </header>
-  <aside id="mobile_drawer" class="u_hide_all navbar__mobile_drawer">
+  <aside
+    id="mobile_drawer"
+    class="u_hide_all not-sr-only navbar__mobile_drawer"
+  >
     <ul class="navbar__mobile_links">
-      <li><a href="/portfolio/">Portfolio</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li>
+        <a href="/portfolio/" aria-label="Go to portfolio page">Portfolio</a>
+      </li>
+      <li><a href="/blog/" aria-label="Go to blog page">Blog</a></li>
+      <li><a href="/contact/" aria-label="Go to contact page">Contact</a></li>
     </ul>
   </aside>
 </div>

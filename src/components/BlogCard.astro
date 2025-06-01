@@ -36,8 +36,10 @@ const { title, description, pubDate, slug, imageSrc, imageAlt, tags } =
     )
   }
   <section class="p-8 md:p-6 flex-grow">
-    <a href={slug}>
-      <h3 class="font-bold mb-2 text-primary hover:text-secondary line-clamp-2">
+    <a href={slug} class="group">
+      <h3
+        class="font-bold mb-2 group-focus:text-secondary text-primary hover:text-secondary line-clamp-2"
+      >
         {title}
       </h3>
     </a>
