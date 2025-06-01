@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "check": "astro check",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -14,11 +15,13 @@
     "@astrojs/cloudflare": "^12.5.2",
     "@astrojs/mdx": "^4.2.6",
     "@astrojs/react": "^4.2.7",
+    "@astrojs/sitemap": "^3.4.0",
     "@astrojs/tailwind": "^6.0.2",
     "@astrojs/vercel": "^8.1.4",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "astro": "^5.7.10",
+    "astro-seo": "^0.8.4",
     "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

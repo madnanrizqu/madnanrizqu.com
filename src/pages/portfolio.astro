@@ -36,7 +36,29 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
 ---
 
 <Layout
-  title="M Adnan Rizqullah, Software Engineer | Portfolio"
+  seo={{
+    title: "Portfolio",
+    description:
+      "Showcasing a collection of software engineering projects by Muhammad Adnan R. Discover expertise in web development, innovative solutions, and technical skills.",
+    openGraph: {
+      basic: {
+        title: "Portfolio | Muhammad Adnan R.",
+        type: "website",
+      },
+      optional: {
+        siteName: "Muhammad Adnan R. Personal portfolio and blog",
+        locale: "en_US",
+      },
+    },
+    twitter: {
+      title: "Portfolio | Muhammad Adnan R.",
+      card: "summary_large_image",
+      creator: "@madnanrizqu",
+      site: "@madnanrizqu",
+      description:
+        "Showcasing a collection of software engineering projects by Muhammad Adnan R. Discover expertise in web development, innovative solutions, and technical skills.",
+    },
+  }}
   variant="top-padding"
 >
   <main class="space-y-32 pb-32">
