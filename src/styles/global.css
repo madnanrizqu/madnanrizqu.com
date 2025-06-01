@@ -415,3 +415,19 @@ ol {
     font-size: var(--btn-font-size);
   }
 }
+
+.cmn_button--solid_invert {
+  display: inline-block;
+  border: none;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--btn-bor-rad);
+  font-size: var(--btn-font-size-mobile);
+  background: var(--font-color);
+  color: var(--bg-color);
+  text-align: center;
+}
+@media screen and (min-width: 700px) {
+  .cmn_button--solid_secondary {
+    font-size: var(--btn-font-size);
+  }
+}
