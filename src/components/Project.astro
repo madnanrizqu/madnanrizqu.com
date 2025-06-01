@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   imageSrc: string;
   imageAlt: string;
@@ -12,17 +14,21 @@ interface Props {
 const props = Astro.props;
 ---
 
-<article class="bg-grey-2 text-white rounded-[20px] overflow-hidden sm:h-full">
+<article
+  class="bg-grey-2 text-white rounded-xl overflow-hidden sm:h-full shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1"
+>
   <div class="flex justify-center">
-    <img
+    <Image
       src={props.imageSrc}
       alt={props.imageAlt}
       height="237"
+      width="500"
+      loading="lazy"
       class="object-fill h-[237px]"
     />
   </div>
   <section class="p-[18px] pb-0 mb-[32px]">
-    <span class="font-bold mb-[16px] line-clamp-1">{props.title}</span>
+    <span class="font-bold mb-[16px] line-clamp-2">{props.title}</span>
     <p class="mb-[24px] line-clamp-3">{props.description}</p>
     <footer class="flex justify-start">
       <div class="flex justify-start flex-wrap gap-[10px]">
