@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
       class="md:relative md:bottom-[92px] flex flex-col md:flex-row items-center md:justify-between gap-16 md:gap-6"
     >
       <div
-        class="relative flex justify-center md:order-2 size-96 md:flex-1 md:w-full md:h-full image-gradient-shadow-host"
+        class="relative flex justify-center md:order-2 size-96 md:w-[47%] md:h-[47%] image-gradient-shadow-host"
       >
         <img
           class="h-full aspect-square animate-border-shape rounded-full object-cover object-top grayscale"
@@ -20,7 +20,7 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
       <div
-        class="text-center md:text-start flex flex-col gap-3 md:gap-6 flex-1"
+        class="text-center md:text-start flex flex-col gap-3 md:gap-6 md:w-[50%]"
       >
         <h1 class="text-4xl md:text-5xl">Hi! I'm Adnan</h1>
         <span
@@ -43,7 +43,7 @@ import Layout from "../layouts/Layout.astro";
         <a href="/portfolio" class="cmn_button--outline">View portfolio</a>
         <a
           href="/blog?tags=Engineering"
-          class="cmn_button--solid_secondary !bg-[var(--font-color)] !text-[var(--bg-color)]"
+          class="cmn_button--solid_secondary !text-[var(--bg-color)] animated-border-button"
           >View engineering case studies</a
         >
       </div>
@@ -52,47 +52,11 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  @keyframes animatedBorderRadius {
-    0% {
-      border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    }
-    25% {
-      border-radius: 25% 75% 35% 85% / 70% 30% 80% 20%;
-    }
-    50% {
-      border-radius: 80% 20% 70% 30% / 30% 70% 25% 75%;
-    }
-    75% {
-      border-radius: 30% 80% 20% 70% / 75% 25% 60% 40%;
-    }
-    100% {
-      border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    }
+  :root {
+    --animation-delay: 2s;
   }
 
-  .animate-border-shape {
-    border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    animation: animatedBorderRadius 4s infinite ease-in-out;
-    animation-delay: 1.25s;
-  }
-
-  .image-gradient-shadow-host::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 30%;
-    left: 0;
-    width: 100%;
-    height: 70%;
-    background: linear-gradient(175deg, var(--font-color) 0%, var(--grey) 100%);
-    border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    animation: animatedBorderRadius 4s infinite ease-in-out;
-    animation-delay: 1.25s;
-    transform: translateY(15%);
-    filter: blur(30px);
-    opacity: 0.8;
-  }
-
+  /* H1 animation */
   .animated-line-through {
     position: relative;
     display: inline-block;
@@ -135,5 +99,82 @@ import Layout from "../layouts/Layout.astro";
       width: 100%;
       opacity: 1;
     }
+  }
+
+  /* Button animation */
+  @property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes border-angle-rotate {
+    from {
+      --border-angle: 0deg;
+    }
+    to {
+      --border-angle: 360deg;
+    }
+  }
+
+  .animated-border-button {
+    --border-angle: 0deg;
+    position: relative;
+    border: 0.5rem solid transparent;
+    border-radius: var(--btn-bor-rad);
+
+    background:
+      linear-gradient(var(--font-color), var(--font-color)) padding-box,
+      conic-gradient(
+          from var(--border-angle),
+          var(--bg-color) 50%,
+          var(--font-color)
+        )
+        border-box;
+
+    animation: border-angle-rotate 4s infinite linear;
+    animation-delay: var(--animation-delay);
+  }
+
+  /* Headshot animation */
+  @keyframes animatedBorderRadius {
+    0% {
+      border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
+    }
+    25% {
+      border-radius: 25% 75% 35% 85% / 70% 30% 80% 20%;
+    }
+    50% {
+      border-radius: 80% 20% 70% 30% / 30% 70% 25% 75%;
+    }
+    75% {
+      border-radius: 30% 80% 20% 70% / 75% 25% 60% 40%;
+    }
+    100% {
+      border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
+    }
+  }
+
+  .animate-border-shape {
+    border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
+    animation: animatedBorderRadius 4s infinite ease-in-out;
+    animation-delay: var(--animation-delay);
+  }
+
+  .image-gradient-shadow-host::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(175deg, var(--font-color) 0%, var(--grey) 100%);
+    border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
+    animation: animatedBorderRadius 4s infinite ease-in-out;
+    animation-delay: var(--animation-delay);
+    transform: translateY(15%);
+    filter: blur(30px);
+    opacity: 0.8;
   }
 </style>

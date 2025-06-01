@@ -322,7 +322,7 @@ ol {
   padding-left: var(--page-pad-x);
   padding-right: var(--page-pad-x);
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1024px;
 }
 
 .cmn_button--outline {
