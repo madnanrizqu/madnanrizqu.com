@@ -7,6 +7,7 @@ const { variant = "no-top-padding" } = Astro.props;
 ---
 
 <div
+  id="main-content"
   class={variant === "empty"
     ? "min-h-dvh flex justify-center items-center"
     : variant === "top-padding"
