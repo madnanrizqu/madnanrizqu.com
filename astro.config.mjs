@@ -6,8 +6,11 @@ import react from "@astrojs/react";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
-  integrations: [mdx(), tailwind(), react()],
+  site: "https://madnanrizqu.com",
+  integrations: [mdx(), tailwind(), react(), sitemap()],
   output: "static",
   adapter: cloudflare(),
 });

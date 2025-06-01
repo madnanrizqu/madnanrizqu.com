@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madnanrizqu.com/sitemap-index.xml
