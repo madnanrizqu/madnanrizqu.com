@@ -1,28 +1,128 @@
 ---
-import { ClientRouter } from "astro:transitions"; // The 'fade' import might become unused if not used elsewhere
+import { ClientRouter } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 import PageContainer from "./PageContainer.astro";
+import { SEO, type TwitterCardType, type Link, type Meta } from "astro-seo";
+
+export interface SEOProps {
+  title?: string;
+  titleTemplate?: string;
+  titleDefault?: string;
+  charset?: string;
+  description?: string;
+  canonical?: URL | string;
+  nofollow?: boolean;
+  noindex?: boolean;
+  languageAlternates?: {
+    href: URL | string;
+    hrefLang: string;
+  }[];
+  openGraph?: {
+    basic: {
+      title: string;
+      type: string;
+      image?: string;
+      url?: URL | string;
+    };
+    optional?: {
+      audio?: string;
+      description?: string;
+      determiner?: string;
+      locale?: string;
+      localeAlternate?: string[];
+      siteName?: string;
+      video?: string;
+    };
+    image?: {
+      url?: URL | string;
+      secureUrl?: URL | string;
+      type?: string;
+      width?: number;
+      height?: number;
+      alt?: string;
+    };
+    article?: {
+      publishedTime?: string;
+      modifiedTime?: string;
+      expirationTime?: string;
+      authors?: string[];
+      section?: string;
+      tags?: string[];
+    };
+  };
+  twitter?: {
+    card?: TwitterCardType;
+    site?: string;
+    creator?: string;
+    title?: string;
+    description?: string;
+    image?: URL | string;
+    imageAlt?: string;
+  };
+  extend?: {
+    link?: Partial<Link>[];
+    meta?: Partial<Meta>[];
+  };
+  surpressWarnings?: boolean;
+}
 
 interface Props {
-  title: string;
+  seo?: SEOProps;
   variant?: "empty" | "no-top-padding" | "top-padding" | "navbar-only";
 }
 
-const { title, variant = "no-top-padding" } = Astro.props;
+const { seo, variant = "no-top-padding" } = Astro.props;
 
+const titleDefault = "Muhammad Adnan R.";
 const isProd = import.meta.env.PROD;
+const siteBaseUrl = Astro.url.origin;
+const url = Astro.request.url;
 ---
 
 <!doctype html>
 <html lang="en" transition:persist>
   <head>
-    <meta charset="UTF-8" />
-    <title>{title}</title>
-    <meta
-      name="description"
-      content="Helping people to be create more smooth, reliable, engaging, powerfull and aesthethic web apps"
+    <SEO
+      titleTemplate="%s | Muhammad Adnan R."
+      titleDefault={titleDefault}
+      title={seo?.title}
+      description={seo?.description ??
+        "Personal portfolio and blog of Muhammad Adnan R., Software Engineer. Discover projects, articles, and insights on web development, technology, and academia."}
+      nofollow={seo?.nofollow}
+      noindex={seo?.noindex}
+      canonical={seo?.canonical}
+      charset="UTF-8"
+      languageAlternates={seo?.languageAlternates}
+      openGraph={{
+        basic: {
+          title: seo?.title ?? titleDefault,
+          url: url,
+          type: "website",
+          image: `${siteBaseUrl}/images/hero.png`,
+          ...seo?.openGraph?.basic,
+        },
+        optional: {
+          siteName: "Muhammad Adnan R. Personal portfolio and blog",
+          locale: "en_US",
+          ...seo?.openGraph?.optional,
+        },
+        article: {
+          authors: ["Muhammad Adnan R."],
+          ...seo?.openGraph?.article,
+        },
+      }}
+      twitter={{
+        title: seo?.title ?? titleDefault,
+        card: "summary_large_image",
+        creator: "@madnanrizqu",
+        site: "@madnanrizqu",
+        image: `${siteBaseUrl}/images/hero.png`,
+        imageAlt: "Muhammad Adnan R. - Software Engineer",
+        description: seo?.description,
+        ...seo?.twitter,
+      }}
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/favicon_black.ico" />

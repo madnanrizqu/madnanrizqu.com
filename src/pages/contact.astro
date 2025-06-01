@@ -5,7 +5,29 @@ import ContactForm from "../components/ContactForm";
 ---
 
 <Layout
-  title="M Adnan Rizqullah, Software Engineer | Contact"
+  seo={{
+    title: "Contact",
+    description:
+      "Get in touch with Muhammad Adnan R. for web development projects, collaborations, or any inquiries. Fill out the contact form or reach out via social media.",
+    openGraph: {
+      basic: {
+        title: "Contact | Muhammad Adnan R.",
+        type: "website",
+      },
+      optional: {
+        siteName: "Muhammad Adnan R. Personal portfolio and blog",
+        locale: "en_US",
+      },
+    },
+    twitter: {
+      title: "Contact | Muhammad Adnan R.",
+      card: "summary_large_image",
+      creator: "@madnanrizqu",
+      site: "@madnanrizqu",
+      description:
+        "Get in touch with Muhammad Adnan R. for web development projects, collaborations, or any inquiries. Fill out the contact form or reach out via social media.",
+    },
+  }}
   variant="top-padding"
 >
   <main>

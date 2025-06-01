@@ -16,10 +16,54 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const siteBaseUrl = Astro.url.origin;
+const postUrl = `${siteBaseUrl}/blog/${slugify(entry.data.title)}`;
+const imageUrl = entry.data.imageSrc
+  ? entry.data.imageSrc.startsWith("http")
+    ? entry.data.imageSrc
+    : `${siteBaseUrl}${entry.data.imageSrc.startsWith("/") ? "" : "/"}${entry.data.imageSrc}`
+  : `${siteBaseUrl}/images/hero.png`;
 ---
 
 <Layout
-  title={`M Adnan Rizqullah, Software Engineer | Blog - ${entry.data.title}`}
+  seo={{
+    title: entry.data.title,
+    description: entry.data.description || "A blog post by Muhammad Adnan R.",
+    canonical: postUrl,
+    openGraph: {
+      basic: {
+        title: `${entry.data.title} | Muhammad Adnan R.`,
+        type: "article",
+        image: imageUrl,
+        url: postUrl,
+      },
+      optional: {
+        description:
+          entry.data.description || "A blog post by Muhammad Adnan R.",
+        siteName: "Muhammad Adnan R. Personal portfolio and blog",
+        locale: "en_US",
+      },
+      article: {
+        publishedTime: entry.data.pubDate.toISOString(),
+        authors: ["Muhammad Adnan R."],
+        tags: entry.data.tags || [],
+      },
+      image: {
+        url: imageUrl,
+        alt: entry.data.imageAlt || entry.data.title,
+      },
+    },
+    twitter: {
+      title: `${entry.data.title} | Muhammad Adnan R.`,
+      card: "summary_large_image",
+      creator: "@madnanrizqu",
+      site: "@madnanrizqu",
+      description: entry.data.description || "A blog post by Muhammad Adnan R.",
+      image: imageUrl,
+      imageAlt: entry.data.imageAlt || entry.data.title,
+    },
+  }}
   variant="top-padding"
 >
   <div class="cmn_container pb-32 flex flex-col items-center">
