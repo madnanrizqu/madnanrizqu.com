@@ -2,8 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout variant="navbar-only">
+<Layout
+  variant="navbar-only"
+  skipToMainContentTarget="#target-skip-main-content"
+>
   <main
+    id="landing-page"
     class="relative h-screen pt-[4rem] md:pt-[5rem] cmn_container flex flex-col md:flex-row gap-12 md:items-center"
   >
     <div
@@ -40,7 +44,11 @@ import Layout from "../layouts/Layout.astro";
       class="md:absolute bottom-10 left-10 right-10 md:left-10 md:right-auto"
     >
       <div class="flex flex-col gap-4">
-        <a href="/portfolio" class="cmn_button--outline">View portfolio</a>
+        <a
+          id="target-skip-main-content"
+          href="/portfolio"
+          class="cmn_button--outline">View portfolio</a
+        >
         <a
           href="/blog?tags=Engineering"
           class="cmn_button--solid_invert animated-border-button"
@@ -204,9 +212,8 @@ import Layout from "../layouts/Layout.astro";
     transition: background 1000ms linear;
   }
 
-  .image-gradient-shadow-host:hover::after,
-  .image-gradient-shadow-host:focus::after,
-  .image-gradient-shadow-host:active::after {
+  #landing-page:hover .image-gradient-shadow-host::after,
+  #landing-page:focus-within .image-gradient-shadow-host::after {
     background: linear-gradient(
       175deg,
       var(--secondary) 0%,
