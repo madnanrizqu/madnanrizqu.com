@@ -69,11 +69,16 @@ export interface SEOProps {
 }
 
 interface Props {
+  skipToMainContentTarget: string;
   seo?: SEOProps;
   variant?: "empty" | "no-top-padding" | "top-padding" | "navbar-only";
 }
 
-const { seo, variant = "no-top-padding" } = Astro.props;
+const {
+  seo,
+  variant = "no-top-padding",
+  skipToMainContentTarget,
+} = Astro.props;
 
 const titleDefault = "Muhammad Adnan R.";
 const isProd = import.meta.env.PROD;
@@ -163,7 +168,7 @@ const url = Astro.request.url;
     </script>
   </head>
   <body>
-    <a href="#main-content" class="skip-to-content-link">
+    <a href={skipToMainContentTarget} class="skip-to-content-link">
       Skip to main content
     </a>
     {variant !== "empty" && <Navbar />}
