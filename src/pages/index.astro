@@ -129,20 +129,36 @@ import Layout from "../layouts/Layout.astro";
   .animated-border-button {
     --border-angle: 0deg;
     position: relative;
-    border: 0.5rem solid transparent;
+    border: 0.35rem solid transparent;
     border-radius: var(--btn-bor-rad);
 
     background:
       linear-gradient(var(--font-color), var(--font-color)) padding-box,
       conic-gradient(
           from var(--border-angle),
-          var(--bg-color) 50%,
-          var(--font-color)
+          var(--font-color) 50%,
+          var(--bg-color)
         )
         border-box;
 
-    animation: border-angle-rotate 4s infinite linear;
+    transition: all 250ms ease-in;
+
+    animation: border-angle-rotate 8s infinite linear;
     animation-delay: var(--animation-delay);
+  }
+
+  .animated-border-button:hover,
+  .animated-border-button:focus {
+    background:
+      linear-gradient(var(--font-color), var(--font-color)) padding-box,
+      conic-gradient(
+          from var(--border-angle),
+          var(--bg-color) 50%,
+          var(--secondary)
+        )
+        border-box;
+    color: var(--bg-color) !important;
+    outline: none;
   }
 
   /* Headshot animation */
@@ -166,7 +182,7 @@ import Layout from "../layouts/Layout.astro";
 
   .animate-border-shape {
     border-radius: 70% 30% 80% 20% / 60% 40% 75% 25%;
-    animation: animatedBorderRadius 5s infinite linear;
+    animation: animatedBorderRadius 6s infinite linear;
     animation-delay: var(--animation-delay);
   }
 
@@ -185,5 +201,15 @@ import Layout from "../layouts/Layout.astro";
     transform: translateY(15%);
     filter: blur(30px);
     opacity: 0.8;
+    transition: background 1000ms linear;
+  }
+
+  .image-gradient-shadow-host:hover::after,
+  .image-gradient-shadow-host:focus::after {
+    background: linear-gradient(
+      175deg,
+      var(--secondary) 0%,
+      var(--font-color) 100%
+    );
   }
 </style>
