@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import classes from "./ThemePicker.module.css";
-import clsx from "clsx";
 
 type ThemeVariant = "system" | "light" | "dark";
 
@@ -21,18 +19,27 @@ const ThemePicker = () => {
   };
 
   return (
-    <section className={classes.root}>
-      <span className={classes.theme_headline}>Pick a theme</span>
+    <section className="flex flex-col pb-[4.8rem] gap-[2.4rem]">
+      <span className="text-headline-3 font-bold inline-block">
+        Pick a theme
+      </span>
 
-      <ul className={classes.theme_list}>
+      <ul className="flex flex-col gap-[1.4rem]">
         <li>
           <button
-            className={clsx(classes.theme_option, {
-              [classes["theme_option--active"]]: activeTheme === "system",
-            })}
+            className={`
+              w-full border-[3px] rounded-[4px] p-[2.4rem]
+              inline-flex justify-center flex-col items-center gap-[1.2rem]
+              transition-colors duration-200 ease-in-out
+              ${
+                activeTheme === "system"
+                  ? "border-secondary bg-secondary-100 text-white"
+                  : "border-grey hover:border-secondary-100"
+              }
+            `}
             onClick={() => handleClickTheme("system")}
           >
-            <span className={classes.theme_option__label}>Detect system</span>
+            <span className="text-[1.6rem]">Detect system</span>
             <svg
               width={24}
               height={24}
@@ -46,12 +53,19 @@ const ThemePicker = () => {
         </li>
         <li>
           <button
-            className={clsx(classes.theme_option, {
-              [classes["theme_option--active"]]: activeTheme === "light",
-            })}
+            className={`
+              w-full border-[3px] rounded-[4px] p-[2.4rem]
+              inline-flex justify-center flex-col items-center gap-[1.2rem]
+              transition-colors duration-200 ease-in-out
+              ${
+                activeTheme === "light"
+                  ? "border-secondary bg-secondary-100 text-white"
+                  : "border-grey hover:border-secondary-100"
+              }
+            `}
             onClick={() => handleClickTheme("light")}
           >
-            <span className={classes.theme_option__label}>Light Mode</span>
+            <span className="text-[1.6rem]">Light Mode</span>
             <svg
               width={24}
               height={24}
@@ -65,12 +79,19 @@ const ThemePicker = () => {
         </li>
         <li>
           <button
-            className={clsx(classes.theme_option, {
-              [classes["theme_option--active"]]: activeTheme === "dark",
-            })}
+            className={`
+              w-full border-[3px] rounded-[4px] p-[2.4rem]
+              inline-flex justify-center flex-col items-center gap-[1.2rem]
+              transition-colors duration-200 ease-in-out
+              ${
+                activeTheme === "dark"
+                  ? "border-secondary bg-secondary-100 text-white"
+                  : "border-grey hover:border-secondary-100"
+              }
+            `}
             onClick={() => handleClickTheme("dark")}
           >
-            <span className={classes.theme_option__label}>Dark Mode</span>
+            <span className="text-[1.6rem]">Dark Mode</span>
             <svg
               width={24}
               height={24}
