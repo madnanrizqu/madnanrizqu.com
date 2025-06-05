@@ -3,70 +3,26 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout variant="empty">
-  <div class="main-content-border">
-    <main class="main-content">
+  <div class="max-w-2xl p-4 bg-gradient-to-r from-primary to-secondary">
+    <main class="max-w-3xl mx-auto text-center bg-skin-base p-20">
       <section>
-        <span class="pre-headline">This page is...</span>
-        <h1 class="headline">Not Found</h1>
+        <span class="inline-block mb-1 text-skin-base text-[1.4rem]"
+          >This page is...</span
+        >
+        <h1
+          class="text-[5rem] font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        >
+          Not Found
+        </h1>
       </section>
-      <footer class="footer">
-        <p class="thanks-note">
-          We are sorry. Click <a class="email_link" href="/">here</a> to go back
-          to home
+      <footer class="text-sm">
+        <p class="mb-4 text-skin-base">
+          Click <a
+            class="text-primary hover:text-secondary transition-colors"
+            href="/">here</a
+          > to go back to home
         </p>
       </footer>
     </main>
   </div>
 </Layout>
-
-<style>
-  .main-content {
-    max-width: 50rem;
-    width: 0px auto;
-    text-align: center;
-    background: var(--grey);
-    padding: 24px;
-  }
-
-  .main-content > *:not(:last-child) {
-    margin-bottom: 16px;
-  }
-
-  .main-content-border {
-    max-width: 320px;
-    padding: 1rem;
-    position: relative;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    padding: 3px;
-  }
-
-  .pre-headline {
-    display: inline-block;
-    margin-bottom: 4px;
-    font-size: 1.4rem;
-  }
-
-  .headline {
-    background: var(--primary);
-    background: linear-gradient(
-      to right,
-      var(--primary) 28%,
-      var(--secondary) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .footer {
-    font-size: 0.8rem;
-  }
-
-  .thanks-note {
-    margin-bottom: 16px;
-    font-size: 1.6rem;
-  }
-
-  .email_link {
-    color: #1faac8;
-  }
-</style>
