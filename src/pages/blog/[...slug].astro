@@ -68,12 +68,13 @@ const imageUrl = entry.data.imageSrc
 >
   <div class="cmn_container pb-32 flex flex-col items-center">
     <div class="w-full">
-      <button
+      <a
         id="back_button"
         class="cmn_button--outline mb-6 md:mb-8 inline-block"
+        href="/blog"
       >
         Go back to Blog
-      </button>
+      </a>
 
       <MdContainer>
         {/* MdContainer uses Tailwind prose classes */}
@@ -118,19 +119,3 @@ const imageUrl = entry.data.imageSrc
     </div>
   </div>
 </Layout>
-
-<script>
-  const backFunctionality = () => {
-    const button = document.getElementById("back_button");
-    if (!button) {
-      return;
-    }
-
-    button.addEventListener("click", () => {
-      window.history.back();
-    });
-  };
-
-  backFunctionality();
-  document.addEventListener("astro:after-swap", backFunctionality);
-</script>
