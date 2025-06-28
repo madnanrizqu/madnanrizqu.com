@@ -8,8 +8,10 @@ import TagPill from "../components/TagPill.astro";
 const blogCollection = await getCollection("blogs");
 // Sort by newest first
 const posts = blogCollection.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+console.log("blogCollection", blogCollection);
 
 // Extract all unique tags for filter buttons
 const allTags = [
@@ -115,7 +117,7 @@ const allTags = [
 <script define:vars={{ initialPosts: posts }}>
   document.addEventListener("astro:page-load", () => {
     const tagFilterButtons = document.querySelectorAll(
-      ".tag-filter-button[data-tag]",
+      ".tag-filter-button[data-tag]"
     );
     const clearFiltersButton = document.getElementById("clear-filters-button");
     const blogPostItems = document.querySelectorAll(".blog-post-item");
@@ -177,7 +179,7 @@ const allTags = [
           postsFound = true;
         } else {
           const matches = Array.from(activeFilters).every((filterTag) =>
-            itemTags.includes(filterTag),
+            itemTags.includes(filterTag)
           );
           item.style.display = matches ? "" : "none";
           if (matches) postsFound = true;
@@ -192,7 +194,7 @@ const allTags = [
             "border",
             "border-primary",
             "text-primary",
-            "hover:bg-primary-100",
+            "hover:bg-primary-100"
           );
         } else {
           button.classList.remove("bg-primary", "text-white");
@@ -200,7 +202,7 @@ const allTags = [
             "border",
             "border-primary",
             "text-primary",
-            "hover:bg-primary-100",
+            "hover:bg-primary-100"
           );
         }
       });

@@ -7,6 +7,11 @@
   --success: #49d49d;
   --success-200: #a9f1ce;
   --success-700: #067653;
+  --warning: #facc15;
+  --warning-100: #fefce8;
+  --warning-200: #fef08a;
+  --warning-500: #eab308;
+  --warning-900: #422006;
   --black: #000000;
   --white: #ffffff;
   --grey: #f5f5f5;
@@ -76,6 +81,11 @@ html.dark {
   --success: #49d49d;
   --success-200: #a9f1ce;
   --success-700: #067653;
+  --warning: #facc15;
+  --warning-100: #fefce8;
+  --warning-200: #fef08a;
+  --warning-500: #eab308;
+  --warning-900: #422006;
   --black: #000000;
   --white: #ffffff;
   --grey: #f5f5f5;
@@ -178,7 +188,9 @@ button,
 label,
 input,
 textarea,
-li {
+li,
+th,
+td {
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
@@ -459,4 +471,10 @@ ol {
   .cmn_button--solid_secondary {
     font-size: var(--btn-font-size);
   }
+}
+
+.responsive-table {
+  max-width: 85vw;
+  margin: 0 auto;
+  overflow-x: auto;
 }
