@@ -1,0 +1,94 @@
+---
+title: "Navigating Complex Decisions: Criteria & Evaluation Table"
+description: "Struggling with complex choices? This guide introduces the Criteria and Evaluation Table, a powerful problem-solving technique for making objective decisions. We demonstrate this method with a real-world example: selecting the best database for an e-commerce application, using a weighted matrix to compare options like MySQL and PostgreSQL. Enhance your engineering and decision-making skills."
+pubDate: 2025-06-28
+imageSrc: "/images/criteria-evaluation-table.png"
+imageAlt: "Benefits of criteria and evaluation table"
+tags: ["Problem Solving", "Engineering", "Web Development"]
+---
+
+## Complex Decisions are Hard 🧠
+
+Making complex decisions without clear-cut answers is challenging for all of us. When facing multiple options with competing priorities, it's easy to get overwhelmed by analysis paralysis. I wanted to share a practical approach that's helped me tremendously in these situations.
+
+That approach is the Criteria and Evaluation Table, as described in Ken Watanabe's book "Problem Solving 101." Rather than relying on gut feelings alone, this method brings clarity through structured comparison of options against weighted criteria that matter most to your specific situation. I've found this framework transforms seemingly subjective decisions into objective analyses with clear rationales.
+
+## A Software Engineer Example 🧑‍💻
+
+Let's say we're picking a database for an e-commerce project. From the Complete Intro to Databases course by Brian Holt, the key factors to consider are:
+
+1. Data model alignment
+2. Read/write patterns
+3. Developer familiarity
+4. Driver quality
+5. Total operational costs
+6. Proven technology ("boring factor")
+
+Now, let's consider our specific requirements for a hypothetical e-commerce application:
+
+- High volume of product catalog data
+- Complex customer order history
+- Needs good search capabilities
+- Development team with primarily SQL background
+- Limited DevOps resources
+
+> **⚠️ DISCLAIMER**
+> This example is generated with help of Claude Sonnet 3.7 Thinking, please double check the correctness of it. The focus on this article is to show how to use Criteria and Evaluation Table, not to teach how to pick databases.
+
+Afterwords, let's the weights for each decision factor based on the specific e-commerce requirements:
+
+1. **Data Paradigm (0.25)** - Highest weight because the data model fundamentally determines how well we can handle high-volume product catalogs, complex order histories, and search capabilities required by our e-commerce application.
+
+2. **Developer Familiarity (0.20)** - Significant weight as our team's SQL background makes technology alignment crucial for productivity, faster development cycles, and minimizing strain on limited DevOps resources.
+
+3. **Read/Write Patterns (0.20)** - Equal importance to familiarity as e-commerce applications need optimized read performance for browsing/searching while maintaining reliable write operations for order processing.
+
+4. **Operational Costs (0.15)** - Moderate weight because our limited DevOps resources necessitate operational simplicity, though this factor ranks below core technical fit considerations.
+
+5. **Boring Factor (0.15)** - Equal to driver quality because proven technology reduces unexpected issues and ensures stability with our limited DevOps resources.
+
+6. **Driver Quality (0.05)** - Lower weight as most established databases offer acceptable integration options with minimal day-to-day operational impact after initial implementation.
+
+| Database Type | Data Paradigm (0.25) | Read/Write (0.20) | Dev Familiarity (0.20) | Driver Quality (0.05) | Ops Cost (0.15) | Boring Factor (0.15) | Total Score |
+| ------------- | -------------------- | ----------------- | ---------------------- | --------------------- | --------------- | -------------------- | ----------- |
+| PostgreSQL    | 4 (1.0)              | 3 (0.6)           | 5 (1.0)                | 5 (0.25)              | 3 (0.45)        | 5 (0.75)             | 4.05/5      |
+| MongoDB       | 3 (0.75)             | 4 (0.8)           | 2 (0.4)                | 4 (0.2)               | 3 (0.45)        | 4 (0.6)              | 3.20/5      |
+| MySQL         | 4 (1.0)              | 3 (0.6)           | 5 (1.0)                | 5 (0.25)              | 4 (0.6)         | 5 (0.75)             | 4.20/5      |
+| DynamoDB      | 2 (0.5)              | 5 (1.0)           | 1 (0.2)                | 3 (0.15)              | 2 (0.3)         | 3 (0.45)             | 2.60/5      |
+
+Lets breakdown the table:
+
+1. MySQL scores highest overall (4.20/5):
+
+   - Strong in the data paradigm (relational data fits well)
+   - Excellent developer familiarity (team knows SQL)
+   - Lower operational costs than PostgreSQL
+   - Very "boring" (stable, proven technology)
+
+2. PostgreSQL comes in second (4.05/5):
+
+   - Nearly identical strengths to MySQL
+   - Slightly higher operational costs
+   - Better for complex queries and advanced features
+
+3. MongoDB scores moderately (3.20/5):
+
+   - Better for write-heavy operations
+   - Lower developer familiarity (team would need training)
+   - Document model is less optimal for the relational aspects
+
+4. DynamoDB scores lowest (2.60/5):
+   - Excellent for write-heavy operations
+   - Very poor developer familiarity
+   - Higher operational complexity
+   - Less suitable for the complex relational data needs
+
+Based on this analysis, MySQL would be the recommended choice for this specific project, with PostgreSQL as a close alternative if advanced features become more important.
+
+As you can see using a Criteria and Evaluation Table really helps on making a hard decision more navigable, it helps us decide based on factors that are important for us.
+
+Furthermore, the table can be used to explain & justify your decision to others. Making everybody more willing to agree and support the decision.
+
+What complex decisions have you faced recently? Have you tried a structured approach like this? Let me know in the comments below
+
+See you in the next one 👋

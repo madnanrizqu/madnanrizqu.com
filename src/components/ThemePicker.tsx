@@ -6,16 +6,36 @@ const ThemePicker = () => {
   const [activeTheme, setActiveTheme] = useState<ThemeVariant>("system");
 
   useEffect(() => {
-    setActiveTheme(
-      (document.documentElement.getAttribute("data-theme") as ThemeVariant) ??
-        "system",
-    );
+    const currentTheme =
+      localStorage.getItem("data-theme-mode") === "auto"
+        ? "system"
+        : localStorage.getItem("data-theme");
+
+    setActiveTheme((currentTheme || "system") as ThemeVariant);
   }, [document.documentElement.getAttribute("data-theme")]);
 
   const handleClickTheme = (theme: ThemeVariant) => {
-    localStorage.setItem("data-theme", theme);
-    document.documentElement.setAttribute("data-theme", theme);
-    setActiveTheme(theme);
+    if (theme === "system") {
+      localStorage.setItem(
+        "data-theme",
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+      );
+      localStorage.setItem("data-theme-mode", "auto");
+      document.documentElement.setAttribute(
+        "data-theme",
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+      );
+      setActiveTheme(theme);
+    } else {
+      localStorage.setItem("data-theme", theme);
+      localStorage.setItem("data-theme-mode", "manual");
+      document.documentElement.setAttribute("data-theme", theme);
+      setActiveTheme(theme);
+    }
   };
 
   return (

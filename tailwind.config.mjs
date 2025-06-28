@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -17,6 +18,13 @@ export default {
           DEFAULT: "var(--success)",
           200: "var(--success-200)",
           700: "var(--success-700)",
+        },
+        warning: {
+          DEFAULT: "var(--warning)",
+          100: "var(--warning-100)",
+          200: "var(--warning-200)",
+          500: "var(--warning-500)",
+          900: "var(--warning-900)",
         },
         grey: {
           DEFAULT: "var(--grey)",

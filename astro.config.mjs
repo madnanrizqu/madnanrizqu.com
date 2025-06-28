@@ -8,9 +8,26 @@ import cloudflare from "@astrojs/cloudflare";
 
 import sitemap from "@astrojs/sitemap";
 
+import rehypeWrap from "rehype-wrap-all";
+
 export default defineConfig({
   site: "https://madnanrizqu.com",
-  integrations: [mdx(), tailwind(), react(), sitemap()],
+  integrations: [
+    mdx({
+      rehypePlugins: [
+        [
+          rehypeWrap,
+          {
+            selector: "table",
+            wrapper: "div.responsive-table",
+          },
+        ],
+      ],
+    }),
+    tailwind(),
+    react(),
+    sitemap(),
+  ],
   output: "static",
   adapter: cloudflare(),
 });

@@ -157,7 +157,14 @@ const url = Astro.request.url;
         if (localStorage.getItem("data-theme")) {
           document.documentElement.setAttribute(
             "data-theme",
-            localStorage.getItem("data-theme"),
+            localStorage.getItem("data-theme")
+          );
+        } else {
+          document.documentElement.setAttribute(
+            "data-theme",
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
           );
         }
       };
