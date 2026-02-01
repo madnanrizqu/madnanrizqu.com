@@ -9,47 +9,47 @@ tags: ["Artificial Intelligence", "Productivity"]
 
 ## Motivation
 
-We all know and love coding agents. We plan, refine, and instruct agents to execute. 2025 was wild, it changed how we conduct software engineering massively, we now rarely touch our keyboards to manually code. That, I guess rewired my brain, for better and for worse
+We all know and love coding agents. We plan, refine, and instruct agents to execute. 2025 was wild, it changed how we conduct software engineering massively, we now rarely touch our keyboards to manually code. That, I guess, rewired my brain, for better and for worse. I now get mildly frustrated when my dishwasher doesn't accept natural language instructions.
 
-We use coding agents for software engineering. Why not use it for CV Building? Theres lot of tedious and maintenance that must be done, like changing resume to match a job description or keeping resume up-to-date with our latest achievements, etc.
+So naturally, I started looking for other tedious tasks to offload. CV building came to mind, there's a lot of maintenance that must be done, like tailoring your resume to match a job description or keeping it up-to-date with your latest achievements.
 
-Adding to that is that Software Engineers probably already subscribes on some kind of coding agent setup (pay to win :D), so why not just leverage the subscription so we get more value!
+Adding to that is that Software Engineers probably already subscribe to some kind of coding agent setup (pay to win :D), so why not just leverage the subscription so we get more value!
 
 That led me to experiment with coding agents + LaTeX
 
 ## Solution
 
-LaTeX is a markup language (kinda like HTML) to describe content for structured PDF. The main benefit is to decouple presentation of the PDF with its content. It allows people to easily change formatting / layout / presentation without the need to change the actual content
+LaTeX is a markup language (kinda like HTML) to describe content for structured PDF. The main benefit is to decouple presentation of the PDF from its content. It allows people to easily change formatting / layout / presentation without the need to change the actual content.
 
-While thats nice and all, how does it help with CV / resume building? LaTeX as a language editable locally in our computers can be augmented with agentic editing (or coding). We can relieve ourselves of low level details to change LateX by using the higher level abstraction of prompts. Better since agents has tools, we now rarely need to touch our keyboards.
+While that's nice and all, how does it help with CV / resume building? LaTeX as a language editable locally in our computers can be augmented with agentic editing. We can relieve ourselves of low-level details to change LaTeX by using the higher-level abstraction of prompts. Better yet, since agents have tools, we now rarely need to touch our keyboards.
 
 ![CV Resume Agentic Building workflow](/images/cv-resume-agent.png)
 
-## Uses cases
+## Use cases
 
-Here some use cases the agentic CV Building allows to do easily:
+Here are some use cases the agentic CV building allows you to do easily:
 
-1. Change cv content to match job description for better ATS scores
+1. Change CV content to match job description for better ATS scores
 2. Optimize how to write the achievements of each job position
 3. Change the layout/formatting/presentation of CV without changing content
-4. Have a seperate evaluation agents that acts as an expert CV reviewer to evaluate any content changes
-5. Track changes using versioning, branching, tagging, and all other goodies that comes with Git
+4. Have a separate evaluation agent that acts as an expert CV reviewer to evaluate any content changes
+5. Track changes using versioning, branching, tagging, and all other goodies that come with Git
 
-Well I'm sure theres more but you get my point, basically we dont need to do old school inefficient way of changing/maintain our CV. We can spend less time on CV related stuff and even come out with an always optimized CV for any job description, all without touching our keyboards (well kinda)
+Well I'm sure there's more but you get my point, basically we don't need to do old school inefficient way of changing/maintaining our CV. We can spend less time on CV-related stuff and even come out with an always optimized CV for any job description, all without touching our keyboards (well kinda)
 
 ## Example: Tailoring Resume for Job Description
 
-Here's a real example from [this commit](https://github.com/madnanrizqu/vibe-cv-resume/commit/b955e7b) — tailoring a resume for Canva's AI Developer Tooling role.
+Here's a real example from [this commit](https://github.com/madnanrizqu/vibe-cv-resume/commit/b955e7b), tailoring a resume for Canva's AI Developer Tooling role.
 
-**The job description prioritizes:**
+The job description prioritizes:
 
 - AI-orchestrated developer workflows and MCP implementations
 - Python/Go expertise with AI tooling experience
 - LLM and agent understanding
 
-**Changes made to match:**
+Changes made to match:
 
-1. **Rewrote professional summary** — shifted focus from frontend to AI:
+1. Rewrote professional summary: shifted focus from frontend to AI:
 
 ```diff
 - Senior Software Engineer with 5+ years building scalable web
@@ -62,7 +62,7 @@ Here's a real example from [this commit](https://github.com/madnanrizqu/vibe-cv-
 + Experience with prompt engineering, RAG systems, and CI/CD automation.
 ```
 
-2. **Reordered experience section** — AI Research Assistant moved from second to first position:
+2. Reordered experience section: AI Research Assistant moved from second to first position:
 
 ```diff
   \section{Professional Experience}
@@ -84,7 +84,7 @@ Here's a real example from [this commit](https://github.com/madnanrizqu/vibe-cv-
 +     {Senior Frontend Engineer | React, TypeScript, GraphQL, Node.js}
 ```
 
-3. **Restructured entire skills section** — AI/ML skills promoted to top, frontend demoted:
+3. Restructured entire skills section: AI/ML skills promoted to top, frontend demoted:
 
 ```diff
   \section{Skills}
@@ -102,17 +102,17 @@ Here's a real example from [this commit](https://github.com/madnanrizqu/vibe-cv-
 +   \textbf{Databases:} PostgreSQL, MongoDB, Redis \\
 ```
 
-Two versions maintained: `main.tex` (AI-tailored) and `master.tex` (frontend-focused). Same experience, different emphasis — optimized for different job descriptions.
+Two versions maintained: `main.tex` (AI-tailored) and `master.tex` (frontend-focused). Same experience, different emphasis, optimized for different job descriptions.
 
 ## Want to try this workflow?
 
-I've open-sourced everything—template, prompts, Docker setup, all of it.
+I've open-sourced everything: template, prompts, Docker setup, all of it.
 
 What you get:
 
-- **Zero LaTeX setup** — Docker handles the messy installation so you don't have to
-- **Battle-tested template** — Clean, ATS-friendly format ready to customize
-- **Working agent prompts** — Skip the trial and error, use prompts that actually work
-- **Workflow examples** — Master CV with tailored subdirectories per job application, job description matching prompt to score how well your CV fits
+- **Zero LaTeX setup:** Docker handles the messy installation so you don't have to
+- **Battle-tested template:** Clean, ATS-friendly format ready to customize
+- **Working agent prompts:** Skip the trial and error, use prompts that actually work
+- **Workflow examples:** Master CV with tailored subdirectories per job application, job description matching prompt to score how well your CV fits
 
 Star it to bookmark for your next job search, fork it to customize for your own CV, or contribute by checking out the open issues: [github.com/madnanrizqu/vibe-cv-resume](https://github.com/madnanrizqu/vibe-cv-resume)
