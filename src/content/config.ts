@@ -19,6 +19,7 @@ const projectCollection = defineCollection({
     imageSrc: z.string(),
     imageAlt: z.string(),
     projectHref: z.optional(z.string()),
+    githubRepo: z.optional(z.string()),
     order: z.number().optional(),
   }),
 });

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { slugify } from "../../scripts/url";
 import Layout from "../../layouts/Layout.astro";
 import MdContainer from "../../components/MdContainer.astro";
+import GitHubStats from "../../components/GitHubStats";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects");
@@ -67,6 +68,12 @@ const imageUrl = entry.data.imageSrc
   <div class="cmn_container root">
     <div>
       <button id="back_button" class="cmn_button--outline">Go back</button>
+
+      {entry.data.githubRepo && (
+        <div class="my-6">
+          <GitHubStats repo={entry.data.githubRepo} client:visible />
+        </div>
+      )}
 
       <MdContainer>
         <Content />
