@@ -14,7 +14,7 @@ const testimoniesUnsorted = await Promise.all(
       ...v,
       Content,
     };
-  })
+  }),
 );
 
 // Sort projects by the 'order' field, handling undefined 'order' by placing them at the end.
@@ -73,14 +73,17 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
                 class="text-primary"
                 >5+ years in frontend and full-stack development
               </strong> having contributed to diverse environments from agile startups
-              to leading Southeast Asian tech giants like Grab. Currently deepening
-              his expertise with a <strong class="text-primary"
-                >Master's Degree in Computer Science researching AI Engineering</strong
-              >, he specializes in maintaining software engineering quality and
-              crafting high-performant web applications using technologies such
-              as <strong class="text-primary">
+              to leading Southeast Asian tech giants like Grab. he specializes in
+              maintaining software engineering quality and crafting high-performant
+              web applications using technologies such as <strong
+                class="text-primary"
+              >
                 React.js, Next.js, Node.js/Express.js, and TypeScript</strong
-              >.
+              >. Having a <strong class="text-primary"
+                >Master's Degree in Computer Science publishing papers in AI
+                Engineering</strong
+              >, he also deep knowledge in Large Language Models and AI
+              Evaluation.
             </p>
 
             <p>
@@ -123,7 +126,7 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
             >
             <span
               class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
-              >10M+</span
+              >30M+</span
             >
           </div>
           <div class="flex flex-col items-center gap-1">
@@ -134,6 +137,16 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
             <span
               class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
               >10+</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span
+              class="text-base bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >Publications</span
+            >
+            <span
+              class="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent"
+              >2</span
             >
           </div>
           <div class="flex flex-col items-center gap-1">
@@ -203,339 +216,124 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
     <section class="bg-[var(--bg-color)] text-[var(--font-color)]">
       <div class="cmn_container flex flex-col gap-[2.4rem]">
         <h2 class="text-primary">Technologies I Use</h2>
-        <p>These are the tech that I have used professionaly</p>
+        <p>These are the tech that I have used professionally</p>
 
         <ol class="flex flex-col gap-[2.4rem]">
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>Progamming Language</h3>
+            <h3>Programming Languages</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >TypeScript</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Node.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >JavaScript</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >ReasonML</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Python</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Go</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">JavaScript</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">TypeScript</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Python</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">ReasonML</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>JavaScript Framework</h3>
+            <h3>Frontend Frameworks</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Next.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Express.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Nest.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >React.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Vue.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Nuxt.js</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Electron.js</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">React.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Next.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Vue.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Nuxt.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Electron</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>Styling</h3>
+            <h3>UI & Styling</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >CSS</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >LESS</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >SASS</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Tailwind</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Emotion</span
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="flex flex-col gap-[1.2rem]">
-            <h3>UI Libraries</h3>
-            <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Antd</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Material</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Chakra UI</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Bulma</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Bootsrap</span
-                >
-              </li>
-            </ol>
-          </li>
-          <li class="flex flex-col gap-[1.2rem]">
-            <h3>Testing</h3>
-            <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Jest</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Vitest</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >React Testing Library</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Cypress</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Selenium</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">HTML5</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">CSS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">SASS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">LESS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Tailwind CSS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Emotion CSS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Ant Design</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Material UI</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Chakra UI</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Vuetify</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
             <h3>State Management</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Zustand</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Redux</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Vuex</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Redux.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Vuex</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">React Query</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>Data Fetching</h3>
+            <h3>Backend</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Axios</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >React Query</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >useSWR</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Redux Thunk</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Node.js</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Express.js</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>Database</h3>
+            <h3>Testing & Tools</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >SQL (Postgres)</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Jest</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Cypress</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Playwright</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Selenium</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Storybook</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Webpack</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Git</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>Other</h3>
+            <h3>CMS & Content</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Webpack</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Storybook</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Docker</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >HTML</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Adobe Experience Manager</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Magento</span></li>
             </ol>
           </li>
           <li class="flex flex-col gap-[1.2rem]">
-            <h3>3rd Party Services</h3>
+            <h3>Marketing & Analytics</h3>
             <ol class="flex gap-[1.6rem] flex-wrap">
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Github</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Gitlab</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >JIRA</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Grafana</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Jenkins</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Google Analytics</span
-                >
-              </li>
-              <li>
-                <span
-                  class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]"
-                  >Google Lighthouse</span
-                >
-              </li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Google Tag Manager</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Google Analytics</span></li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Databases & APIs</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">PostgreSQL</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">SQL</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">GraphQL</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">REST APIs</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">API Integrations</span></li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Infrastructure & DevOps</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Docker</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Kubernetes</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">AWS</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Azure</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Jenkins</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Monorepo</span></li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Data Science & AI/ML</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Large Language Models</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">LLMOps</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Machine Learning</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Deep Learning</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">NLP</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Data Mining</span></li>
+            </ol>
+          </li>
+          <li class="flex flex-col gap-[1.2rem]">
+            <h3>Methodologies</h3>
+            <ol class="flex gap-[1.6rem] flex-wrap">
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Agile</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Scrum</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">OOP</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">Web Performance</span></li>
+              <li><span class="text-[1.4rem] text-secondary border border-secondary rounded-[12px] py-[0.4rem] px-[1rem]">SEO</span></li>
             </ol>
           </li>
         </ol>
