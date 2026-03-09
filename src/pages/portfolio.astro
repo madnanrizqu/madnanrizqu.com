@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Testimony from "../components/Testimony.astro";
 import Project from "../components/Project.astro";
+import Publication from "../components/Publication.astro";
 import { slugify } from "../scripts/url";
 
 const testimoniesCollections = await getCollection("testimonies");
@@ -31,6 +32,27 @@ const projects = projectCollection.sort((a, b) => {
   const orderB = b.data.order ?? Infinity;
   return orderA - orderB;
 });
+
+const publications = [
+  {
+    title: "Model-Agnostic Empirical Evaluation of Test-Driven Prompt Engineering on Improving Accuracy and Efficiency in Large Language Models Python Code Generation",
+    journal: "IEEE Access",
+    status: "Published",
+    link: "https://ieeexplore.ieee.org/document/11386872",
+    indexing: ["WoS Q2", "Scopus Q1"],
+    sjr: "0.849",
+    impactFactor: "3.6",
+  },
+  {
+    title: "Large Language Model Selection for Test-Driven Prompt Android iOS Development",
+    journal: "International Journal of Interactive Mobile Technologies (iJIM)",
+    status: "Published",
+    link: "https://online-journals.org/index.php/i-jim/article/view/59861",
+    indexing: ["Scopus Q3"],
+    sjr: "0.413",
+    impactFactor: null,
+  },
+];
 
 import CallToActionHeadline from "../components/CallToActionHeadline.astro";
 ---
@@ -181,6 +203,23 @@ import CallToActionHeadline from "../components/CallToActionHeadline.astro";
                   {...p.data}
                   projectDetailSlug={`/projects/${slugify(p.data.title)}`}
                 />
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section id="publications" class="bg-[var(--bg-color)]">
+      <div class="cmn_container">
+        <h2 class="text-primary font-bold mb-[2.4rem]">Publications</h2>
+        <ol
+          class="list-none grid gap-6 md:gap-8 mb-[2.4rem] md:grid-cols-2 md:justify-center md:justify-items-center"
+        >
+          {
+            publications.map((pub) => (
+              <li>
+                <Publication {...pub} />
               </li>
             ))
           }

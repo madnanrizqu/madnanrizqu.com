@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  journal: string;
+  status: string;
+  link: string;
+  indexing: string[];
+  sjr: string;
+  impactFactor: string | null;
+}
+
+const props = Astro.props;
+---
+
+<article
+  class="bg-grey-2 text-white rounded-xl border-l-4 border-primary p-6 shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1"
+>
+  <header class="mb-8">
+    <h3 class="text-primary font-bold text-[2.4rem]">{props.journal}</h3>
+    <span
+      class="inline-block bg-amber-500 text-neutral-900 px-3 py-1 rounded-md text-[1.6rem] font-semibold mt-4"
+    >
+      {props.status}
+    </span>
+  </header>
+
+  <h4 class="text-white font-semibold text-[2rem] mb-6 line-clamp-3">
+    {props.title}
+  </h4>
+
+  <div class="flex flex-wrap gap-2 mb-6">
+    {
+      props.indexing.map((index) => (
+        <span class="border border-amber-400/60 text-amber-400 rounded-lg px-2 py-1 text-[1.4rem]">
+          {index}
+        </span>
+      ))
+    }
+    <span
+      class="border border-amber-400/60 text-amber-400 rounded-lg px-2 py-1 text-[1.4rem]"
+    >
+      SJR: {props.sjr}
+    </span>
+    {
+      props.impactFactor && (
+        <span class="border border-amber-400/60 text-amber-400 rounded-lg px-2 py-1 text-[1.4rem]">
+          IF: {props.impactFactor}
+        </span>
+      )
+    }
+  </div>
+
+  <footer>
+    <a
+      href={props.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-primary hover:text-primary/80 font-medium text-[1.6rem]"
+    >
+      Read Paper →
+    </a>
+  </footer>
+</article>
