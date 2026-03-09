@@ -2,29 +2,29 @@
   <defs>
     <pattern id="topographic-light" x="0" y="0" width="600" height="600" patternUnits="userSpaceOnUse">
       <!-- Subtle topographic lines for light mode -->
-      <path d="M0,50 Q150,30 300,50 T600,50" stroke="rgba(31, 170, 200, 0.15)" stroke-width="1.5" fill="none"/>
-      <path d="M0,120 Q150,100 300,120 T600,120" stroke="rgba(31, 170, 200, 0.12)" stroke-width="1.2" fill="none"/>
-      <path d="M0,200 Q150,180 300,200 T600,200" stroke="rgba(31, 170, 200, 0.1)" stroke-width="1" fill="none"/>
-      <path d="M0,280 Q150,260 300,280 T600,280" stroke="rgba(31, 170, 200, 0.08)" stroke-width="0.8" fill="none"/>
-      <path d="M0,360 Q150,340 300,360 T600,360" stroke="rgba(31, 170, 200, 0.1)" stroke-width="1" fill="none"/>
-      <path d="M0,440 Q150,420 300,440 T600,440" stroke="rgba(31, 170, 200, 0.12)" stroke-width="1.2" fill="none"/>
-      <path d="M0,520 Q150,500 300,520 T600,520" stroke="rgba(31, 170, 200, 0.15)" stroke-width="1.5" fill="none"/>
+      <path d="M0,50 Q150,30 300,50 T600,50" stroke="rgba(31, 170, 200, 0.28)" stroke-width="1.5" fill="none"/>
+      <path d="M0,120 Q150,100 300,120 T600,120" stroke="rgba(31, 170, 200, 0.24)" stroke-width="1.2" fill="none"/>
+      <path d="M0,200 Q150,180 300,200 T600,200" stroke="rgba(31, 170, 200, 0.2)" stroke-width="1" fill="none"/>
+      <path d="M0,280 Q150,260 300,280 T600,280" stroke="rgba(31, 170, 200, 0.16)" stroke-width="0.8" fill="none"/>
+      <path d="M0,360 Q150,340 300,360 T600,360" stroke="rgba(31, 170, 200, 0.2)" stroke-width="1" fill="none"/>
+      <path d="M0,440 Q150,420 300,440 T600,440" stroke="rgba(31, 170, 200, 0.24)" stroke-width="1.2" fill="none"/>
+      <path d="M0,520 Q150,500 300,520 T600,520" stroke="rgba(31, 170, 200, 0.28)" stroke-width="1.5" fill="none"/>
       
       <!-- Vertical variation -->
-      <path d="M50,0 Q30,150 50,300 T50,600" stroke="rgba(31, 170, 200, 0.08)" stroke-width="1" fill="none"/>
-      <path d="M150,0 Q130,150 150,300 T150,600" stroke="rgba(31, 170, 200, 0.06)" stroke-width="0.8" fill="none"/>
-      <path d="M300,0 Q280,150 300,300 T300,600" stroke="rgba(31, 170, 200, 0.1)" stroke-width="1.2" fill="none"/>
-      <path d="M450,0 Q430,150 450,300 T450,600" stroke="rgba(31, 170, 200, 0.06)" stroke-width="0.8" fill="none"/>
-      <path d="M550,0 Q530,150 550,300 T550,600" stroke="rgba(31, 170, 200, 0.08)" stroke-width="1" fill="none"/>
+      <path d="M50,0 Q30,150 50,300 T50,600" stroke="rgba(31, 170, 200, 0.18)" stroke-width="1" fill="none"/>
+      <path d="M150,0 Q130,150 150,300 T150,600" stroke="rgba(31, 170, 200, 0.14)" stroke-width="0.8" fill="none"/>
+      <path d="M300,0 Q280,150 300,300 T300,600" stroke="rgba(31, 170, 200, 0.22)" stroke-width="1.2" fill="none"/>
+      <path d="M450,0 Q430,150 450,300 T450,600" stroke="rgba(31, 170, 200, 0.14)" stroke-width="0.8" fill="none"/>
+      <path d="M550,0 Q530,150 550,300 T550,600" stroke="rgba(31, 170, 200, 0.18)" stroke-width="1" fill="none"/>
       
       <!-- Subtle dots at intersections -->
-      <circle cx="50" cy="50" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="150" cy="120" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="300" cy="200" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="450" cy="280" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="300" cy="360" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="150" cy="440" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
-      <circle cx="550" cy="520" r="1.5" fill="rgba(31, 170, 200, 0.2)"/>
+      <circle cx="50" cy="50" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="150" cy="120" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="300" cy="200" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="450" cy="280" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="300" cy="360" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="150" cy="440" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
+      <circle cx="550" cy="520" r="1.5" fill="rgba(31, 170, 200, 0.38)"/>
     </pattern>
   </defs>
   <rect width="600" height="600" fill="url(#topographic-light)"/>
