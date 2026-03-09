@@ -170,9 +170,18 @@ const url = Astro.request.url;
         }
       };
 
+      const initPattern = () => {
+        const pattern = localStorage.getItem("data-pattern") || "constellation";
+        document.documentElement.setAttribute("data-pattern", pattern);
+      };
+
       initTheme();
+      initPattern();
       // Runs on view transitions navigation
-      document.addEventListener("astro:after-swap", initTheme);
+      document.addEventListener("astro:after-swap", () => {
+        initTheme();
+        initPattern();
+      });
     </script>
   </head>
   <body>

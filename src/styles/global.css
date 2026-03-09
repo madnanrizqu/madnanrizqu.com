@@ -55,6 +55,149 @@
   --bg-color-hero: rgba(255, 255, 255, 0.1);
 }
 
+/* ============================================================
+   BACKGROUND PATTERN SYSTEM
+   ============================================================ */
+
+/* Pattern registry - SVG pattern URLs */
+:root {
+  --bg-pattern-topographic-light: url("/images/backgrounds/topographic-light.svg");
+  --bg-pattern-topographic-dark: url("/images/backgrounds/topographic-dark.svg");
+  --bg-pattern-constellation-light: url("/images/backgrounds/constellation-light.svg");
+  --bg-pattern-constellation-dark: url("/images/backgrounds/constellation-dark.svg");
+
+  /* Active pattern - defaults to constellation */
+  --bg-pattern: var(--bg-pattern-constellation-light);
+}
+
+/* Pattern selection via data-pattern attribute */
+:root[data-pattern="topographic"] {
+  --bg-pattern: var(--bg-pattern-topographic-light);
+}
+:root[data-pattern="topographic"][data-theme="dark"] {
+  --bg-pattern: var(--bg-pattern-topographic-dark);
+}
+:root[data-pattern="constellation"] {
+  --bg-pattern: var(--bg-pattern-constellation-light);
+}
+:root[data-pattern="constellation"][data-theme="dark"] {
+  --bg-pattern: var(--bg-pattern-constellation-dark);
+}
+:root[data-pattern="none"] .bg-pattern::before,
+:root[data-pattern="none"] .bg-pattern::after {
+  display: none;
+}
+
+/* Pattern utility class - applies SVG pattern as animated overlay with parallax layers */
+.bg-pattern {
+  position: relative;
+  isolation: isolate; /* Create stacking context */
+}
+
+/* Foreground pattern layer - faster movement, higher opacity */
+.bg-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-pattern);
+  background-repeat: repeat;
+  background-size: 800px 800px;
+  background-position: 0% 0%;
+  pointer-events: none; /* Allow clicking through */
+  z-index: 1;
+  animation: bg-drift-fg 45s ease-in-out infinite, bg-breathe 8s ease-in-out infinite;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+/* Background pattern layer - slower movement, lower opacity for depth */
+.bg-pattern::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-pattern);
+  background-repeat: repeat;
+  background-size: 1200px 1200px;
+  background-position: 0% 0%;
+  pointer-events: none;
+  z-index: 0;
+  animation: bg-drift-bg 80s ease-in-out infinite, bg-breathe-slow 12s ease-in-out infinite;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+
+/* Ensure interactive elements stay above pattern */
+.bg-pattern button,
+.bg-pattern a,
+.bg-pattern input,
+.bg-pattern textarea,
+.bg-pattern select {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pattern animations - layered parallax + breathing effects */
+
+/* Foreground layer drift - faster, more dynamic path */
+@keyframes bg-drift-fg {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 15% 10%;
+  }
+  50% {
+    background-position: 8% 18%;
+  }
+  75% {
+    background-position: -8% 5%;
+  }
+}
+
+/* Background layer drift - slower, different path for parallax effect */
+@keyframes bg-drift-bg {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: -10% 8%;
+  }
+  50% {
+    background-position: -5% -12%;
+  }
+  75% {
+    background-position: 12% -6%;
+  }
+}
+
+/* Breathing effect - foreground layer */
+@keyframes bg-breathe {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Breathing effect - background layer (slower, different timing) */
+@keyframes bg-breathe-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* End of Background Pattern System */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -478,3 +621,4 @@ ol {
   margin: 0 auto;
   overflow-x: auto;
 }
+

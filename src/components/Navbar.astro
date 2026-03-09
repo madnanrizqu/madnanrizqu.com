@@ -3,6 +3,7 @@ import Dialog from "./Dialog.astro";
 import DialogTrigger from "./DialogTrigger.astro";
 import Logo from "./Logo.astro";
 import ThemePicker from "./ThemePicker";
+import PatternPicker from "./PatternPicker";
 ---
 
 <div class="navbar_anchor">
@@ -78,11 +79,12 @@ import ThemePicker from "./ThemePicker";
         </nav>
         <Dialog dialogId="dialog_theme" transition:persist>
           <ThemePicker client:only />
+          <PatternPicker client:only />
         </Dialog>
         <div class="min-h-6 min-w-6 flex justify-center items-center">
           <DialogTrigger
             dialogId="dialog_theme"
-            ariaLabel="Open theme switcher"
+            ariaLabel="Open appearance settings"
           >
             <svg
               width="24"
