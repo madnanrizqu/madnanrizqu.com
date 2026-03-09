@@ -17,30 +17,29 @@ const PatternPicker = () => {
   };
 
   return (
-    <section className="flex flex-col pb-[4.8rem] gap-[2.4rem]">
-      <span className="text-headline-3 font-bold inline-block">
+    <section className="flex flex-col pb-[2.4rem] gap-[1.2rem]">
+      <span className="text-[1.6rem] font-bold inline-block text-skin-base">
         Pick a pattern
       </span>
 
-      <ul className="flex flex-col gap-[1.4rem]">
+      <ul className="flex flex-wrap gap-[0.8rem]">
         <li>
           <button
             className={`
-              w-full border-[3px] rounded-[4px] p-[2.4rem]
-              inline-flex justify-center flex-col items-center gap-[1.2rem]
-              transition-colors duration-200 ease-in-out
+              border-[2px] rounded-[8px] px-[1.6rem] py-[0.8rem]
+              inline-flex items-center gap-[0.8rem]
+              transition-all duration-200 ease-in-out
               ${
                 activePattern === "topographic"
                   ? "border-secondary bg-secondary-100 text-white"
-                  : "border-grey hover:border-secondary-100"
+                  : "border-grey-4 hover:border-secondary-100 text-skin-base"
               }
             `}
             onClick={() => handleClickPattern("topographic")}
           >
-            <span className="text-[1.6rem]">Topographic</span>
             <svg
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -50,26 +49,26 @@ const PatternPicker = () => {
               <path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0" strokeWidth="2"/>
               <path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0" strokeWidth="2"/>
             </svg>
+            <span className="text-[1.4rem] font-medium">Topographic</span>
           </button>
         </li>
         <li>
           <button
             className={`
-              w-full border-[3px] rounded-[4px] p-[2.4rem]
-              inline-flex justify-center flex-col items-center gap-[1.2rem]
-              transition-colors duration-200 ease-in-out
+              border-[2px] rounded-[8px] px-[1.6rem] py-[0.8rem]
+              inline-flex items-center gap-[0.8rem]
+              transition-all duration-200 ease-in-out
               ${
                 activePattern === "constellation"
                   ? "border-secondary bg-secondary-100 text-white"
-                  : "border-grey hover:border-secondary-100"
+                  : "border-grey-4 hover:border-secondary-100 text-skin-base"
               }
             `}
             onClick={() => handleClickPattern("constellation")}
           >
-            <span className="text-[1.6rem]">Constellation</span>
             <svg
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -84,26 +83,26 @@ const PatternPicker = () => {
               <line x1="12" y1="12" x2="6" y2="18" stroke="currentColor" strokeWidth="1"/>
               <line x1="12" y1="12" x2="18" y2="18" stroke="currentColor" strokeWidth="1"/>
             </svg>
+            <span className="text-[1.4rem] font-medium">Constellation</span>
           </button>
         </li>
         <li>
           <button
             className={`
-              w-full border-[3px] rounded-[4px] p-[2.4rem]
-              inline-flex justify-center flex-col items-center gap-[1.2rem]
-              transition-colors duration-200 ease-in-out
+              border-[2px] rounded-[8px] px-[1.6rem] py-[0.8rem]
+              inline-flex items-center gap-[0.8rem]
+              transition-all duration-200 ease-in-out
               ${
                 activePattern === "none"
                   ? "border-secondary bg-secondary-100 text-white"
-                  : "border-grey hover:border-secondary-100"
+                  : "border-grey-4 hover:border-secondary-100 text-skin-base"
               }
             `}
             onClick={() => handleClickPattern("none")}
           >
-            <span className="text-[1.6rem]">None</span>
             <svg
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -112,6 +111,7 @@ const PatternPicker = () => {
               <rect x="3" y="3" width="18" height="18" strokeWidth="2" rx="2"/>
               <line x1="3" y1="3" x2="21" y2="21" strokeWidth="2"/>
             </svg>
+            <span className="text-[1.4rem] font-medium">None</span>
           </button>
         </li>
       </ul>
