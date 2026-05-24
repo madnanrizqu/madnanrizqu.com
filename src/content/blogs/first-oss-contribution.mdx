@@ -1,0 +1,93 @@
+---
+title: "My First Open Source Contribution: 2 PRs Merged in a 50K Stars Project in 1 Week"
+description: "How I went from zero OSS contributions to merging 2 PRs in a world-class project within a week; the exact steps I took to find beginner-friendly projects, pick my first issue, and build trust with maintainers."
+pubDate: 2026-05-24
+imageSrc: "/images/oss-contribution.jpeg"
+imageAlt: "Open source contribution journey"
+tags: ["Open Source", "Engineering"]
+---
+import { Picture } from "astro:assets";
+import MdImageContainer from "../../components/MdImageContainer.astro";
+
+2 PRs merged in a 50K stars project within 1 week. Sounds unlikely for someone with zero prior OSS contributions? That was me a week ago.
+
+On Saturday, May 16th 2026, I attended a mentoring session by Riandy from [idnremote](https://idnremote.com) about why and how to contribute to world-class open source projects. Fast forward one week, alhamdulillah I had 2 PRs merged in [nexu-io/open-design](https://github.com/nexu-io/open-design):
+
+1. [PR #2500](https://github.com/nexu-io/open-design/pull/2500)
+2. [PR #2764](https://github.com/nexu-io/open-design/pull/2764)
+
+The mentoring material was genuinely that good. I hope Riandy or the idnremote team opens the mentoring session again in the future for the next batch of participants.
+
+## Motivation 🧠
+
+I'll try to shortly share what motivates me the most from Riandy's mentoring session, basically it's related to the opportunity created by the difference in economical strength of various nations. Many companies in the first tier tech industry nations (ie: US/Europe/Singapore) are now looking for "cheaper" talent in Asia. Indonesians fit that bill, we have a quite solid reputation having some engineers already working on Asia level big tech (Gojek, Shopee, Grab, etc) and obviously we have lower currency strength/living costs so our salary expectations match the "cheap" budget the companies have. I'm quoting "cheap" since while the companies are indeed paying way less compared to their local talents, it's still way larger than what top tier companies are giving in Indonesia.
+
+So next question is on how we can fill this opportunity gap. Contributing to OSS comes as a very good least-effort choice to prove our capabilities in the world level. The alternatives mentioned are having experience working at Indonesian big tech and experience building valuable software products
+
+Unlike CV citing experience working at large scale product big tech company in Indonesia where recruiters will find harder to verify. And unlike having to build the software product that's used by thousands of users where its genuinely hard to do as it requires other skills besides software engineering. Contributing to OSS is easily verifiable and has more straightforward steps.
+
+During the mentoring session, Riandy shared 4 criteria for picking projects that double as portfolio pieces: **Welcoming**, **World-Class**, **Relevant**, and **Exciting**. Welcoming means maintainers actually respond to external contributors. World-class means significant adoption; stars, downloads, users. Relevant means the tech stack aligns with your career direction/target company. Exciting means you'd genuinely enjoy working on it.
+
+I chose nexu-io/open-design because it checked all four boxes: 50K stars, 72 external PRs merged, beginner-friendly issues, and it's in the intersection of two areas I'm interested in: AI and UI/UX/Frontend.
+
+## Finding the Right Project 🎯
+
+The hardest part of OSS contribution isn't writing the code — it's finding a project that will actually merge your PR. Here's how I found mine:
+
+1. Visit [contrib.idnremote.com](https://contrib.idnremote.com) — a curated list of projects friendly to new contributors
+2. Sort by "Most welcoming" to find beginner-friendly projects
+3. Filter for projects matching the 4 criteria above (via the filter panel on left side)
+
+<MdImageContainer>
+  <Picture
+    src="/images/oss-contrib-idnremote.jpeg"
+    alt="OSS project finder for first contribution"
+    width="300"
+    height="300"
+  />
+</MdImageContainer>
+
+4. By visiting the projects one by one, I added one more personal criterion: maintainers who respond fast to issues and PRs from external users. Here open-design fares nicely since I can find the maintainers consistently reply in same day to issues and PRs.
+
+<MdImageContainer>
+  <Picture
+    src="/images/oss-same-date-reply-1.jpeg"
+    alt="Finding projects that consistently replies on same day"
+    width="300"
+    height="300"
+  />
+</MdImageContainer>
+
+<MdImageContainer>
+  <Picture
+    src="/images/oss-same-date-reply-2.jpeg"
+    alt="Finding projects that consistently replies on same day"
+    width="300"
+    height="300"
+  />
+</MdImageContainer>
+
+That last point is crucial. You could write the perfect PR, but if maintainers take weeks to review it, your momentum dies. Fast response times mean you can iterate quickly, learn from feedback, and build trust within days rather than months.
+
+## My Approach: Pick Random, Debug, Discover 🔄
+
+Maybe this is where most newcomers get stuck. You find a project, scroll through issues, and either everything looks too hard or alternatively too trivial that you think it won't help your portfolio. Here's what I did.
+
+I picked a random harder looking issue without overthinking whether I could solve it. Then I started debugging: cloned the repo, tried to reproduce the bug, read the surrounding code. While investigating, I stumbled onto a completely different bug multiple times that I was confident about and knew how to fix.
+
+So I created a new issue on GitHub documenting that bug, quickly claimed the issue for me to solve, and submitted a PR for it. And since my debugging was thankfully successful, I also managed to solve the original issue, buy 1 get 1 😄
+
+<MdImageContainer>
+  <Picture
+    src="/images/oss-open-new-issue.jpeg"
+    alt="Finding projects that consistently replies on same day"
+    width="300"
+    height="300"
+  />
+</MdImageContainer>
+
+This approach works particularly well for projects that are still relatively new. The project I contributed to was at version 0.7.0 and had only recently opened up for external contributions. Newer projects tend to have more undiscovered bugs, fewer existing solutions to duplicate, and maintainers who are actively looking for contributors.
+
+My biggest takeaway: the barrier to OSS contribution is probably psychological. We see projects with tens of thousands of stars and assume the codebase is too complex, the maintainers too busy, the process too intimidating. But maintainers of welcoming projects genuinely want your contributions.
+
+See you in the next one 👋
